@@ -1,11 +1,8 @@
-import { AppBar } from "@material-ui/core";
-// import { BottomNavigation } from "@material-ui/core";
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import BottomNav from "./Components/BottomNavigation/BottomNavigation";
-import SvgMumble from "./Components/MumbleIcon/Mumble";
 import Nav from "./Components/Nav/Nav";
 import About from "./Components/Pages/About";
 import Delete from "./Components/Pages/Delete";
@@ -50,10 +47,7 @@ function App() {
 
   return (
     <Router>
-      <AppBar />
-      {/* <SvgMumble /> */}
       <BottomNav />
-      {/* <BottomNavigation /> */}
       <Nav links={[<Link to="/">Home</Link>, <Link to="/about">About</Link>]} />
       <Switch>
         <Route exact path="/edit">

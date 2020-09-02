@@ -1,14 +1,18 @@
-import React, { useState } from "react";
-import "./App.css";
+import { AppBar } from "@material-ui/core";
+// import { BottomNavigation } from "@material-ui/core";
 import axios from "axios";
+import React, { useState } from "react";
+import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-import Edit from "./Components/Pages/Edit";
-import Delete from "./Components/Pages/Delete";
-import Home from "./Components/Pages/Home";
+import BottomNav from "./Components/BottomNavigation/BottomNavigation";
+import SvgMumble from "./Components/MumbleIcon/Mumble";
 import Nav from "./Components/Nav/Nav";
 import About from "./Components/Pages/About";
+import Delete from "./Components/Pages/Delete";
+import Edit from "./Components/Pages/Edit";
+import Home from "./Components/Pages/Home";
+
+import "./App.css";
 
 function App() {
   const [tasks, setTasks] = useState();
@@ -46,6 +50,10 @@ function App() {
 
   return (
     <Router>
+      <AppBar />
+      {/* <SvgMumble /> */}
+      <BottomNav />
+      {/* <BottomNavigation /> */}
       <Nav links={[<Link to="/">Home</Link>, <Link to="/about">About</Link>]} />
       <Switch>
         <Route exact path="/edit">

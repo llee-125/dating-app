@@ -6,9 +6,19 @@ require("./models/connection");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// app.use(express.static("public"));
 
 const apiRoutes = require("./routes/api-routes");
+
+// logs any request
+var myLogger = function (req, res, next) {
+  console.log(req.path);
+  next();
+};
+app.use(myLogger);
 app.use(apiRoutes);
+
+console.log(process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

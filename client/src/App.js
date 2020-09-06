@@ -8,6 +8,7 @@ import About from "./Components/Pages/About";
 import Delete from "./Components/Pages/Delete";
 import Edit from "./Components/Pages/Edit";
 import Home from "./Components/Pages/Home";
+import Profile from "./Components/Pages/Profile";
 
 import "./App.css";
 
@@ -72,6 +73,9 @@ function App() {
         </Route>
         <Route exact path="/about">
           <About />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
         </Route>
       </Switch>
     </Router>

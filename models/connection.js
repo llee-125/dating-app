@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/mern_template";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/datingApp";
 
 mongoose
   .connect(MONGODB_URI, {
@@ -8,7 +7,7 @@ mongoose
     useUnifiedTopology: true,
     useFindAndModify: false,
   })
-  .then(() => console.log("you are connected to mongodb"))
+  .then(() => console.log("YES, you are connected to mongodb"))
   .catch((err) => console.log(err));
 
 module.exports = mongoose;

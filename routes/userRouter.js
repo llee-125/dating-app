@@ -1,7 +1,9 @@
 const router = require("express").Router();
-const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const auth = require("../middleware/auth");
+const User = require("../models/userModel");
+require("dotenv").config();
 
 router.get("/test", (req, res) => {
   res.send("Hello, test is working");
@@ -57,7 +59,7 @@ router.post("/login", async (req, res) => {
     const user = await User.findOne({ email: email });
     if (!user)
       return res.status(400).json({
-        msg: "No account with this email has been registered, lleelogin.",
+        msg: "No account with this email has been registered, llee.",
       });
 
     const isMatch = await bcrypt.compare(password, user.password);
@@ -77,12 +79,35 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.delete("/delete", async (req, res) => {
+router.delete("/delete", auth, async (req, res) => {
   try {
     const deletedUser = await User.findByIdAndDelete(req.user);
     res.json(deletedUser);
-  } catch ({error: err.message}); 
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
-  });
+});
+
+router.post("/tokenIsValid", async (req, res) => {
+  try {
+    const token = req.header("x-auth-token");
+    if (!token) return res.json(false);
+
+    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    if (!verified) return res.json(false);
+
+    const user = await User.findById(verified.id);
+    if (!user) return res.json(false);
+
+    return res.json(true);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get("/", auth, async (req, res) => {
+  const user = await User.findById(req.user);
+  res.json({ displayName: user.displayName, id: user._id });
+});
 
 module.exports = router;

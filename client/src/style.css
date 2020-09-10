@@ -1,12 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-a {
-  color: #2199df;
-  text-decoration: unset;
+Link {
+  color: rgb(160, 17, 17);
+  text-decoration: none;
 }
 
 ul {
@@ -34,8 +36,19 @@ ol {
   margin: 1em 0;
 }
 
+/* general */
+
 body {
-  font-family: "Roboto", "Sans-Serif";
+  font-family: "shadows", sans-serif;
+}
+
+.page {
+  padding: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 #header {
@@ -43,37 +56,93 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: blue;
+  background-color: #6a53eb;
 }
 
 #header .title {
   margin: 0;
   padding: 0 1rem;
-  color: #ffffff;
+  color: #97e2e2;
 }
 
 #header .auth-options {
   height: 100%;
   display: flex;
 }
+
 #header .auth-options button {
-  padding: 0 1rem;
-  background-color: rgb(153, 185, 245);
-  color: white;
+  color: #ffffff;
   font-size: 1.1rem;
+  padding: 0 1rem;
+  background-color: rgb(50, 37, 199);
 }
 
 #header .auth-options button:hover {
-  background-color: rgb(146, 29, 58);
+  background: #6a53eb;
+}
+
+.form label,
+.form input {
+  display: block;
+}
+
+.form input {
+  margin-bottom: 1rem;
+}
+
+.form label {
+  margin-bottom: 0.2rem;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+  width: 100%;
+  padding: 0.3rem;
+  border: 1px solid #c2c2c2;
+  border-radius: 8px;
+  background-color: #9b9cd4;
+  font-size: 1.1rem;
+}
+.form input:focus {
+  border: 1px solid #268ee4;
+  box-shadow: inset 0px 0px 15px #072e4e;
+  outline: none;
+}
+
+.form input [type="submit"] {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #6aa051;
+  border-radius: 8px;
+  background-color: #bce4aa;
+  font-size: 1.1rem;
+}
+
+.error-notice {
+  margin: 1rem 0rem;
+  padding: 0.5rem;
+  border: 1px solid #e07c7c;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8d6d6;
+}
+
+.error-notice button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #df4343;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 550px) {
   #header .title {
     font-size: 1.2rem;
   }
-
   #header .auth-options button {
-    padding: 0 0.5rem;
     font-size: 0.9rem;
+    padding: 0 0.5rem;
   }
 }

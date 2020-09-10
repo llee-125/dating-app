@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Axios from "axios";
 import Header from "../Components/Layout/Header";
 import Home from "../Components/Pages/Home.js";
 import Login from "../Components/auth/Login.js";
@@ -13,6 +14,29 @@ export default function App() {
     token: undefined,
     user: undefined,
   });
+
+  useEffect(() => {
+    const checkLoggedIn = async () => {
+      let token = localStorage.getItem("auth-token");
+      if (token === null) {
+        localStorage.setItem("auth-token", "");
+        token = "";
+      }
+      const tokenRes = await Axios.post(
+        "http://localhost:5000/users/tokenIsValid",
+        null,
+        { headers: { "x-auth-token": token } }
+      );
+      if (tokenRes.data) {
+        const userRes = await Axios.get("http://localhost:5000/users/", {
+          headers: { "x-auth-token": token },
+        });
+        setUserData({ token, user: userRes.data });
+      }
+    };
+
+    checkLoggedIn();
+  }, []);
 
   return (
     <>

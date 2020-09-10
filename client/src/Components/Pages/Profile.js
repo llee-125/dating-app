@@ -107,41 +107,42 @@ class Profile extends React.Component {
     return (
       <div className="profile">
         <h1>Profile</h1>
-        <form>
-          {result}
-          <div className="navigation">
-            {this.state.counter !== 0 ? (
-              <NavigateBeforeIcon onClick={this.handleLeftCounter} id="left">
-                Left
-              </NavigateBeforeIcon>
-            ) : (
-              <div></div>
-            )}
-            {this.state.counter === 4 ? (
-              // change 2 to the last number of all the categories, remember it starts at 0
-              <ProfileDashboard
-                firstName={this.state.firstName}
-                lastName={this.state.lastName}
-                phone={this.state.phone}
-                email={this.state.email}
-                birthday={this.state.birthday}
-                gender={this.state.gender}
-                ethnicity={this.state.ethnicity}
-                body={this.state.body}
-                education={this.state.education}
-                religion={this.state.religion}
-                politics={this.state.politics}
-                children={this.state.children}
-                substances={this.state.substances}
-                interest={this.state.interest}
-              ></ProfileDashboard>
-            ) : (
+
+        {this.state.counter === 4 ? (
+          // change 2 to the last number of all the categories, remember it starts at 0
+          <ProfileDashboard
+            firstName={this.state.firstName}
+            lastName={this.state.lastName}
+            phone={this.state.phone}
+            email={this.state.email}
+            birthday={this.state.birthday}
+            gender={this.state.gender}
+            ethnicity={this.state.ethnicity}
+            body={this.state.body}
+            education={this.state.education}
+            religion={this.state.religion}
+            politics={this.state.politics}
+            children={this.state.children}
+            substances={this.state.substances}
+            interest={this.state.interest}
+          ></ProfileDashboard>
+        ) : (
+          <form>
+            {result}
+            <div className="navigation">
+              {this.state.counter !== 0 ? (
+                <NavigateBeforeIcon onClick={this.handleLeftCounter} id="left">
+                  Left
+                </NavigateBeforeIcon>
+              ) : (
+                <div></div>
+              )}
               <NavigateNextIcon onClick={this.handleRightCounter} id="right">
                 Right
               </NavigateNextIcon>
-            )}
-          </div>
-        </form>
+            </div>
+          </form>
+        )}
       </div>
     );
   }

@@ -13,7 +13,7 @@ import Box from "@material-ui/core/Box";
 // import { spacing } from "@material-ui/system";
 // import FixedColumnLayout from "../Grid/FixedColumnLayout";
 // import { withStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+// import Grid from "@material-ui/core/Grid";
 // import Options from "../Grid/Options";
 import Gender1 from "../Options/Gender1";
 import Gender2 from "../Options/Gender2";
@@ -21,6 +21,10 @@ import Gender3 from "../Options/Gender3";
 import Gender4 from "../Options/Gender4";
 import Gender5 from "../Options/Gender5";
 import Gender6 from "../Options/Gender6";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { makeStyles } from "@material-ui/core/styles";
 
 class Profile extends React.Component {
   state = {
@@ -63,7 +67,13 @@ class Profile extends React.Component {
     var result;
     if (this.state.counter === 0) {
       result = (
-        <Box display="flex" justifyContent="center" m={1} p={1}>
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          m={1}
+          p={1}
+        >
           <Box>
             <h1>What is your name?</h1>
             <form>
@@ -86,15 +96,23 @@ class Profile extends React.Component {
       );
     } else if (this.state.counter === 1) {
       result = (
-        <Box display="flex" justifyContent="center" m={1} p={1}>
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          m={1}
+          p={1}
+        >
           <Box>
             <h1>What is your phone number?</h1>
-            <TextField
-              label="555-555-5555"
-              name="phone"
-              value={this.state.phone}
-              onChange={this.handleChange}
-            />
+            <form>
+              <TextField
+                label="555-555-5555"
+                name="phone"
+                value={this.state.phone}
+                onChange={this.handleChange}
+              />
+            </form>
           </Box>
         </Box>
       );
@@ -126,55 +144,31 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>How do you self-identify?</h1>
-
-            <div>
-              <Grid id="top-row" container spacing={24}>
-                <Grid item xs={20}>
-                  <Gender1
-                    value={this.state.gender}
-                    onChange={this.handleChange}
-                  ></Gender1>
-                </Grid>
-
-                <Grid item xs={18}>
-                  <Gender2
-                    value={this.state.gender}
-                    onChange={this.handleChange}
-                  ></Gender2>
-                </Grid>
-
-                <Grid item xs={18}>
-                  <Gender3
-                    value={this.state.gender}
-                    onChange={this.handleChange}
-                  ></Gender3>
-                </Grid>
-              </Grid>
-
-              <Grid id="bottom-row" container spacing={24}>
-                <Grid item xs={18}>
-                  <Gender4
-                    value={this.state.gender}
-                    onChange={this.handleChange}
-                  ></Gender4>
-                </Grid>
-
-                <Grid item xs={18}>
-                  <Gender5
-                    value={this.state.gender}
-                    onChange={this.handleChange}
-                  ></Gender5>
-                </Grid>
-
-                <Grid item xs={18}>
-                  <Gender6
-                    value={this.state.gender}
-                    onChange={this.handleChange}
-                  ></Gender6>
-                </Grid>
-              </Grid>
-            </div>
+            <h1 className="text-center">How do you self-identify?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Gender1></Gender1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Gender2></Gender2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Gender3></Gender3>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Gender4></Gender4>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Gender5></Gender5>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Gender6></Gender6>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
 
             {/* <Box component="span" m={1} display="flex" flexWrap="wrap">
               <Button
@@ -259,7 +253,7 @@ class Profile extends React.Component {
     } else if (this.state.counter === 5) {
       result = (
         <div>
-          <h1>How would you describe your ethnicty?</h1>
+          <h1>How would you describe your ethnicity?</h1>
           <input
             name="ethnicity"
             placeholder="ethnicity"
@@ -376,8 +370,8 @@ class Profile extends React.Component {
               display="flex"
               justifyContent="center"
               alignItems="center"
-              mx={5}
-              mt={45}
+              mx={7}
+              mt={30}
               p={2}
             >
               {this.state.counter !== 0 ? (

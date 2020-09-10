@@ -11,9 +11,16 @@ import Box from "@material-ui/core/Box";
 // import Box from "../Box/Box";
 // import styled from "styled-components";
 // import { spacing } from "@material-ui/system";
-import FixedColumnLayout from "../Grid/FixedColumnLayout";
-import { withStyles } from "@material-ui/core/styles";
+// import FixedColumnLayout from "../Grid/FixedColumnLayout";
+// import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+// import Options from "../Grid/Options";
+import Gender1 from "../Options/Gender1";
+import Gender2 from "../Options/Gender2";
+import Gender3 from "../Options/Gender3";
+import Gender4 from "../Options/Gender4";
+import Gender5 from "../Options/Gender5";
+import Gender6 from "../Options/Gender6";
 
 class Profile extends React.Component {
   state = {
@@ -120,29 +127,51 @@ class Profile extends React.Component {
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
             <h1>How do you self-identify?</h1>
+
             <div>
               <Grid id="top-row" container spacing={24}>
-                <Grid item xs={4}>
-                  <Button
+                <Grid item xs={20}>
+                  <Gender1
                     value={this.state.gender}
                     onChange={this.handleChange}
-                    variant="contained"
-                    color="primary"
-                    disableElevation
-                  >
-                    Female
-                  </Button>
+                  ></Gender1>
                 </Grid>
-                <Grid item xs={4}>
-                  {/* <Paper className={classes.paper}>Grid cell 2, 1</Paper> */}
+
+                <Grid item xs={18}>
+                  <Gender2
+                    value={this.state.gender}
+                    onChange={this.handleChange}
+                  ></Gender2>
+                </Grid>
+
+                <Grid item xs={18}>
+                  <Gender3
+                    value={this.state.gender}
+                    onChange={this.handleChange}
+                  ></Gender3>
                 </Grid>
               </Grid>
+
               <Grid id="bottom-row" container spacing={24}>
-                <Grid item xs={4}>
-                  {/* <Paper className={classes.paper}>Grid cell 1, 2</Paper> */}
+                <Grid item xs={18}>
+                  <Gender4
+                    value={this.state.gender}
+                    onChange={this.handleChange}
+                  ></Gender4>
                 </Grid>
-                <Grid item xs={4}>
-                  {/* <Paper className={classes.paper}>Grid cell 2, 2</Paper> */}
+
+                <Grid item xs={18}>
+                  <Gender5
+                    value={this.state.gender}
+                    onChange={this.handleChange}
+                  ></Gender5>
+                </Grid>
+
+                <Grid item xs={18}>
+                  <Gender6
+                    value={this.state.gender}
+                    onChange={this.handleChange}
+                  ></Gender6>
                 </Grid>
               </Grid>
             </div>
@@ -346,7 +375,9 @@ class Profile extends React.Component {
               id="navArrows"
               display="flex"
               justifyContent="center"
-              m={5}
+              alignItems="center"
+              mx={5}
+              mt={45}
               p={2}
             >
               {this.state.counter !== 0 ? (

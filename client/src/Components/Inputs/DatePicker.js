@@ -21,7 +21,6 @@ export function DatePicker() {
     <form className={classes.container} noValidate>
       <TextField
         id="date"
-        label="Birthday"
         type="date"
         className={classes.textField}
         InputLabelProps={{

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Axios from "axios";
-import Header from "../Components/Layout/Header";
+import BottomNavigation from "../Components/BottomNavigation/BottomNavigation.js";
 import Home from "../Components/Pages/Home.js";
 import Login from "../Components/auth/Login.js";
 import Register from "../Components/auth/Register.js";
@@ -43,7 +43,7 @@ export default function App() {
       <BrowserRouter>
         {/* to give state to all of these components, can access userData and store current userData */}
         <UserContext.Provider value={{ userData, setUserData }}>
-          <Header />
+          <BottomNavigation />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />

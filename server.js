@@ -1,13 +1,14 @@
 const express = require("express");
-const app = express();
+const mongoose = require("mongoose");
 const PORT = process.env.PORT || 5000;
 const path = require("path");
-require("./models/connection");
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/datingApp";
 
+const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const apiRoutes = require("./routes/api-routes");
+app.use("/users", require("./routes/userRouter"));
 
 // logs any request
 var myLogger = function (req, res, next) {
@@ -15,9 +16,6 @@ var myLogger = function (req, res, next) {
   next();
 };
 app.use(myLogger);
-app.use(apiRoutes);
-
-console.log(process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -25,6 +23,19 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+mongoose.connect(
+  MONGODB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  },
+  (err) => {
+    if (err) throw err;
+    console.log("MongoDB connection established, llee.");
+  }
+);
 
 app.listen(PORT, () => {
   console.log(`listening at http://localhost:${PORT}`);

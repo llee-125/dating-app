@@ -40,11 +40,6 @@ export default function LabelBottomNavigation() {
       onChange={handleChange}
       className={classes.root}
     >
-      {/* <SvgIcon component={MumbleIcon} viewBox="0 0 600 476.6" /> */}
-      {/* <Icon className={classes.iconRoot}>
-        <img className={classes.imageIcon} src={"/mumble-logo.png"} alt={""} />
-      </Icon> */}
-
       <BottomNavigationAction
         label="Discover"
         value="discover"

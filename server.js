@@ -6,7 +6,6 @@ require("./models/connection");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static("public"));
 
 const apiRoutes = require("./routes/api-routes");
 

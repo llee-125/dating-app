@@ -9,6 +9,15 @@ router.get("/test", (req, res) => {
   res.send("Hello, test is working");
 });
 
+router.get("/user_data", (req, res) => {
+  !req.user
+    ? res.json({ message: "No user Present" })
+    : res.json({
+        email: req.user.email,
+        id: req.user._id,
+      });
+});
+
 router.post("/register", async (req, res) => {
   try {
     let { email, password, passwordCheck } = req.body;

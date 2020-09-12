@@ -8,7 +8,7 @@ mongoose.connect("mongodb://localhost/profile", {
 
 let profileSeed = [
   {
-    user_id: 1,
+    _id: 1,
     first_name: "Steven",
     last_name: "Gibson",
     mumble_email: "steven.gibson@mumble.com",
@@ -37,7 +37,7 @@ let profileSeed = [
     profile_image: "https://randomuser.me/api/portraits/men/88.jpg",
   },
   {
-    user_id: 2,
+    _id: 2,
     first_name: "Andrew",
     last_name: "Dyer",
     mumble_email: "andrew.dyer@mumble.com",
@@ -66,7 +66,7 @@ let profileSeed = [
     profile_image: "https://randomuser.me/api/portraits/men/60.jpg",
   },
   {
-    user_id: 3,
+    _id: 3,
     first_name: "Ruth",
     last_name: "Coleman",
     mumble_email: "ruth.coleman@mumble.com",
@@ -94,7 +94,7 @@ let profileSeed = [
     profile_image: "https://randomuser.me/api/portraits/women/2.jpg",
   },
   {
-    user_id: 4,
+    _id: 4,
     first_name: "Olivia",
     last_name: "Robertson",
     mumble_email: "olivia.robertson@mumble.com",
@@ -122,7 +122,7 @@ let profileSeed = [
     profile_image: "https://randomuser.me/api/portraits/women/11.jpg",
   },
   {
-    user_id: 5,
+    _id: 5,
     first_name: "Frank",
     last_name: "Terry",
     mumble_email: "frank.terry@mumble.com",

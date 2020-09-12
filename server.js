@@ -10,7 +10,6 @@ app.use(express.json());
 
 app.use("/users", require("./routes/userRouter"));
 app.use("/profile", require("./routes/profileRouter"));
-// app.use("/api", require("./routes/api-routes"));
 
 // logs any request
 var myLogger = function (req, res, next) {

@@ -7,7 +7,7 @@ require("dotenv").config();
 let userId = "";
 
 router.get("/test", (req, res) => {
-  res.send("Hello, test is working");
+  res.send("profileRouter successfully connected");
 });
 
 // router.get("/test2", (req, res) => {

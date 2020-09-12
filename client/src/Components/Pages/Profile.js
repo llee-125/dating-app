@@ -149,118 +149,72 @@ class Profile extends React.Component {
               <Row>
                 <Row className="text-center">
                   <Col xs={6} md={4}>
-                    <Gender1></Gender1>
+                    <Gender1
+                      value={this.state.gender}
+                      onChange={this.handleChange}
+                    ></Gender1>
                   </Col>
                   <Col xs={6} md={4}>
-                    <Gender2></Gender2>
+                    <Gender2
+                      value={this.state.gender}
+                      onChange={this.handleChange}
+                    ></Gender2>
                   </Col>
                   <Col xs={6} md={4}>
-                    <Gender3></Gender3>
+                    <Gender3
+                      value={this.state.gender}
+                      onChange={this.handleChange}
+                    ></Gender3>
                   </Col>
                   <Col xs={6} md={4}>
-                    <Gender4></Gender4>
+                    <Gender4
+                      value={this.state.gender}
+                      onChange={this.handleChange}
+                    ></Gender4>
                   </Col>
                   <Col xs={6} md={4}>
-                    <Gender5></Gender5>
+                    <Gender5
+                      value={this.state.gender}
+                      onChange={this.handleChange}
+                    ></Gender5>
                   </Col>
                   <Col xs={6} md={4}>
-                    <Gender6></Gender6>
+                    <Gender6
+                      value={this.state.gender}
+                      onChange={this.handleChange}
+                    ></Gender6>
                   </Col>
                 </Row>
               </Row>
             </Container>
-
-            {/* <Box component="span" m={1} display="flex" flexWrap="wrap">
-              <Button
-                value={this.state.gender}
-                onChange={this.handleChange}
-                variant="contained"
-                color="primary"
-                disableElevation
-              >
-                Female
-              </Button>
-            </Box>
-
-            <Box component="span" m={1} display="flex" flexWrap="wrap">
-              <Button
-                value={this.state.gender}
-                onChange={this.handleChange}
-                variant="contained"
-                color="primary"
-                disableElevation
-              >
-                Male
-              </Button>
-            </Box>
-
-            <Box component="span" m={1} display="flex" flexWrap="wrap">
-              <Button
-                value={this.state.gender}
-                onChange={this.handleChange}
-                variant="contained"
-                color="primary"
-                disableElevation
-              >
-                Trans female
-              </Button>
-            </Box>
-
-            <Box component="span" m={1} display="flex" flexWrap="wrap">
-              <Button
-                value={this.state.gender}
-                onChange={this.handleChange}
-                variant="contained"
-                color="primary"
-                disableElevation
-              >
-                Trans male
-              </Button>
-            </Box>
-
-            <Box component="span" m={1} display="flex" flexWrap="wrap">
-              <Button
-                value={this.state.gender}
-                onChange={this.handleChange}
-                variant="contained"
-                color="primary"
-                disableElevation
-              >
-                Non-conforming
-              </Button>
-            </Box>
-
-            <Box component="span" m={1} display="flex" flexWrap="wrap">
-              <Button
-                value={this.state.gender}
-                onChange={this.handleChange}
-                variant="contained"
-                color="primary"
-                disableElevation
-              >
-                Other
-              </Button>
-            </Box> */}
-            {/* <input
-              name="gender"
-              placeholder="gender"
-              value={this.state.gender}
-              onChange={this.handleChange}
-            ></input> */}
           </Box>
         </Box>
       );
     } else if (this.state.counter === 5) {
       result = (
-        <div>
-          <h1>How would you describe your ethnicity?</h1>
-          <input
-            name="ethnicity"
-            placeholder="ethnicity"
-            value={this.state.ethnicity}
-            onChange={this.handleChange}
-          ></input>
-        </div>
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>How would you describe your ethnicity?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}></Col>
+                  <Col xs={6} md={4}></Col>
+                  <Col xs={6} md={4}></Col>
+                  <Col xs={6} md={4}></Col>
+                  <Col xs={6} md={4}></Col>
+                  <Col xs={6} md={4}></Col>
+                </Row>
+              </Row>
+            </Container>
+            {/* <input
+              name="ethnicity"
+              placeholder="ethnicity"
+              value={this.state.ethnicity}
+              onChange={this.handleChange}
+            ></input> */}
+          </Box>
+        </Box>
       );
     } else if (this.state.counter === 6) {
       result = (

@@ -6,7 +6,8 @@ import Home from "../Components/Pages/Home.js";
 import Login from "../Components/auth/Login.js";
 import Register from "../Components/auth/Register.js";
 import UserContext from "../context/UserContext";
-
+import Profile from "../Components/Pages/Profile.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../style.css";
 
 export default function App() {
@@ -48,6 +49,9 @@ export default function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
           </Switch>
         </UserContext.Provider>
       </BrowserRouter>

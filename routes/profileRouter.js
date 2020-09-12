@@ -12,9 +12,9 @@ router.get("/all", (req, res) => {
   db.Profile.find().then((profiles) => res.send(profiles));
 });
 
-// router.get("/find/:id", (req, res) => {
-//   db.Profile.findById(req.params.id).then((todo) => res.send(todo));
-// });
+router.get("/find/:id", (req, res) => {
+  db.Profile.findById(req.params.id).then((profile) => res.send(profile));
+});
 
 router.post("/", auth, async (req, res) => {
   try {

@@ -44,7 +44,6 @@ export default function App() {
       <BrowserRouter>
         {/* to give state to all of these components, can access userData and store current userData */}
         <UserContext.Provider value={{ userData, setUserData }}>
-          <BottomNavigation />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
@@ -53,6 +52,7 @@ export default function App() {
               <Profile />
             </Route>
           </Switch>
+          <BottomNavigation />
         </UserContext.Provider>
       </BrowserRouter>
     </>

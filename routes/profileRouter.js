@@ -18,6 +18,16 @@ router.delete("/remove/:id", (req, res) => {
   db.Profile.findByIdAndRemove(req.params.id).then(() => res.send("success"));
 });
 
+router.post("/new", (req, res) => {
+  db.Profile.create(req.body).then((profile) => res.send(profile));
+});
+
+router.patch("/edit/:id", (req, res) => {
+  db.Profile.findByIdAndUpdate(req.params.id, req.body).then((result) =>
+    res.send(result)
+  );
+});
+
 router.post("/", auth, async (req, res) => {
   try {
     const { title } = req.body;

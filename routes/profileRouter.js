@@ -1,6 +1,20 @@
 const router = require("express").Router();
 const auth = require("../middleware/auth");
-const Todo = require("../models/todoModel");
+let db = require("../models/profileModel");
+
+router.get("/test", (req, res) => {
+  res.send("Hello, test is working");
+});
+router.get("/example", (req, res) => {
+  res.send("message from back end: this msg");
+});
+router.get("/all", (req, res) => {
+  db.Profile.find().then((profiles) => res.send(profiles));
+});
+
+// router.get("/find/:id", (req, res) => {
+//   db.Profile.findById(req.params.id).then((todo) => res.send(todo));
+// });
 
 router.post("/", auth, async (req, res) => {
   try {
@@ -20,6 +34,6 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-router.get;
+// router.get;
 
 module.exports = router;

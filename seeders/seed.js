@@ -1,5 +1,5 @@
 let mongoose = require("mongoose");
-let db = require("../models/Profile");
+let db = require("../models/profileModel");
 
 mongoose.connect("mongodb://localhost/profile", {
   useNewUrlParser: true,

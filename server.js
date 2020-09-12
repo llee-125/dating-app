@@ -2,13 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 5000;
 const path = require("path");
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/datingApp";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/profile";
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/users", require("./routes/userRouter"));
+app.use("/profile", require("./routes/profileRouter"));
+// app.use("/api", require("./routes/api-routes"));
 
 // logs any request
 var myLogger = function (req, res, next) {

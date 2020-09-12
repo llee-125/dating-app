@@ -3,17 +3,19 @@ const auth = require("../middleware/auth");
 let db = require("../models/profileModel");
 
 router.get("/test", (req, res) => {
-  res.send("Hello, test is working");
+  res.send("working profileRouter");
 });
-router.get("/example", (req, res) => {
-  res.send("message from back end: this msg");
-});
+
 router.get("/all", (req, res) => {
   db.Profile.find().then((profiles) => res.send(profiles));
 });
 
 router.get("/find/:id", (req, res) => {
   db.Profile.findById(req.params.id).then((profile) => res.send(profile));
+});
+
+router.delete("/remove/:id", (req, res) => {
+  db.Profile.findByIdAndRemove(req.params.id).then(() => res.send("success"));
 });
 
 router.post("/", auth, async (req, res) => {

@@ -7,6 +7,12 @@ const checkSexualPreference = require("./checkSexualPreference");
 const checkSmokesCompatibility = require("./checkSmokesCompatibility");
 const checkStatusCompatibility = require("./checkStatusCompatibility");
 const checkDietCompatibility = require("./checkDietCompatibility");
+const checkEduCompatibility = require("./checkEduCompatibility");
+const checkEthnicityCompatibility = require("./checkEthnicityCompatibility");
+const checkPetCompatibility = require("./checkPetCompatibility");
+const checkReligionCompatibility = require("./checkReligionCompatibility");
+const checkOffspringCompatibility = require("./checkOffspringCompatibility");
+const checkJobCompatibility = require("./checkJobCompatibility");
 
 const getUserProfile = () => {
   axios.get("http://localhost:3000/users/user_data").then(({ data }) => data);
@@ -18,22 +24,22 @@ const myProfile = {
   last_name: "Manning",
   mumble_email: "ella.manning@mumble.com",
   age: 22,
-  body_type: "a little extra",
+  body_type: "thin",
   diet: "strictly kosher",
   drinks: "desperately",
-  drugs: "never",
-  education: "graduated from college/university",
+  drugs: "often",
+  education: "graduated from ph.d program",
   essay: "",
   ethnicity: "white",
   height: 75,
   income: -1,
-  job: "sales / marketing / biz dev",
+  job: "military",
   location: "san francisco, california",
   offspring: "doesnt have kids",
   orientation: "straight",
-  pets: "likes dogs and likes cats",
-  religion: "agnosticism",
-  sex: "women",
+  pets: "has dogs",
+  religion: "catholicism but not too serious about it",
+  sex: "men",
   sign: "cancer and it&rsquo;s fun to think about",
   smokes: "sometimes",
   speaks: "english (fluently), spanish (poorly)",
@@ -51,6 +57,8 @@ const recoAlgo = (myProfile) => {
           (Data) =>
             (sexualPreference[0] === Data.sex ||
               sexualPreference[1] === Data.sex) &&
+            (sexualPreference[2] === Data.orientation ||
+              sexualPreference[3] === Data.orientation) &&
             Data.age > myProfile.age - 20 &&
             Data.age < myProfile.age + 20
         );
@@ -58,13 +66,7 @@ const recoAlgo = (myProfile) => {
       .then((rightData) => {
         rightData.map((userProfile) => {
           userProfile.loveFactor = 0;
-          checkDrinkCompatibility(myProfile, userProfile);
-          checkDrugCompatibility(myProfile, userProfile);
-          checkBodyCompatibility(myProfile, userProfile);
-          checkHeightCompatibility(myProfile, userProfile);
-          checkSmokesCompatibility(myProfile, userProfile);
-          checkStatusCompatibility(myProfile, userProfile);
-          checkDietCompatibility(myProfile, userProfile);
+          calculateLoveFactor(myProfile, userProfile);
         });
         return rightData;
       })
@@ -72,10 +74,26 @@ const recoAlgo = (myProfile) => {
         resolve(
           recommendedProfiles
             .sort((a, b) => b.loveFactor - a.loveFactor)
-            .slice(0, 1)
+            .slice(0, 10)
         );
       });
   });
+};
+
+const calculateLoveFactor = (myProfile, userProfile) => {
+  checkDrinkCompatibility(myProfile, userProfile);
+  checkDrugCompatibility(myProfile, userProfile);
+  checkBodyCompatibility(myProfile, userProfile);
+  checkHeightCompatibility(myProfile, userProfile);
+  checkSmokesCompatibility(myProfile, userProfile);
+  checkStatusCompatibility(myProfile, userProfile);
+  checkDietCompatibility(myProfile, userProfile);
+  checkEduCompatibility(myProfile, userProfile);
+  checkEthnicityCompatibility(myProfile, userProfile);
+  checkPetCompatibility(myProfile, userProfile);
+  checkReligionCompatibility(myProfile, userProfile);
+  checkOffspringCompatibility(myProfile, userProfile);
+  checkJobCompatibility(myProfile, userProfile);
 };
 
 recoAlgo(myProfile).then((res) => console.log(res));

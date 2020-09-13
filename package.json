@@ -9,7 +9,7 @@
     "server": "nodemon server.js",
     "dev": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "cd client/ && npm install && npm run build",
-    "seed": "node seeders/seed2.js"
+    "seed": "node seeders/seed.js"
   },
   "keywords": [],
   "author": "",

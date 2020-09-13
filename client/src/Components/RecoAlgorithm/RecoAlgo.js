@@ -20,7 +20,7 @@ const myProfile = {
   age: 22,
   body_type: "a little extra",
   diet: "strictly kosher",
-  drinks: "never",
+  drinks: "desperately",
   drugs: "never",
   education: "graduated from college/university",
   essay: "",
@@ -47,34 +47,35 @@ const recoAlgo = (myProfile) => {
       .get("http://localhost:3000/profile/all")
       .then(({ data }) => {
         let sexualPreference = checkSexualPreference(myProfile);
-        data.map((userProfile) => {
-          userProfile.loveFactor = 0;
-          if (
-            sexualPreference[0] === userProfile.sex ||
-            (sexualPreference[1] === userProfile.sex &&
-              userProfile.age > myProfile.age - 10 &&
-              userProfile.age < myProfile.age + 10)
-          ) {
-            checkDrinkCompatibility(myProfile, userProfile);
-            checkDrugCompatibility(myProfile, userProfile);
-            checkBodyCompatibility(myProfile, userProfile);
-            checkHeightCompatibility(myProfile, userProfile);
-            checkSmokesCompatibility(myProfile, userProfile);
-            checkStatusCompatibility(myProfile, userProfile);
-            checkDietCompatibility(myProfile, userProfile);
-          }
-          return userProfile;
-        });
-        return data;
+        return data.filter(
+          (Data) =>
+            (sexualPreference[0] === Data.sex ||
+              sexualPreference[1] === Data.sex) &&
+            Data.age > myProfile.age - 20 &&
+            Data.age < myProfile.age + 20
+        );
       })
-      .then((recommendedProfiles) =>
+      .then((rightData) => {
+        rightData.map((userProfile) => {
+          userProfile.loveFactor = 0;
+          checkDrinkCompatibility(myProfile, userProfile);
+          checkDrugCompatibility(myProfile, userProfile);
+          checkBodyCompatibility(myProfile, userProfile);
+          checkHeightCompatibility(myProfile, userProfile);
+          checkSmokesCompatibility(myProfile, userProfile);
+          checkStatusCompatibility(myProfile, userProfile);
+          checkDietCompatibility(myProfile, userProfile);
+        });
+        return rightData;
+      })
+      .then((recommendedProfiles) => {
         resolve(
           recommendedProfiles
             .sort((a, b) => b.loveFactor - a.loveFactor)
             .slice(0, 1)
-        )
-      );
+        );
+      });
   });
 };
 
-recoAlgo(myProfile).then((res) => setTimeout(() => console.log(res), 000));
+recoAlgo(myProfile).then((res) => console.log(res));

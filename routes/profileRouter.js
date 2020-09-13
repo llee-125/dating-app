@@ -1,25 +1,11 @@
 const router = require("express").Router();
 const auth = require("../middleware/auth");
 let db = require("../models/profileModel");
-const axios = require("axios");
-const jwt = require("jsonwebtoken");
 require("dotenv").config();
-let userId = "";
 
 router.get("/test", (req, res) => {
   res.send("profileRouter successfully connected");
 });
-
-// router.get("/test2", (req, res) => {
-//   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
-//   res.json({
-//     token,
-//     user: {
-//       id: user._id,
-//       email: user.email,
-//     },
-//   });
-// });
 
 router.get("/all", (req, res) => {
   db.Profile.find().then((profiles) => res.send(profiles));

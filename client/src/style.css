@@ -24,11 +24,11 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+h1,
 h3,
 h4,
 h5,
 h6,
-p,
 ul,
 ol {
   margin: 1em 0;
@@ -37,12 +37,8 @@ ol {
 .Logo {
   background-image: url(./Components/BottomNavigation/mumble-logo.png);
 }
-h1 {
-  margin-bottom: 20px;
-}
 
 h2 {
-  margin: 1em 0;
   color: #ec646f;
   font-family: Roboto, sans-serif;
   text-decoration: bold;
@@ -53,9 +49,13 @@ h2 {
 
 h4 {
   color: #8f8f8f;
+  font-family: Roboto, sans-serif;
+  text-decoration: bold;
   font-size: 18px;
+  fill: linear;
   text-align: center;
 }
+
 /* general */
 
 body {
@@ -119,30 +119,33 @@ body {
 .form input[type="password"] {
   width: 100%;
   padding: 0.3rem;
-  border: 1px solid #c2c2c2;
+  border: 1px solid black;
   border-radius: 8px;
-  background-color: #9b9cd4;
+  background-color: transparent;
   font-size: 1.1rem;
-}
-.form input:focus {
-  border: 1px solid #268ee4;
-  box-shadow: inset 0px 0px 15px #072e4e;
-  outline: none;
 }
 
-.form input [type="submit"] {
+.form input[type="submit"] {
   padding: 0.3rem 0.5rem;
-  border: 1px solid #6aa051;
+  display: flex;
   border-radius: 8px;
-  background-color: #bce4aa;
+  background-color: #ec666f;
   font-size: 1.1rem;
+  color: white;
+}
+
+.form input:focus {
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #ec666f;
+  color: black;
 }
 
 .error-notice {
   margin: 1rem 0rem;
   padding: 0.5rem;
   border: 1px solid #e07c7c;
-  border-radius: 8px;
+  border: radius 8;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -152,9 +155,15 @@ body {
 .error-notice button {
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  border: radius 50%;
   background-color: #df4343;
   color: #ffffff;
+}
+
+.Mumble {
+  height: 300px;
+  width: 300px;
+  margin: 50px 50px 50px 650px;
 }
 
 @media screen and (max-width: 550px) {
@@ -165,10 +174,170 @@ body {
     font-size: 0.9rem;
     padding: 0 0.5rem;
   }
-}
 
-.Mumble {
-  height: 100px;
-  width: 100px;
-  align-items: center;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  Link {
+    color: rgb(160, 17, 17);
+    text-decoration: none;
+  }
+
+  ul {
+    margin-left: 1.5rem;
+    list-style: none;
+  }
+
+  button,
+  input[type="submit"] {
+    border: radius 8;
+    background: none;
+    color: unset;
+    cursor: pointer;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol {
+    margin: 1em 0;
+  }
+
+  .Logo {
+    background-image: url(./Components/BottomNavigation/mumble-logo.png);
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #ec646f;
+    font-family: Roboto, sans-serif;
+    text-decoration: bold;
+    font-size: 48px;
+    fill: linear;
+    text-align: center;
+  }
+
+  h3 {
+    color: #ec646f;
+    font-family: Roboto, sans-serif;
+    text-decoration: bold;
+    font-size: 18px;
+    fill: linear;
+    text-align: center;
+  }
+
+  h4 {
+    color: #8f8f8f;
+    font-family: Roboto, sans-serif;
+    text-decoration: bold;
+    font-size: 18px;
+    fill: linear;
+    text-align: center;
+  }
+  /* general */
+
+  body {
+    font-family: "shadows", sans-serif;
+  }
+
+  .page {
+    padding: 1rem;
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  #header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6a53eb;
+  }
+
+  #header .title {
+    margin: 0;
+    padding: 0 1rem;
+    color: #97e2e2;
+  }
+
+  #header .auth-options {
+    height: 100%;
+    display: flex;
+  }
+
+  #header .auth-options button {
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    background-color: rgb(50, 37, 199);
+  }
+
+  #header .auth-options button:hover {
+    background: #6a53eb;
+  }
+
+  .form label,
+  .form input {
+    display: block;
+  }
+
+  .form input[type="text"],
+  .form input[type="email"],
+  .form input[type="password"] {
+    width: 100%;
+    padding: 0.3rem;
+    border: 1px solid black;
+    border: radius 8;
+    background-color: transparent;
+    font-size: 1.1rem;
+  }
+  .form input:focus {
+    border: 1px solid black;
+    border: radius 8;
+    outline: black;
+  }
+
+  .form input [type="submit"] {
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #6aa051;
+    border: radius 8;
+    background-color: #ec666f;
+    font-size: 1.1rem;
+  }
+
+  .error-notice {
+    margin: 1rem 0rem;
+    padding: 0.5rem;
+    border: 1px solid #e07c7c;
+    border: radius 8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8d6d6;
+  }
+
+  .error-notice button {
+    width: 20px;
+    height: 20px;
+    border: radius 8;
+    background-color: #df4343;
+    color: #ffffff;
+  }
+
+  .Mumble {
+    height: 300px;
+    width: 300px;
+    margin: 0 0 0 50px;
+  }
 }

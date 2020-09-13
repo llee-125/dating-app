@@ -24,8 +24,6 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-h1,
-h2,
 h3,
 h4,
 h5,
@@ -36,6 +34,28 @@ ol {
   margin: 1em 0;
 }
 
+.Logo {
+  background-image: url(./Components/BottomNavigation/mumble-logo.png);
+}
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 1em 0;
+  color: #ec646f;
+  font-family: Roboto, sans-serif;
+  text-decoration: bold;
+  font-size: 48px;
+  fill: linear;
+  text-align: center;
+}
+
+h4 {
+  color: #8f8f8f;
+  font-size: 18px;
+  text-align: center;
+}
 /* general */
 
 body {
@@ -145,4 +165,10 @@ body {
     font-size: 0.9rem;
     padding: 0 0.5rem;
   }
+}
+
+.Mumble {
+  height: 100px;
+  width: 100px;
+  align-items: center;
 }

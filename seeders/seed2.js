@@ -35,7 +35,6 @@ let profileSeed = [
     speaks: "english",
     status: "single",
     profile_image: "https://randomuser.me/api/portraits/men/88.jpg",
-    loveFactor: 0,
   },
   {
     _id: 2,
@@ -65,7 +64,6 @@ let profileSeed = [
     speaks: "english (fluently), spanish (poorly), french (poorly)",
     status: "single",
     profile_image: "https://randomuser.me/api/portraits/men/60.jpg",
-    loveFactor: 0,
   },
   {
     _id: 3,
@@ -94,7 +92,6 @@ let profileSeed = [
     speaks: "english, spanish (okay)",
     status: "single",
     profile_image: "https://randomuser.me/api/portraits/women/2.jpg",
-    loveFactor: 0,
   },
   {
     _id: 4,
@@ -123,7 +120,6 @@ let profileSeed = [
     speaks: "english",
     status: "single",
     profile_image: "https://randomuser.me/api/portraits/women/11.jpg",
-    loveFactor: 0,
   },
   {
     _id: 5,
@@ -153,7 +149,6 @@ let profileSeed = [
     speaks: "english (fluently)",
     status: "single",
     profile_image: "https://randomuser.me/api/portraits/men/28.jpg",
-    loveFactor: 0,
   },
 ];
 

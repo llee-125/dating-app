@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Axios from "axios";
 import BottomNavigation from "./Components/BottomNavigation/BottomNavigation.js";
 import Home from "./Components/Pages/Home.js";
@@ -48,9 +46,7 @@ export default function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
+            <Route exact path="/profile" component={Profile} />
           </Switch>
           <BottomNavigation />
         </UserContext.Provider>

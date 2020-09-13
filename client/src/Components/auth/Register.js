@@ -36,7 +36,8 @@ export default function Register() {
 
   return (
     <div className="page">
-      <h2>Register</h2>
+      <h2>Let's Get Started!</h2>
+      <h4>Sign up to Mumble now!</h4>
       {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
       )}
@@ -63,6 +64,7 @@ export default function Register() {
 
         <input type="submit" value="Register" />
       </form>
+      <h3>Login!</h3>
     </div>
   );
 }

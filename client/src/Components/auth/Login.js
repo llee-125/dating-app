@@ -32,12 +32,11 @@ export default function Login() {
 
   return (
     <div className="page">
-      <container>
-        <img
-          className="Mumble"
-          src={require("../BottomNavigation/mumble-logo.png")}
-        />
-      </container>
+      <img
+        className="Mumble"
+        src={require("../BottomNavigation/mumble-logo.png")}
+      />
+
       <h2>Mumble</h2>
       <h4>A Dating App for Introverts.</h4>
       <form className="form" onSubmit={submit}>
@@ -57,6 +56,7 @@ export default function Login() {
 
         <input type="submit" value="Login" />
       </form>
+      <h3>Register!</h3>
     </div>
   );
 }

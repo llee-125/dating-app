@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Axios from "axios";
-import BottomNavigation from "../Components/BottomNavigation/BottomNavigation.js";
-import Home from "../Components/Pages/Home.js";
-import Login from "../Components/auth/Login.js";
-import Register from "../Components/auth/Register.js";
-import UserContext from "../context/UserContext";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import "../style.css";
+import Axios from "axios";
+import BottomNavigation from "./Components/BottomNavigation/BottomNavigation.js";
+import Home from "./Components/Pages/Home.js";
+import Login from "./Components/auth/Login.js";
+import Register from "./Components/auth/Register.js";
+import UserContext from "./context/UserContext";
+import Profile from "./Components/Pages/Profile.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -43,12 +45,13 @@ export default function App() {
       <BrowserRouter>
         {/* to give state to all of these components, can access userData and store current userData */}
         <UserContext.Provider value={{ userData, setUserData }}>
-          <BottomNavigation />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/profile" component={Profile} />
           </Switch>
+          <BottomNavigation />
         </UserContext.Provider>
       </BrowserRouter>
     </>

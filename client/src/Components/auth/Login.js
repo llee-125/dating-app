@@ -2,6 +2,9 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
+import Logo from "../BottomNavigation/mumble-logo.png";
+
+// console.log("Logo");
 
 export default function Login() {
   const [email, setEmail] = useState();
@@ -29,7 +32,13 @@ export default function Login() {
 
   return (
     <div className="page">
-      <h2>Log In</h2>
+      <img
+        className="Mumble"
+        src={require("../BottomNavigation/mumble-logo.png")}
+      />
+
+      <h2>Mumble</h2>
+      <h4>A Dating App for Introverts.</h4>
       <form className="form" onSubmit={submit}>
         <label htmlFor="login-email">Email: </label>
         <input
@@ -47,6 +56,7 @@ export default function Login() {
 
         <input type="submit" value="Login" />
       </form>
+      <h3>Register!</h3>
     </div>
   );
 }

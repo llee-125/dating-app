@@ -29,7 +29,6 @@ const profileSchema = new Schema(
     speaks: { type: String },
     status: { type: String },
     profile_image: { type: String },
-    loveFactor: { type: Number },
   },
   { _id: false }
 );

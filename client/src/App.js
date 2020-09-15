@@ -8,7 +8,9 @@ import BottomNavigation from "./Components/BottomNavigation/BottomNavigation.js"
 import Home from "./Components/Pages/Home.js";
 import Profile from "./Components/Pages/Profile.js";
 import UserContext from "./context/UserContext";
-
+import Discover from "../Components/Pages/Discover";
+import Likes from "../Components/Pages/Likes";
+import Search from "../Components/Pages/Search";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -17,6 +19,79 @@ export default function App() {
     token: undefined,
     user: undefined,
   });
+  let profileSet = [];
+  let likesSet = [];
+  // useEffect(()=>{
+  //   retrieveAllPersons();
+  //   retrieveAllLikes();
+  // },[])
+
+  const retrieveAllPersons = () => {
+    Axios
+      .get("/profile/discover")
+      .then((response) =>  
+      {
+        profileSet = [];
+        profileSet = response.data;
+        setProfileArray([...profileSet]);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const retrieveAllLikes = () => {
+    Axios
+      .get("/profile/likes")
+      .then((response) =>  
+      {
+        likesSet = [];
+        likesSet = response.data;
+        setLikesArray([...likesSet]);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const updateLikesSet = (id) => {
+    let newLikes = [];
+    Axios
+      .get("/profile/find/"+id)
+      .then((response) =>  
+      {
+        
+        newLikes = response.data;  
+        if (!likesSet.includes(newLikes)){
+           Axios
+            .post("/profile/newlikes",newLikes)
+            .then(() =>
+          {
+            retrieveAllLikes();
+          })
+        }      
+      })
+      .catch((err) => console.log(err));
+    
+      
+  }
+
+  const personSearch = (e) => {
+    setSearch({ ...search, name: e.target.value });
+  };
+
+  const [search, setSearch] = useState({
+    name: "",
+  });
+
+  
+  const [profileArray, setProfileArray] = useState(profileSet);
+  const [likesArray,setLikesArray] = useState(likesSet);
+  
+  const personList = profileArray.filter(function (profile) {
+    if (search.name.length < 0) {
+      return profile;
+    } else if (profile.first_name.includes(search.name)) {
+      return profile;
+    }
+  });
+
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -39,6 +114,8 @@ export default function App() {
     };
 
     checkLoggedIn();
+    retrieveAllPersons();
+    retrieveAllLikes();
   }, []);
 
   return (
@@ -51,6 +128,22 @@ export default function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/profile/discover">
+            <Search personSearch={personSearch}/>
+             {personList.map((profile, id) => (
+            <Discover key={id} updateLikes={updateLikesSet}>
+              {profile}
+            </Discover>
+          ))}
+          </Route>
+          <Route exact path="/profile/likes">
+          {likesArray.map((likes, id) => (
+            <Likes key={id}>
+              {likes}
+            </Likes>
+          ))}
+
+          </Route>
           </Switch>
           <BottomNavigation />
         </UserContext.Provider>

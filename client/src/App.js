@@ -22,9 +22,35 @@ export default function App() {
   let profileSet = [];
   let likesSet = [];
   // useEffect(()=>{
-  //   retrieveAllPersons();
-  //   retrieveAllLikes();
+  //    retrieveAllPersons();
+  //    retrieveAllLikes();
   // },[])
+
+  useEffect(() => {
+    const checkLoggedIn = async () => {
+      let token = localStorage.getItem("auth-token");
+      if (token === null) {
+        localStorage.setItem("auth-token", "");
+        token = "";
+      }
+      const tokenRes = await Axios.post(
+        "http://localhost:5000/users/tokenIsValid",
+        null,
+        { headers: { "x-auth-token": token } }
+      );
+      if (tokenRes.data) {
+        const userRes = await Axios.get("http://localhost:5000/users/", {
+          headers: { "x-auth-token": token },
+        });
+        setUserData({ token, user: userRes.data });
+      }
+    };
+   
+    checkLoggedIn();
+    retrieveAllPersons();
+    retrieveAllLikes();
+  }, []);
+
 
   const retrieveAllPersons = () => {
     Axios.get("/profile/discover")
@@ -41,6 +67,7 @@ export default function App() {
       .then((response) => {
         likesSet = [];
         likesSet = response.data;
+        console.log("response data"+response);
         setLikesArray([...likesSet]);
       })
       .catch((err) => console.log(err));
@@ -54,7 +81,7 @@ export default function App() {
         if (!likesSet.includes(newLikes)) {
           Axios.post("/profile/newlikes", newLikes).then(() => {
             retrieveAllLikes();
-          });
+          }).catch((err) => console.log(err));
         }
       })
       .catch((err) => console.log(err));
@@ -79,31 +106,7 @@ export default function App() {
     }
   });
 
-  useEffect(() => {
-    const checkLoggedIn = async () => {
-      let token = localStorage.getItem("auth-token");
-      if (token === null) {
-        localStorage.setItem("auth-token", "");
-        token = "";
-      }
-      const tokenRes = await Axios.post(
-        "http://localhost:5000/users/tokenIsValid",
-        null,
-        { headers: { "x-auth-token": token } }
-      );
-      if (tokenRes.data) {
-        const userRes = await Axios.get("http://localhost:5000/users/", {
-          headers: { "x-auth-token": token },
-        });
-        setUserData({ token, user: userRes.data });
-      }
-    };
-
-    checkLoggedIn();
-    retrieveAllPersons();
-    retrieveAllLikes();
-  }, []);
-
+  
   return (
     <>
       <BrowserRouter>

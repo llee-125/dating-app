@@ -9,6 +9,15 @@ router.get("/test", (req, res) => {
   res.send("Hello, test is working");
 });
 
+// router.get("/user_data", async (req, res) => {
+//   !req.user
+//     ? res.json({ message: "No user Present" })
+//     : res.json({
+//         email: req.user.email,
+//         id: req.user._id,
+//       });
+// });
+
 router.post("/register", async (req, res) => {
   try {
     let { email, password, passwordCheck } = req.body;
@@ -49,7 +58,7 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     let { email, password } = req.body;
-    console.log(req.body);
+    console.log("Login", req.body);
 
     if (!email || !password)
       return res
@@ -67,6 +76,7 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ msg: "Invalid credentials, lleelogin." });
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    console.log(token);
     res.json({
       token,
       user: {
@@ -91,17 +101,19 @@ router.delete("/delete", auth, async (req, res) => {
 router.post("/tokenIsValid", async (req, res) => {
   try {
     const token = req.header("x-auth-token");
-    if (!token) return res.json(false);
+    if (!token) return res.status(401).json({ msg: "No token" });
 
     const verified = jwt.verify(token, process.env.JWT_SECRET);
-    if (!verified) return res.json(false);
+    if (!verified) res.status(401).json({ msg: "Cannot verify token" });
 
     const user = await User.findById(verified.id);
-    if (!user) return res.json(false);
+    if (!user) return res.status(404).json({ msg: "User Not Found" });
 
-    return res.json(true);
+    console.log(user);
+
+    return res.json({ email: user.email, id: user._id });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ msg: err.message });
   }
 });
 

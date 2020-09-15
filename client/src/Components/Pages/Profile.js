@@ -15,15 +15,27 @@ import Box from "@material-ui/core/Box";
 // import { withStyles } from "@material-ui/core/styles";
 // import Grid from "@material-ui/core/Grid";
 // import Options from "../Grid/Options";
-import Gender1 from "../Options/Gender1";
-import Gender2 from "../Options/Gender2";
-import Gender3 from "../Options/Gender3";
-import Gender4 from "../Options/Gender4";
-import Gender5 from "../Options/Gender5";
-import Gender6 from "../Options/Gender6";
+import Gender1 from "../Options/Gender/Gender1";
+import Gender2 from "../Options/Gender/Gender2";
+import Gender3 from "../Options/Gender/Gender3";
+import Gender4 from "../Options/Gender/Gender4";
+import Gender5 from "../Options/Gender/Gender5";
+import Gender6 from "../Options/Gender/Gender6";
+import PreferNotToSay from "../Options/PreferNotToSay";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Ethnicity1 from "../Options/Ethnicity/Ethnicity1";
+import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
+import Ethnicity3 from "../Options/Ethnicity/Ethnicity3";
+import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
+import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
+import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
+import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
+import Ethnicity8 from "../Options/Ethnicity/Ethnicity8";
+import Ethnicity9 from "../Options/Ethnicity/Ethnicity9";
+import Slider from "../Options/Slider/Slider.js";
+
 import { makeStyles } from "@material-ui/core/styles";
 
 class Profile extends React.Component {
@@ -63,6 +75,19 @@ class Profile extends React.Component {
       [name]: value,
     });
   };
+  handleGenderChange = (value) => {
+    console.log(value);
+    this.setState({ gender: value });
+  };
+  handleDateChange = (value) => {
+    console.log(value);
+    this.setState({ birthday: value });
+  };
+  handleEthnicityChange = (value) => {
+    console.log(value);
+    this.setState({ ethnicity: value });
+  };
+
   render() {
     var result;
     if (this.state.counter === 0) {
@@ -136,7 +161,7 @@ class Profile extends React.Component {
           <Box>
             <h1>When is your birthday?</h1>
             <br></br>
-            <DatePicker />
+            <DatePicker handleDate={this.handleDateChange} />
           </Box>
         </Box>
       );
@@ -150,39 +175,45 @@ class Profile extends React.Component {
                 <Row className="text-center">
                   <Col xs={6} md={4}>
                     <Gender1
-                      value={this.state.gender}
-                      onChange={this.handleChange}
+                      value="Female"
+                      handleGender={this.handleGenderChange}
                     ></Gender1>
                   </Col>
                   <Col xs={6} md={4}>
                     <Gender2
-                      value={this.state.gender}
-                      onChange={this.handleChange}
+                      value="Male"
+                      handleGender={this.handleGenderChange}
                     ></Gender2>
                   </Col>
                   <Col xs={6} md={4}>
                     <Gender3
-                      value={this.state.gender}
-                      onChange={this.handleChange}
+                      value="Trans female"
+                      handleGender={this.handleGenderChange}
                     ></Gender3>
                   </Col>
                   <Col xs={6} md={4}>
                     <Gender4
-                      value={this.state.gender}
-                      onChange={this.handleChange}
+                      value="Trans male"
+                      handleGender={this.handleGenderChange}
                     ></Gender4>
                   </Col>
                   <Col xs={6} md={4}>
                     <Gender5
-                      value={this.state.gender}
-                      onChange={this.handleChange}
+                      value="Non-conforming"
+                      handleGender={this.handleGenderChange}
                     ></Gender5>
                   </Col>
                   <Col xs={6} md={4}>
                     <Gender6
-                      value={this.state.gender}
-                      onChange={this.handleChange}
+                      value="Other"
+                      handleGender={this.handleGenderChange}
                     ></Gender6>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <PreferNotToSay
+                      value="Prefer not to say"
+                      handleGender={this.handleGenderChange}
+                    ></PreferNotToSay>
                   </Col>
                 </Row>
               </Row>
@@ -198,35 +229,86 @@ class Profile extends React.Component {
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">
-                  <Col xs={6} md={4}></Col>
-                  <Col xs={6} md={4}></Col>
-                  <Col xs={6} md={4}></Col>
-                  <Col xs={6} md={4}></Col>
-                  <Col xs={6} md={4}></Col>
-                  <Col xs={6} md={4}></Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity1
+                      value="American Indian"
+                      handleEthnicity={this.handleEthnicityChange}
+                    ></Ethnicity1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity2
+                      value="Black/African Descent"
+                      handleEthnicity={this.handleChange}
+                    ></Ethnicity2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity3
+                      value="East Asian"
+                      handleEthnicity={this.handleChange}
+                    ></Ethnicity3>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity4
+                      value="Hispanic/Latino"
+                      handleEthnicity={this.handleChange}
+                    ></Ethnicity4>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity5
+                      value="Middle Eastern"
+                      handleEthnicity={this.handleChange}
+                    ></Ethnicity5>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity6
+                      value="Pacific Islander"
+                      handleEthnicity={this.handleChange}
+                    ></Ethnicity6>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity7
+                      value="South Asian"
+                      handleEthnicity={this.handleChange}
+                    ></Ethnicity7>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity8
+                      value="White/Caucasian"
+                      handleEthnicity={this.handleChange}
+                    ></Ethnicity8>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity9
+                      value="Other"
+                      handleEthnicity={this.handleChange}
+                    ></Ethnicity9>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <PreferNotToSay
+                      value="Prefer not to say"
+                      handleEthnicity={this.handleChange}
+                    ></PreferNotToSay>
+                  </Col>
                 </Row>
               </Row>
             </Container>
-            {/* <input
-              name="ethnicity"
-              placeholder="ethnicity"
-              value={this.state.ethnicity}
-              onChange={this.handleChange}
-            ></input> */}
           </Box>
         </Box>
       );
     } else if (this.state.counter === 6) {
       result = (
-        <div>
-          <h1>How would you describe your body type?</h1>
-          <input
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>Let's get to know you.</h1>
+            <Slider></Slider>
+            {/* <input
             name="body"
             placeholder="body"
             value={this.state.body}
             onChange={this.handleChange}
-          ></input>
-        </div>
+          ></input> */}
+          </Box>
+        </Box>
       );
     } else if (this.state.counter === 7) {
       result = (
@@ -324,9 +406,9 @@ class Profile extends React.Component {
               display="flex"
               justifyContent="center"
               alignItems="center"
-              mx={7}
+              mx={5}
               mt={30}
-              p={2}
+              // p={2}
             >
               {this.state.counter !== 0 ? (
                 <NavigateBeforeIcon onClick={this.handleLeftCounter} id="left">

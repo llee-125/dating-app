@@ -25,7 +25,7 @@ class ProfileDashboard extends React.Component {
       <div>
         <h1>Profile</h1>
         <form>
-          <input value={this.props.firstName} onChange={} />
+          <input value={this.props.firstName} />
           <input value={this.props.lastName} />
 
           <input value={this.props.phone} />

@@ -8,9 +8,9 @@ import BottomNavigation from "./Components/BottomNavigation/BottomNavigation.js"
 import Home from "./Components/Pages/Home.js";
 import Profile from "./Components/Pages/Profile.js";
 import UserContext from "./context/UserContext";
-import Discover from "../Components/Pages/Discover";
-import Likes from "../Components/Pages/Likes";
-import Search from "../Components/Pages/Search";
+import Discover from "./Components/Pages/Discover";
+import Likes from "./Components/Pages/Likes";
+import Search from "./Components/Pages/Search";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -27,10 +27,8 @@ export default function App() {
   // },[])
 
   const retrieveAllPersons = () => {
-    Axios
-      .get("/profile/discover")
-      .then((response) =>  
-      {
+    Axios.get("/profile/discover")
+      .then((response) => {
         profileSet = [];
         profileSet = response.data;
         setProfileArray([...profileSet]);
@@ -39,10 +37,8 @@ export default function App() {
   };
 
   const retrieveAllLikes = () => {
-    Axios
-      .get("/profile/likes")
-      .then((response) =>  
-      {
+    Axios.get("/profile/likes")
+      .then((response) => {
         likesSet = [];
         likesSet = response.data;
         setLikesArray([...likesSet]);
@@ -52,25 +48,17 @@ export default function App() {
 
   const updateLikesSet = (id) => {
     let newLikes = [];
-    Axios
-      .get("/profile/find/"+id)
-      .then((response) =>  
-      {
-        
-        newLikes = response.data;  
-        if (!likesSet.includes(newLikes)){
-           Axios
-            .post("/profile/newlikes",newLikes)
-            .then(() =>
-          {
+    Axios.get("/profile/find/" + id)
+      .then((response) => {
+        newLikes = response.data;
+        if (!likesSet.includes(newLikes)) {
+          Axios.post("/profile/newlikes", newLikes).then(() => {
             retrieveAllLikes();
-          })
-        }      
+          });
+        }
       })
       .catch((err) => console.log(err));
-    
-      
-  }
+  };
 
   const personSearch = (e) => {
     setSearch({ ...search, name: e.target.value });
@@ -80,10 +68,9 @@ export default function App() {
     name: "",
   });
 
-  
   const [profileArray, setProfileArray] = useState(profileSet);
-  const [likesArray,setLikesArray] = useState(likesSet);
-  
+  const [likesArray, setLikesArray] = useState(likesSet);
+
   const personList = profileArray.filter(function (profile) {
     if (search.name.length < 0) {
       return profile;
@@ -91,7 +78,6 @@ export default function App() {
       return profile;
     }
   });
-
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -129,21 +115,18 @@ export default function App() {
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/profile/discover">
-            <Search personSearch={personSearch}/>
-             {personList.map((profile, id) => (
-            <Discover key={id} updateLikes={updateLikesSet}>
-              {profile}
-            </Discover>
-          ))}
-          </Route>
-          <Route exact path="/profile/likes">
-          {likesArray.map((likes, id) => (
-            <Likes key={id}>
-              {likes}
-            </Likes>
-          ))}
-
-          </Route>
+              <Search personSearch={personSearch} />
+              {personList.map((profile, id) => (
+                <Discover key={id} updateLikes={updateLikesSet}>
+                  {profile}
+                </Discover>
+              ))}
+            </Route>
+            <Route exact path="/profile/likes">
+              {likesArray.map((likes, id) => (
+                <Likes key={id}>{likes}</Likes>
+              ))}
+            </Route>
           </Switch>
           <BottomNavigation />
         </UserContext.Provider>

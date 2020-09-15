@@ -150,7 +150,7 @@ let profileSeed = [
     status: "single",
     profile_image: "https://randomuser.me/api/portraits/men/28.jpg",
   },
-];
+]
 
 db.Profile.deleteMany({})
   .then(() => db.Profile.collection.insertMany(profileSeed))

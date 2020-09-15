@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const auth = require("../middleware/auth");
 let db = require("../models/profileModel");
+let likesDb = require("../models/likesModel")
 require("dotenv").config();
 
 router.get("/test", (req, res) => {

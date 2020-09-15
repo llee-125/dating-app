@@ -35,6 +35,8 @@ class ProfileDashboard extends React.Component {
           <input value={this.props.birthday} />
 
           <input value={this.props.gender} />
+          {/* select from  */}
+
           <input value={this.props.ethnicity} />
           {/* select from  */}
 

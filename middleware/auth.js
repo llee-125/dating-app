@@ -14,7 +14,7 @@ const auth = (req, res, next) => {
         msg: "Token verification failed, authorization denied, llee.",
       });
 
-    req.user = verified.id;
+    console.log("token", verified);
     next();
   } catch (err) {
     res.status(500).json({ error: err.message });

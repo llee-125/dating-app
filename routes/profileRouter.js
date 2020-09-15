@@ -15,6 +15,17 @@ router.get("/find/:id", (req, res) => {
   db.Profile.findById(req.params.id).then((profile) => res.send(profile));
 });
 
+router.get("/discover", (req, res) => {
+  db.Profile.find().then((profiles) => res.send(profiles));
+});
+
+router.get("/likes",(req, res) => {
+  likesDb.LikesModel.find().then((likes) => res.send(likes));
+});
+
+router.post("/newlikes",(req, res) => {
+  likesDb.LikesModel.create(req.body).then((likes) => res.send(likes));
+});
 router.delete("/remove/:id", (req, res) => {
   db.Profile.findByIdAndRemove(req.params.id).then(() => res.send("success"));
 });

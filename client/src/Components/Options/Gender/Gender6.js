@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 
 const Gender6 = (props) => {
   return (
-    <div style={{ margin: "0px 0px 10px 0px" }}>
+    <div style={{ margin: "1px 1px 1px 1px" }}>
       <Button
         variant="contained"
         color="primary"

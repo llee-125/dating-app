@@ -1,21 +1,21 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 
-const Gender5 = (props) => {
+const PreferNotToSay2 = (props) => {
   return (
-    <div style={{ margin: "1px 1px 1px 1px" }}>
+    <div style={{ margin: "0px 0px 10px 0px" }}>
       <Button
         variant="contained"
         color="primary"
         onClick={() => {
-          props.handleGender(props.value);
+          props.handleEthnicity(props.value);
         }}
         disableElevation
       >
-        Non-conforming
+        Prefer not to say
       </Button>
     </div>
   );
 };
 
-export default Gender5;
+export default PreferNotToSay2;

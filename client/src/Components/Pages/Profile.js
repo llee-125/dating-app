@@ -27,10 +27,8 @@ import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
 import Ethnicity3 from "../Options/Ethnicity/Ethnicity3";
 import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
 import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
-import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
+import Ethnicity6 from "../Options/Ethnicity/Ethnicity5";
 import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
-import Ethnicity8 from "../Options/Ethnicity/Ethnicity8";
-import Ethnicity9 from "../Options/Ethnicity/Ethnicity9";
 import Slider from "@material-ui/core/Slider";
 import Orientation1 from "../Options/Orientation/Orientation1";
 import Orientation2 from "../Options/Orientation/Orientation2";
@@ -261,63 +259,45 @@ class Profile extends React.Component {
                 <Row className="text-center">
                   <Col xs={6} md={4}>
                     <Ethnicity1
-                      value="American Indian"
+                      value="Native American"
                       handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity1>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity2
-                      value="Black/African Descent"
+                      value="Black"
                       handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity2>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity3
-                      value="East Asian"
+                      value="Asian"
                       handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity3>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity4
-                      value="Hispanic/Latino"
+                      value="Hispanic/Latin"
                       handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity4>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity5
-                      value="Middle Eastern"
+                      value="Pacific Islander"
                       handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity5>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity6
-                      value="Pacific Islander"
+                      value="White"
                       handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity6>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity7
-                      value="South Asian"
-                      handleEthnicity={this.handleEthnicityChange}
-                    ></Ethnicity7>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Ethnicity8
-                      value="White/Caucasian"
-                      handleEthnicity={this.handleEthnicityChange}
-                    ></Ethnicity8>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Ethnicity9
                       value="Other"
                       handleEthnicity={this.handleEthnicityChange}
-                    ></Ethnicity9>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <PreferNotToSay2
-                      value="Prefer not to say"
-                      handleEthnicity={this.handleEthnicityChange}
-                    ></PreferNotToSay2>
+                    ></Ethnicity7>
                   </Col>
                 </Row>
               </Row>
@@ -329,7 +309,7 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>Let's get to know you.</h1>
+            <h1>How would you describe your body type?</h1>
             <Slider></Slider>
             {/* <input
             name="body"

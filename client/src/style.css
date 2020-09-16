@@ -11,6 +11,17 @@ Link {
   text-decoration: none;
 }
 
+img.Mumble {
+  height: auto;
+  width: 45%;
+}
+
+div#image {
+  display: grid;
+  place-items: center;
+  padding: 0px 0px 50px 0px;
+}
+
 ul {
   margin-left: 1.5rem;
   list-style: none;
@@ -24,7 +35,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-h1,
+h2,
 h3,
 h4,
 h5,
@@ -34,15 +45,12 @@ ol {
   margin: 1em 0;
 }
 
-.Logo {
-  background-image: url(./Components/BottomNavigation/mumble-logo.png);
-}
-
-h2 {
+h1 {
   color: #ec646f;
   font-family: Roboto, sans-serif;
   text-decoration: bold;
   font-size: 48px;
+  margin-top: 20px;
   fill: linear;
   text-align: center;
 }
@@ -160,12 +168,6 @@ body {
   color: #ffffff;
 }
 
-.Mumble {
-  height: 300px;
-  width: 300px;
-  margin: 50px 50px 50px 650px;
-}
-
 @media screen and (max-width: 550px) {
   #header .title {
     font-size: 1.2rem;
@@ -186,6 +188,17 @@ body {
     text-decoration: none;
   }
 
+  img.Mumble {
+    height: auto;
+    width: 45%;
+  }
+
+  div#image {
+    display: grid;
+    place-items: center;
+    padding: 0px 0px 50px 0px;
+  }
+
   ul {
     margin-left: 1.5rem;
     list-style: none;
@@ -199,7 +212,7 @@ body {
     cursor: pointer;
   }
 
-  h3,
+  h2,
   h4,
   h5,
   h6,
@@ -209,18 +222,12 @@ body {
     margin: 1em 0;
   }
 
-  .Logo {
-    background-image: url(./Components/BottomNavigation/mumble-logo.png);
-  }
   h1 {
-    margin-bottom: 20px;
-  }
-
-  h2 {
     color: #ec646f;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     text-decoration: bold;
     font-size: 48px;
+    margin-top: 20px;
     fill: linear;
     text-align: center;
   }
@@ -333,11 +340,5 @@ body {
     border: radius 8;
     background-color: #df4343;
     color: #ffffff;
-  }
-
-  .Mumble {
-    height: 300px;
-    width: 300px;
-    margin: 0 0 0 50px;
   }
 }

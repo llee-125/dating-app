@@ -19,10 +19,6 @@ import Gender1 from "../Options/Gender/Gender1";
 import Gender2 from "../Options/Gender/Gender2";
 import Gender3 from "../Options/Gender/Gender3";
 import Gender4 from "../Options/Gender/Gender4";
-import Gender5 from "../Options/Gender/Gender5";
-import Gender6 from "../Options/Gender/Gender6";
-import PreferNotToSay from "../Options/Gender/PreferNotToSay";
-import PreferNotToSay2 from "../Options/Ethnicity/PreferNotToSay2";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -200,16 +196,16 @@ class Profile extends React.Component {
                     ></Gender2>
                   </Col>
                   <Col xs={6} md={4}>
-                    <Gender5
+                    <Gender3
                       value="Non-conforming"
                       handleGender={this.handleGenderChange}
-                    ></Gender5>
+                    ></Gender3>
                   </Col>
                   <Col xs={6} md={4}>
-                    <Gender6
+                    <Gender4
                       value="Other"
                       handleGender={this.handleGenderChange}
-                    ></Gender6>
+                    ></Gender4>
                   </Col>
                 </Row>
               </Row>

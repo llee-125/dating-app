@@ -1,9 +1,8 @@
 import React, { useState, useContext } from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
-// import Cms from "./Cms";
+import { Link, useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
-import Register from "../../Components/auth/Register";
+import Register from "../../../src/Components/auth/Register";
 
 export default function Login() {
   const [email, setEmail] = useState();
@@ -53,17 +52,11 @@ export default function Login() {
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-
         <input type="submit" value="Login" />
       </form>
-      {/* const App = () => (
-      <div className="reroute">
-        <Switch>
-          <Route path="register" component={Register} />
-          {/* <Route path="/" component={Cms} /> */}
-      {/* </Switch>
+      <div className="redirect">
+        <Link to="/register">Register</Link>
       </div>
-      ); */}
     </div>
   );
 }

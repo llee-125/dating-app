@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-Link {
-  color: rgb(160, 17, 17);
-  text-decoration: none;
-}
-
 img.Mumble {
   height: auto;
   width: 45%;
@@ -168,6 +163,13 @@ body {
   color: #ffffff;
 }
 
+.redirect {
+  margin-top: 50px;
+  size: 20px;
+  color: black;
+  text-align: center;
+}
+
 @media screen and (max-width: 550px) {
   #header .title {
     font-size: 1.2rem;
@@ -181,11 +183,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-
-  Link {
-    color: rgb(160, 17, 17);
-    text-decoration: none;
   }
 
   img.Mumble {
@@ -340,5 +337,10 @@ body {
     border: radius 8;
     background-color: #df4343;
     color: #ffffff;
+  }
+  .redirect {
+    margin-top: 50px;
+    size: 20px;
+    text-align: center;
   }
 }

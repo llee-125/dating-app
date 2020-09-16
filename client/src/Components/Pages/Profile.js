@@ -40,6 +40,12 @@ import Offspring2 from "../Options/Offspring/Offspring2";
 import WantOffspring1 from "../Options/WantOffspring/WantOffspring1";
 import WantOffspring2 from "../Options/WantOffspring/WantOffspring2";
 import WantOffspring3 from "../Options/WantOffspring/WantOffspring3";
+import HavePets1 from "../Options/HavePets/HavePets1";
+import HavePets2 from "../Options/HavePets/HavePets2";
+import HavePets3 from "../Options/HavePets/HavePets3";
+import WantPets1 from "../Options/WantPets/WantPets1";
+import WantPets2 from "../Options/WantPets/WantPets2";
+import WantPets3 from "../Options/WantPets/WantPets3";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -55,6 +61,9 @@ class Profile extends React.Component {
     ethnicity: "",
     height: "",
     offspring: "",
+    wantOffspring: "",
+    havePets: "",
+    wantPets: "",
     education: "",
     religion: "",
     politics: "",
@@ -104,6 +113,14 @@ class Profile extends React.Component {
   handleWantOffspringChange = (value) => {
     console.log(value);
     this.setState({ wantOffspring: value });
+  };
+  handleHavePetsChange = (value) => {
+    console.log(value);
+    this.setState({ havePets: value });
+  };
+  handleWantPetsChange = (value) => {
+    console.log(value);
+    this.setState({ wantPets: value });
   };
 
   render() {
@@ -344,13 +361,13 @@ class Profile extends React.Component {
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">
-                  <Col xs={6} md={4}>
+                  <Col xs={6} md={6}>
                     <Offspring1
                       value="Yes"
                       handleOffspring={this.handleOffspringChange}
                     ></Offspring1>
                   </Col>
-                  <Col xs={6} md={4}>
+                  <Col xs={6} md={6}>
                     <Offspring2
                       value="No"
                       handleOffspring={this.handleOffspringChange}
@@ -359,14 +376,8 @@ class Profile extends React.Component {
                 </Row>
               </Row>
             </Container>
-          </Box>
-        </Box>
-      );
-    } else if (this.state.counter === 9) {
-      result = (
-        <Box display="flex" justifyContent="center" m={1} p={1}>
-          <Box>
-            <h1>Do you want any more children than you currently have?</h1>
+            <br></br>
+            <h1>Do you want more children than you currently have?</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">
@@ -387,6 +398,64 @@ class Profile extends React.Component {
                       value="Maybe"
                       handleWantOffspring={this.handleWantOffspringChange}
                     ></WantOffspring3>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
+      );
+    } else if (this.state.counter === 9) {
+      result = (
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>I have...</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <HavePets1
+                      value="Dogs"
+                      handleOffspring={this.handleOffspringChange}
+                    ></HavePets1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <HavePets2
+                      value="Cats"
+                      handleOffspring={this.handleOffspringChange}
+                    ></HavePets2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <HavePets3
+                      value="No pets"
+                      handleOffspring={this.handleOffspringChange}
+                    ></HavePets3>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+            <br></br>
+            <h1>I want...</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <WantPets1
+                      value="Dogs"
+                      handleWantPets={this.handleWantPetsChange}
+                    ></WantPets1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <WantPets2
+                      value="Cats"
+                      handleWantPets={this.handleWantPetsChange}
+                    ></WantPets2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <WantPets3
+                      value="No pets"
+                      handleWantPets={this.handleWantPetsChange}
+                    ></WantPets3>
                   </Col>
                 </Row>
               </Row>
@@ -454,6 +523,8 @@ class Profile extends React.Component {
             height={this.state.height}
             offspring={this.state.offspring}
             wantOffspring={this.state.wantOffspring}
+            havePets={this.state.havePets}
+            wantPets={this.state.wantPets}
             education={this.state.education}
             religion={this.state.religion}
             politics={this.state.politics}

@@ -1,33 +1,29 @@
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-// import Icon from "@material-ui/core/Icon";
-import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import ListItemText from "@material-ui/core/ListItemText";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import FolderIcon from "@material-ui/icons/Folder";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import RestoreIcon from "@material-ui/icons/Restore";
 import React from "react";
-import ListItemText from "@material-ui/core/ListItemText";
-import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
+// import Icon from "@material-ui/core/Icon";
+import { Link } from "react-router-dom";
+
 import SvgMumble from "./MumbleIcon/Mumble";
 
 // import MumbleIcon from "./Mumble.svg";
 
 const useStyles = makeStyles({
   root: {
-    width: 500,
+    width: "100%",
+    bottom: 0,
+    position: "fixed",
   },
-  // imageIcon: {
-  //   height: "100%",
-  //   width: "100%",
-  // },
-  // iconRoot: {
-  //   textAlign: "center",
-  // },
 });
 
 const StyledMenu = withStyles({

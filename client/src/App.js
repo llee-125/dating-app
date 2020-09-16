@@ -21,10 +21,11 @@ export default function App() {
   });
   let profileSet = [];
   let likesSet = [];
+
   // useEffect(()=>{
-  //    retrieveAllPersons();
-  //    retrieveAllLikes();
-  // },[])
+  //     retrieveAllPersons();
+  //     retrieveAllLikes();
+  // },[]);
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -47,40 +48,65 @@ export default function App() {
     };
 
     checkLoggedIn();
-    // retrieveAllPersons();
-    // retrieveAllLikes();
+    retrieveAllPersons();
+    retrieveAllLikes();
   }, []);
 
-  // const retrieveAllPersons = () => {
-  //   Axios.get("/profile/discover")
-  //     .then((response) => {
-  //       profileSet = [];
-  //       profileSet = response.data;
-  //       setProfileArray([...profileSet]);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
+  const retrieveAllPersons = () => {
+    Axios.get("/profile/discover")
+      .then((response) => {
+        profileSet = [];
+        profileSet = response.data;
+        setProfileArray([...profileSet]);
+      })
+      .catch((err) => console.log(err));
+  };
 
-  // const retrieveAllLikes = () => {
-  //   Axios.get("/profile/likes")
-  //     .then((response) => {
-  //       likesSet = [];
-  //       likesSet = response.data;
-  //       console.log("response data" + response);
-  //       setLikesArray([...likesSet]);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
+  const retrieveAllLikes = () => {
+    Axios.get("/profile/likes")
+      .then((response) => {
+        likesSet = [];
+        likesSet = response.data;
+        console.log("response data" + response);
+        setLikesArray([...likesSet]);
+      })
+      .catch((err) => console.log(err));
+  };
+  const retrieveAllPersons = () => {
+    Axios.get("/profile/discover")
+      .then((response) => {
+        profileSet = [];
+        profileSet = response.data;
+        setProfileArray([...profileSet]);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const retrieveAllLikes = () => {
+    Axios.get("/profile/likes")
+      .then((response) => {
+        likesSet = [];
+        likesSet = response.data;
+        setLikesArray([...likesSet]);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const updateLikesSet = (id) => {
     let newLikes = [];
     Axios.get("/profile/find/" + id)
       .then((response) => {
         newLikes = response.data;
-        if (!likesSet.includes(newLikes)) {
+        let found = false;
+        likesArray.forEach((like) => {
+          if (like._id === newLikes._id) {
+            found = true;
+          }
+        });
+        if (!found) {
           Axios.post("/profile/newlikes", newLikes)
             .then(() => {
-              // retrieveAllLikes();
+              retrieveAllLikes();
             })
             .catch((err) => console.log(err));
         }

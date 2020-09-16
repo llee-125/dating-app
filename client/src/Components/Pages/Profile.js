@@ -27,7 +27,7 @@ import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
 import Ethnicity3 from "../Options/Ethnicity/Ethnicity3";
 import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
 import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
-import Ethnicity6 from "../Options/Ethnicity/Ethnicity5";
+import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
 import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
 import Slider from "@material-ui/core/Slider";
 import Orientation1 from "../Options/Orientation/Orientation1";

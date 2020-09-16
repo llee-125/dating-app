@@ -47,7 +47,7 @@ class Profile extends React.Component {
     gender: "",
     orientation: "",
     ethnicity: "",
-    body: "",
+    height: "",
     education: "",
     religion: "",
     politics: "",
@@ -136,7 +136,8 @@ class Profile extends React.Component {
             <h1>What is your phone number?</h1>
             <form>
               <TextField
-                label="555-555-5555"
+                label="Phone number"
+                placeholder="555-555-5555"
                 name="phone"
                 value={this.state.phone}
                 onChange={this.handleChange}
@@ -151,7 +152,8 @@ class Profile extends React.Component {
           <Box>
             <h1>What is your email?</h1>
             <TextField
-              label="name@email.com"
+              label="Email"
+              placeholder="name@email.com"
               name="email"
               value={this.state.email}
               onChange={this.handleChange}
@@ -309,14 +311,14 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>How would you describe your body type?</h1>
-            <Slider></Slider>
-            {/* <input
-            name="body"
-            placeholder="body"
-            value={this.state.body}
-            onChange={this.handleChange}
-          ></input> */}
+            <h1>How tall are you? (inches)</h1>
+            <TextField
+              label="Height"
+              placeholder="72"
+              name="height"
+              value={this.state.height}
+              onChange={this.handleChange}
+            />
           </Box>
         </Box>
       );
@@ -401,7 +403,7 @@ class Profile extends React.Component {
             gender={this.state.gender}
             orientation={this.state.orientation}
             ethnicity={this.state.ethnicity}
-            body={this.state.body}
+            height={this.state.height}
             education={this.state.education}
             religion={this.state.religion}
             politics={this.state.politics}

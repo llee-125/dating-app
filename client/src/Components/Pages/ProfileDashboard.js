@@ -10,7 +10,7 @@ class ProfileDashboard extends React.Component {
     gender: "",
     orientation: "",
     ethnicity: "",
-    body: "",
+    height: "",
     education: "",
     religion: "",
     politics: "",
@@ -43,8 +43,7 @@ class ProfileDashboard extends React.Component {
           <input value={this.props.ethnicity} />
           {/* select from  */}
 
-          <input value={this.props.body} />
-          {/* sliders: height, body type,  diet*/}
+          <input value={this.props.height} />
 
           <input value={this.props.education} />
           {/* highest level completed */}

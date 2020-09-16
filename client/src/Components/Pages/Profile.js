@@ -21,7 +21,7 @@ import Gender3 from "../Options/Gender/Gender3";
 import Gender4 from "../Options/Gender/Gender4";
 import Gender5 from "../Options/Gender/Gender5";
 import Gender6 from "../Options/Gender/Gender6";
-import PreferNotToSay from "../Options/PreferNotToSay";
+import PreferNotToSay from "../Options/Gender/PreferNotToSay";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -238,55 +238,55 @@ class Profile extends React.Component {
                   <Col xs={6} md={4}>
                     <Ethnicity2
                       value="Black/African Descent"
-                      handleEthnicity={this.handleChange}
+                      handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity2>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity3
                       value="East Asian"
-                      handleEthnicity={this.handleChange}
+                      handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity3>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity4
                       value="Hispanic/Latino"
-                      handleEthnicity={this.handleChange}
+                      handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity4>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity5
                       value="Middle Eastern"
-                      handleEthnicity={this.handleChange}
+                      handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity5>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity6
                       value="Pacific Islander"
-                      handleEthnicity={this.handleChange}
+                      handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity6>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity7
                       value="South Asian"
-                      handleEthnicity={this.handleChange}
+                      handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity7>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity8
                       value="White/Caucasian"
-                      handleEthnicity={this.handleChange}
+                      handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity8>
                   </Col>
                   <Col xs={6} md={4}>
                     <Ethnicity9
                       value="Other"
-                      handleEthnicity={this.handleChange}
+                      handleEthnicity={this.handleEthnicityChange}
                     ></Ethnicity9>
                   </Col>
                   <Col xs={6} md={4}>
                     <PreferNotToSay
                       value="Prefer not to say"
-                      handleEthnicity={this.handleChange}
+                      handleEthnicity={this.handleEthnicityChange}
                     ></PreferNotToSay>
                   </Col>
                 </Row>

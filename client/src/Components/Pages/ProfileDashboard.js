@@ -10,11 +10,12 @@ class ProfileDashboard extends React.Component {
     gender: "",
     orientation: "",
     ethnicity: "",
+    offspring: "",
+    wantOffspring: "",
     height: "",
     education: "",
     religion: "",
     politics: "",
-    children: "",
     substances: "",
     interest: "",
   };
@@ -45,6 +46,11 @@ class ProfileDashboard extends React.Component {
 
           <input value={this.props.height} />
 
+          <input value={this.props.offspring} />
+          {/* do you have/do you want? select yes/no/undecided*/}
+
+          <input value={this.props.wantOffspring} />
+
           <input value={this.props.education} />
           {/* highest level completed */}
 
@@ -53,9 +59,6 @@ class ProfileDashboard extends React.Component {
 
           <input value={this.props.politics} />
           {/* select from  */}
-
-          <input value={this.props.children} />
-          {/* do you have/do you want? select yes/no/undecided*/}
 
           <input value={this.props.substances} />
           {/* sliders: will include alcohol, weed, cigs, drugs*/}

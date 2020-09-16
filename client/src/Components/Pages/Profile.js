@@ -34,6 +34,12 @@ import Orientation1 from "../Options/Orientation/Orientation1";
 import Orientation2 from "../Options/Orientation/Orientation2";
 import Orientation3 from "../Options/Orientation/Orientation3";
 import Orientation4 from "../Options/Orientation/Orientation4";
+// import Offspring from "../Options/Offspring/Offspring";
+import Offspring1 from "../Options/Offspring/Offspring1";
+import Offspring2 from "../Options/Offspring/Offspring2";
+import WantOffspring1 from "../Options/WantOffspring/WantOffspring1";
+import WantOffspring2 from "../Options/WantOffspring/WantOffspring2";
+import WantOffspring3 from "../Options/WantOffspring/WantOffspring3";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -48,10 +54,10 @@ class Profile extends React.Component {
     orientation: "",
     ethnicity: "",
     height: "",
+    offspring: "",
     education: "",
     religion: "",
     politics: "",
-    children: "",
     substances: "",
     interest: "",
     counter: 0,
@@ -90,6 +96,14 @@ class Profile extends React.Component {
   handleOrientationChange = (value) => {
     console.log(value);
     this.setState({ orientation: value });
+  };
+  handleOffspringChange = (value) => {
+    console.log(value);
+    this.setState({ offspring: value });
+  };
+  handleWantOffspringChange = (value) => {
+    console.log(value);
+    this.setState({ wantOffspring: value });
   };
 
   render() {
@@ -324,27 +338,61 @@ class Profile extends React.Component {
       );
     } else if (this.state.counter === 8) {
       result = (
-        <div>
-          <h1>What is the highest level of education you have completed?</h1>
-          <input
-            name="education"
-            placeholder="education"
-            value={this.state.education}
-            onChange={this.handleChange}
-          ></input>
-        </div>
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>Do you have any children?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Offspring1
+                      value="Yes"
+                      handleOffspring={this.handleOffspringChange}
+                    ></Offspring1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Offspring2
+                      value="No"
+                      handleOffspring={this.handleOffspringChange}
+                    ></Offspring2>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
       );
     } else if (this.state.counter === 9) {
       result = (
-        <div>
-          <h1>What is your religion?</h1>
-          <input
-            name="religion"
-            placeholder="religion"
-            value={this.state.religion}
-            onChange={this.handleChange}
-          ></input>
-        </div>
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>Do you want any more children than you currently have?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <WantOffspring1
+                      value="Yes"
+                      handleWantOffspring={this.handleWantOffspringChange}
+                    ></WantOffspring1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <WantOffspring2
+                      value="No"
+                      handleWantOffspring={this.handleWantOffspringChange}
+                    ></WantOffspring2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <WantOffspring3
+                      value="Maybe"
+                      handleWantOffspring={this.handleWantOffspringChange}
+                    ></WantOffspring3>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
       );
     } else if (this.state.counter === 10) {
       result = (
@@ -404,10 +452,11 @@ class Profile extends React.Component {
             orientation={this.state.orientation}
             ethnicity={this.state.ethnicity}
             height={this.state.height}
+            offspring={this.state.offspring}
+            wantOffspring={this.state.wantOffspring}
             education={this.state.education}
             religion={this.state.religion}
             politics={this.state.politics}
-            children={this.state.children}
             substances={this.state.substances}
             interest={this.state.interest}
           ></ProfileDashboard>

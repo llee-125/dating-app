@@ -72,25 +72,7 @@ export default function App() {
       })
       .catch((err) => console.log(err));
   };
-  const retrieveAllPersons = () => {
-    Axios.get("/profile/discover")
-      .then((response) => {
-        profileSet = [];
-        profileSet = response.data;
-        setProfileArray([...profileSet]);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const retrieveAllLikes = () => {
-    Axios.get("/profile/likes")
-      .then((response) => {
-        likesSet = [];
-        likesSet = response.data;
-        setLikesArray([...likesSet]);
-      })
-      .catch((err) => console.log(err));
-  };
+  
 
   const updateLikesSet = (id) => {
     let newLikes = [];

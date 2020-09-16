@@ -1,21 +1,21 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 
-const Ethnicity8 = (props) => {
+const Orientation4 = (props) => {
   return (
     <div style={{ margin: "0px 0px 10px 0px" }}>
       <Button
         variant="contained"
         color="primary"
         onClick={() => {
-          props.handleEthnicity(props.value);
+          props.handleOrientation(props.value);
         }}
         disableElevation
       >
-        White/Caucasian
+        Other
       </Button>
     </div>
   );
 };
 
-export default Ethnicity8;
+export default Orientation4;

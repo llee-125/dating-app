@@ -3,7 +3,7 @@ import ProfileDashboard from "./ProfileDashboard";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import TextField from "@material-ui/core/TextField";
-import DatePicker from "../Inputs/DatePicker";
+// import DatePicker from "../Inputs/DatePicker";
 import Button from "@material-ui/core/Button";
 import "./profile.css";
 // import Container from "@material-ui/core/Container";
@@ -19,9 +19,6 @@ import Gender1 from "../Options/Gender/Gender1";
 import Gender2 from "../Options/Gender/Gender2";
 import Gender3 from "../Options/Gender/Gender3";
 import Gender4 from "../Options/Gender/Gender4";
-import Gender5 from "../Options/Gender/Gender5";
-import Gender6 from "../Options/Gender/Gender6";
-import PreferNotToSay from "../Options/PreferNotToSay";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -30,11 +27,13 @@ import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
 import Ethnicity3 from "../Options/Ethnicity/Ethnicity3";
 import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
 import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
-import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
+import Ethnicity6 from "../Options/Ethnicity/Ethnicity5";
 import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
-import Ethnicity8 from "../Options/Ethnicity/Ethnicity8";
-import Ethnicity9 from "../Options/Ethnicity/Ethnicity9";
-import Slider from "../Options/Slider/Slider.js";
+import Slider from "@material-ui/core/Slider";
+import Orientation1 from "../Options/Orientation/Orientation1";
+import Orientation2 from "../Options/Orientation/Orientation2";
+import Orientation3 from "../Options/Orientation/Orientation3";
+import Orientation4 from "../Options/Orientation/Orientation4";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -44,8 +43,9 @@ class Profile extends React.Component {
     lastName: "",
     phone: "",
     email: "",
-    birthday: "",
+    age: "",
     gender: "",
+    orientation: "",
     ethnicity: "",
     body: "",
     education: "",
@@ -86,6 +86,10 @@ class Profile extends React.Component {
   handleEthnicityChange = (value) => {
     console.log(value);
     this.setState({ ethnicity: value });
+  };
+  handleOrientationChange = (value) => {
+    console.log(value);
+    this.setState({ orientation: value });
   };
 
   render() {
@@ -159,9 +163,13 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>When is your birthday?</h1>
-            <br></br>
-            <DatePicker handleDate={this.handleDateChange} />
+            <h1>How old are you?</h1>
+            <TextField
+              label="Age"
+              name="age"
+              value={this.state.age}
+              onChange={this.handleChange}
+            />
           </Box>
         </Box>
       );
@@ -175,45 +183,27 @@ class Profile extends React.Component {
                 <Row className="text-center">
                   <Col xs={6} md={4}>
                     <Gender1
-                      value="Female"
+                      value="Woman"
                       handleGender={this.handleGenderChange}
                     ></Gender1>
                   </Col>
                   <Col xs={6} md={4}>
                     <Gender2
-                      value="Male"
+                      value="Man"
                       handleGender={this.handleGenderChange}
                     ></Gender2>
                   </Col>
                   <Col xs={6} md={4}>
                     <Gender3
-                      value="Trans female"
+                      value="Non-conforming"
                       handleGender={this.handleGenderChange}
                     ></Gender3>
                   </Col>
                   <Col xs={6} md={4}>
                     <Gender4
-                      value="Trans male"
-                      handleGender={this.handleGenderChange}
-                    ></Gender4>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Gender5
-                      value="Non-conforming"
-                      handleGender={this.handleGenderChange}
-                    ></Gender5>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Gender6
                       value="Other"
                       handleGender={this.handleGenderChange}
-                    ></Gender6>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <PreferNotToSay
-                      value="Prefer not to say"
-                      handleGender={this.handleGenderChange}
-                    ></PreferNotToSay>
+                    ></Gender4>
                   </Col>
                 </Row>
               </Row>
@@ -225,69 +215,33 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>How would you describe your ethnicity?</h1>
+            <h1>What best describes your orientation?</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">
                   <Col xs={6} md={4}>
-                    <Ethnicity1
-                      value="American Indian"
-                      handleEthnicity={this.handleEthnicityChange}
-                    ></Ethnicity1>
+                    <Orientation1
+                      value="Straight"
+                      handleOrientation={this.handleOrientationChange}
+                    ></Orientation1>
                   </Col>
                   <Col xs={6} md={4}>
-                    <Ethnicity2
-                      value="Black/African Descent"
-                      handleEthnicity={this.handleChange}
-                    ></Ethnicity2>
+                    <Orientation2
+                      value="Gay"
+                      handleOrientation={this.handleOrientationChange}
+                    ></Orientation2>
                   </Col>
                   <Col xs={6} md={4}>
-                    <Ethnicity3
-                      value="East Asian"
-                      handleEthnicity={this.handleChange}
-                    ></Ethnicity3>
+                    <Orientation3
+                      value="Bisexual"
+                      handleOrientation={this.handleOrientationChange}
+                    ></Orientation3>
                   </Col>
                   <Col xs={6} md={4}>
-                    <Ethnicity4
-                      value="Hispanic/Latino"
-                      handleEthnicity={this.handleChange}
-                    ></Ethnicity4>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Ethnicity5
-                      value="Middle Eastern"
-                      handleEthnicity={this.handleChange}
-                    ></Ethnicity5>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Ethnicity6
-                      value="Pacific Islander"
-                      handleEthnicity={this.handleChange}
-                    ></Ethnicity6>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Ethnicity7
-                      value="South Asian"
-                      handleEthnicity={this.handleChange}
-                    ></Ethnicity7>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Ethnicity8
-                      value="White/Caucasian"
-                      handleEthnicity={this.handleChange}
-                    ></Ethnicity8>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Ethnicity9
+                    <Orientation4
                       value="Other"
-                      handleEthnicity={this.handleChange}
-                    ></Ethnicity9>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <PreferNotToSay
-                      value="Prefer not to say"
-                      handleEthnicity={this.handleChange}
-                    ></PreferNotToSay>
+                      handleOrientation={this.handleOrientationChange}
+                    ></Orientation4>
                   </Col>
                 </Row>
               </Row>
@@ -299,7 +253,63 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>Let's get to know you.</h1>
+            <h1>How would you describe your ethnicity?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Ethnicity1
+                      value="Native American"
+                      handleEthnicity={this.handleEthnicityChange}
+                    ></Ethnicity1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity2
+                      value="Black"
+                      handleEthnicity={this.handleEthnicityChange}
+                    ></Ethnicity2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity3
+                      value="Asian"
+                      handleEthnicity={this.handleEthnicityChange}
+                    ></Ethnicity3>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity4
+                      value="Hispanic/Latin"
+                      handleEthnicity={this.handleEthnicityChange}
+                    ></Ethnicity4>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity5
+                      value="Pacific Islander"
+                      handleEthnicity={this.handleEthnicityChange}
+                    ></Ethnicity5>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity6
+                      value="White"
+                      handleEthnicity={this.handleEthnicityChange}
+                    ></Ethnicity6>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Ethnicity7
+                      value="Other"
+                      handleEthnicity={this.handleEthnicityChange}
+                    ></Ethnicity7>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
+      );
+    } else if (this.state.counter === 7) {
+      result = (
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>How would you describe your body type?</h1>
             <Slider></Slider>
             {/* <input
             name="body"
@@ -310,7 +320,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 7) {
+    } else if (this.state.counter === 8) {
       result = (
         <div>
           <h1>What is the highest level of education you have completed?</h1>
@@ -322,7 +332,7 @@ class Profile extends React.Component {
           ></input>
         </div>
       );
-    } else if (this.state.counter === 8) {
+    } else if (this.state.counter === 9) {
       result = (
         <div>
           <h1>What is your religion?</h1>
@@ -334,7 +344,7 @@ class Profile extends React.Component {
           ></input>
         </div>
       );
-    } else if (this.state.counter === 9) {
+    } else if (this.state.counter === 10) {
       result = (
         <div>
           <input
@@ -345,7 +355,7 @@ class Profile extends React.Component {
           ></input>
         </div>
       );
-    } else if (this.state.counter === 10) {
+    } else if (this.state.counter === 11) {
       result = (
         <div>
           <input
@@ -356,7 +366,7 @@ class Profile extends React.Component {
           ></input>
         </div>
       );
-    } else if (this.state.counter === 11) {
+    } else if (this.state.counter === 12) {
       result = (
         <div>
           <input
@@ -381,7 +391,7 @@ class Profile extends React.Component {
     }
     return (
       <div className="profile">
-        {this.state.counter === 13 ? (
+        {this.state.counter === 14 ? (
           <ProfileDashboard
             firstName={this.state.firstName}
             lastName={this.state.lastName}
@@ -389,6 +399,7 @@ class Profile extends React.Component {
             email={this.state.email}
             birthday={this.state.birthday}
             gender={this.state.gender}
+            orientation={this.state.orientation}
             ethnicity={this.state.ethnicity}
             body={this.state.body}
             education={this.state.education}

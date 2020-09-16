@@ -12,7 +12,7 @@ const Ethnicity6 = (props) => {
         }}
         disableElevation
       >
-        Pacific Islander
+        White
       </Button>
     </div>
   );

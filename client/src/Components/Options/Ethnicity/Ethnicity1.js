@@ -12,7 +12,7 @@ const Ethnicity1 = (props) => {
         }}
         disableElevation
       >
-        American Indian
+        Native American
       </Button>
     </div>
   );

@@ -6,8 +6,9 @@ class ProfileDashboard extends React.Component {
     lastName: "",
     phone: "",
     email: "",
-    birthday: "",
+    age: "",
     gender: "",
+    orientation: "",
     ethnicity: "",
     body: "",
     education: "",
@@ -32,10 +33,12 @@ class ProfileDashboard extends React.Component {
 
           <input value={this.props.email} />
 
-          <input value={this.props.birthday} />
+          <input value={this.props.age} />
 
           <input value={this.props.gender} />
           {/* select from  */}
+
+          <input value={this.props.orientation} />
 
           <input value={this.props.ethnicity} />
           {/* select from  */}

@@ -12,7 +12,7 @@ const Ethnicity3 = (props) => {
         }}
         disableElevation
       >
-        East Asian
+        Asian
       </Button>
     </div>
   );

@@ -12,7 +12,7 @@ const Ethnicity4 = (props) => {
         }}
         disableElevation
       >
-        Hispanic/Latino
+        Hispanic/Latin
       </Button>
     </div>
   );

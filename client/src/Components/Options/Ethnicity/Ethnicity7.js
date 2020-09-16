@@ -12,7 +12,7 @@ const Ethnicity7 = (props) => {
         }}
         disableElevation
       >
-        South Asian
+        Other
       </Button>
     </div>
   );

@@ -12,7 +12,7 @@ const Ethnicity2 = (props) => {
         }}
         disableElevation
       >
-        Black/African Descent
+        Black
       </Button>
     </div>
   );

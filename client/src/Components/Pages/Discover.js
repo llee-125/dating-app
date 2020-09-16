@@ -60,20 +60,22 @@ const Discover = (props) =>{
     setExpanded(!expanded);
   };
 
+  
   return (
   
     
     <Card className={classes.root}>
       <CardHeader
         avatar={
-          <Avatar aria-label={props.children.counter} className={classes.avatar} src={avatar1}>
-      
-          </Avatar>
+          <Avatar aria-label={props.children.counter} className={classes.avatar} src={avatar1}/>
         }
         action={
-          <IconButton aria-label="settings">
+          <IconButton aria-label="settings"  aria-controls="customized-menu"
+>
             <MoreVertIcon />
+
           </IconButton>
+          
         }
         title={props.children.first_name}
         subheader={props.children.age}
@@ -85,9 +87,6 @@ const Discover = (props) =>{
       /> 
       
       <CardActions disableSpacing>
-        {/* <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton> */}
         <List
       className={classes.root}
         > 

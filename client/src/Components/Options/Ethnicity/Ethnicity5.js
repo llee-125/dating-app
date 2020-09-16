@@ -12,7 +12,7 @@ const Ethnicity5 = (props) => {
         }}
         disableElevation
       >
-        Middle Eastern
+        Pacific Islander
       </Button>
     </div>
   );

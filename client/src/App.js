@@ -21,10 +21,11 @@ export default function App() {
   });
   let profileSet = [];
   let likesSet = [];
+
   // useEffect(()=>{
-  //    retrieveAllPersons();
-  //    retrieveAllLikes();
-  // },[])
+  //     retrieveAllPersons();
+  //     retrieveAllLikes();
+  // },[]);
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -67,7 +68,6 @@ export default function App() {
       .then((response) => {
         likesSet = [];
         likesSet = response.data;
-        console.log("response data"+response);
         setLikesArray([...likesSet]);
       })
       .catch((err) => console.log(err));
@@ -78,7 +78,13 @@ export default function App() {
     Axios.get("/profile/find/" + id)
       .then((response) => {
         newLikes = response.data;
-        if (!likesSet.includes(newLikes)) {
+        let found = false;
+        likesArray.forEach((like)=>{
+          if (like._id === newLikes._id){
+            found = true;
+          }
+        })
+        if (!found) {
           Axios.post("/profile/newlikes", newLikes).then(() => {
             retrieveAllLikes();
           }).catch((err) => console.log(err));

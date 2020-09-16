@@ -20,8 +20,6 @@ import WorkOutlineOutlinedIcon from '@material-ui/icons/WorkOutlineOutlined';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import LocalBarOutlinedIcon from '@material-ui/icons/LocalBarOutlined';
 import SmokingRoomsOutlinedIcon from '@material-ui/icons/SmokingRoomsOutlined';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import avatar1 from "../BottomNavigation/mumble-logo.png";
 
@@ -81,23 +79,10 @@ const Discover = (props) =>{
       /> 
       
       <CardActions disableSpacing>
-        {/* <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton> */}
         <List
       className={classes.root}
         > 
        <ListItem>
-         {/* <IconButton aria-label="add to favorites"
-            onClick={(e) => {
-            
-              props.updateLikes(e);
-            }} 
-            text={props.children._id}
-         >
-        
-          <FavoriteIcon />
-        </IconButton> */}
         <ListItemText />
       </ListItem>
       <ListItem>

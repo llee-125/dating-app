@@ -36,7 +36,14 @@ export default function Register() {
 
   return (
     <div className="page">
-      <h2>Let's Get Started!</h2>
+      <div id="image">
+        <img
+          className="Mumble"
+          src={require("../BottomNavigation/mumble-logo.png")}
+        />
+      </div>
+      <h1>Mumble</h1>
+
       <h4>Sign up to Mumble now!</h4>
       {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />

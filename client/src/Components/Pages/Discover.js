@@ -113,13 +113,12 @@ const Discover = (props) =>{
           <Avatar aria-label={props.children.counter} className={classes.avatar} src={avatar1}/>
         }
         action={
-          <IconButton aria-label="settings"  
-          aria-controls="customized-menu"
-          aria-haspopup="true"
-          variant="contained"
-          onClick={handleClick}
-          >  
-            <MoreVertIcon />
+          <IconButton aria-label="settings">  
+            <MoreVertIcon
+            aria-controls="customized-menu"
+            aria-haspopup="true"
+            variant="contained"
+            onClick={handleClick} />
        <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}

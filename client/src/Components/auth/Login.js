@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
+import ErrorNotice from "../../../src/ErrorHandling/ErrorNotice";
 import Register from "../../../src/Components/auth/Register";
 
 export default function Login() {
@@ -14,6 +15,7 @@ export default function Login() {
 
   const submit = async (e) => {
     e.preventDefault();
+
     try {
       const loginUser = { email, password };
       const loginRes = await Axios.post("/users/login", loginUser);
@@ -38,6 +40,10 @@ export default function Login() {
       </div>
       <h1>Mumble</h1>
       <h4>A Dating App for Introverts.</h4>
+      {error && (
+        <ErrorNotice message={error} clearError={() => setError(undefined)} />
+      )}
+
       <form className="form" onSubmit={submit}>
         <label htmlFor="login-email">Email: </label>
         <input
@@ -54,6 +60,7 @@ export default function Login() {
         />
         <input type="submit" value="Login" />
       </form>
+      {/* link to page */}
       <div className="Register">
         <Link to="/Register">SIGN UP!</Link>
       </div>

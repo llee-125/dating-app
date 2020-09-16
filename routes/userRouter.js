@@ -105,8 +105,6 @@ router.post("/tokenIsValid", async (req, res) => {
     const user = await User.findById(verified.id);
     if (!user) return res.status(404).json({ msg: "User Not Found" });
 
-    console.log(user);
-
     return res.json({ email: user.email, id: user._id });
   } catch (err) {
     res.status(500).json({ msg: err.message });

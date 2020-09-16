@@ -103,6 +103,10 @@ body {
 #header .auth-options button:hover {
   background: #6a53eb;
 }
+form.form {
+  margin-left: 480px;
+  align-content: center;
+}
 
 .form label,
 .form input {
@@ -120,7 +124,7 @@ body {
 .form input[type="text"],
 .form input[type="email"],
 .form input[type="password"] {
-  width: 100%;
+  width: 50%;
   padding: 0.3rem;
   border: 1px solid black;
   border-radius: 8px;
@@ -138,16 +142,15 @@ body {
 }
 
 .form input:focus {
-  border: 1px solid black;
-  border-radius: 8px;
-  background-color: #ec666f;
-  color: black;
+  border: 1px solid #df4343;
+  box-shadow: inset 0px 0px 10px goldenrod;
+  outline: none;
 }
 
 .error-notice {
   margin: 1rem 0rem;
   padding: 0.5rem;
-  border: 1px solid #e07c7c;
+  border: 1px solid rgb(207, 96, 96);
   border: radius 8;
   display: flex;
   justify-content: space-between;
@@ -308,29 +311,29 @@ body {
   .form input[type="password"] {
     width: 100%;
     padding: 0.3rem;
-    border: 1px solid black;
+    border: 1px solid #df4343;
     border: radius 8;
     background-color: transparent;
     font-size: 1.1rem;
   }
   .form input:focus {
-    border: 1px solid black;
-    border: radius 8;
-    outline: black;
+    border: 1px solid #df4343;
+    box-shadow: inset 0px 0px 10px goldenrod;
+    outline: none;
   }
 
   .form input [type="submit"] {
     padding: 0.3rem 0.5rem;
     border: 1px solid #6aa051;
     border: radius 8;
-    background-color: #ec666f;
+    background-color: black;
     font-size: 1.1rem;
   }
 
   .error-notice {
     margin: 1rem 0rem;
     padding: 0.5rem;
-    border: 1px solid #e07c7c;
+    border: 1px solid rgb(207, 96, 96);
     border: radius 8;
     display: flex;
     justify-content: space-between;
@@ -341,10 +344,11 @@ body {
   .error-notice button {
     width: 20px;
     height: 20px;
-    border: radius 8;
+    border: radius 50%;
     background-color: #df4343;
     color: #ffffff;
   }
+
   .Register {
     margin-top: 50px;
     size: 20px;
@@ -357,5 +361,8 @@ body {
     size: 20px;
     color: black;
     text-align: center;
+  }
+  form.form {
+    margin: 0;
   }
 }

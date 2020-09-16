@@ -21,10 +21,11 @@ export default function App() {
   });
   let profileSet = [];
   let likesSet = [];
+
   // useEffect(()=>{
-  //    retrieveAllPersons();
-  //    retrieveAllLikes();
-  // },[])
+  //     retrieveAllPersons();
+  //     retrieveAllLikes();
+  // },[]);
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -45,12 +46,11 @@ export default function App() {
         setUserData({ token, user: userRes.data });
       }
     };
-   
+
     checkLoggedIn();
     retrieveAllPersons();
     retrieveAllLikes();
   }, []);
-
 
   const retrieveAllPersons = () => {
     Axios.get("/profile/discover")
@@ -67,7 +67,26 @@ export default function App() {
       .then((response) => {
         likesSet = [];
         likesSet = response.data;
-        console.log("response data"+response);
+        console.log("response data" + response);
+        setLikesArray([...likesSet]);
+      })
+      .catch((err) => console.log(err));
+  };
+  const retrieveAllPersons = () => {
+    Axios.get("/profile/discover")
+      .then((response) => {
+        profileSet = [];
+        profileSet = response.data;
+        setProfileArray([...profileSet]);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const retrieveAllLikes = () => {
+    Axios.get("/profile/likes")
+      .then((response) => {
+        likesSet = [];
+        likesSet = response.data;
         setLikesArray([...likesSet]);
       })
       .catch((err) => console.log(err));
@@ -78,10 +97,18 @@ export default function App() {
     Axios.get("/profile/find/" + id)
       .then((response) => {
         newLikes = response.data;
-        if (!likesSet.includes(newLikes)) {
-          Axios.post("/profile/newlikes", newLikes).then(() => {
-            retrieveAllLikes();
-          }).catch((err) => console.log(err));
+        let found = false;
+        likesArray.forEach((like) => {
+          if (like._id === newLikes._id) {
+            found = true;
+          }
+        });
+        if (!found) {
+          Axios.post("/profile/newlikes", newLikes)
+            .then(() => {
+              retrieveAllLikes();
+            })
+            .catch((err) => console.log(err));
         }
       })
       .catch((err) => console.log(err));
@@ -106,7 +133,6 @@ export default function App() {
     }
   });
 
-  
   return (
     <>
       <BrowserRouter>

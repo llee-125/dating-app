@@ -54,8 +54,8 @@ export default function Login() {
         />
         <input type="submit" value="Login" />
       </form>
-      <div className="redirect">
-        <Link to="/register">Register</Link>
+      <div className="Register">
+        <Link to="/Register">SIGN UP!</Link>
       </div>
     </div>
   );

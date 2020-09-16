@@ -163,7 +163,14 @@ body {
   color: #ffffff;
 }
 
-.redirect {
+.Register {
+  margin-top: 50px;
+  size: 20px;
+  color: black;
+  text-align: center;
+}
+
+.Login {
   margin-top: 50px;
   size: 20px;
   color: black;
@@ -338,9 +345,17 @@ body {
     background-color: #df4343;
     color: #ffffff;
   }
-  .redirect {
+  .Register {
     margin-top: 50px;
     size: 20px;
+    color: black;
+    text-align: center;
+  }
+
+  .Login {
+    margin-top: 50px;
+    size: 20px;
+    color: black;
     text-align: center;
   }
 }

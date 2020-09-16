@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
 import ErrorNotice from "../../../src/ErrorHandling/ErrorNotice";
+import Login from "../../../src/Components/auth/Login";
 
 export default function Register() {
   const [email, setEmail] = useState();
@@ -71,7 +72,10 @@ export default function Register() {
 
         <input type="submit" value="Register" />
       </form>
-      <h3>Login!</h3>
+
+      <div className="Login">
+        <Link to="/Login">LOGIN!</Link>
+      </div>
     </div>
   );
 }

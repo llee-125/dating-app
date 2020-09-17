@@ -98,6 +98,12 @@ import Drugs1 from "../Options/Drugs/Drugs1";
 import Drugs2 from "../Options/Drugs/Drugs2";
 import Drugs3 from "../Options/Drugs/Drugs3";
 
+import Smokes1 from "../Options/Smokes/Smokes1";
+import Smokes2 from "../Options/Smokes/Smokes2";
+import Smokes3 from "../Options/Smokes/Smokes3";
+import Smokes4 from "../Options/Smokes/Smokes4";
+import Smokes5 from "../Options/Smokes/Smokes5";
+
 class Profile extends React.Component {
   state = {
     firstName: "",
@@ -197,6 +203,10 @@ class Profile extends React.Component {
   handleDrugsChange = (value) => {
     console.log(value);
     this.setState({ drugs: value });
+  };
+  handleSmokesChange = (value) => {
+    console.log(value);
+    this.setState({ smokes: value });
   };
 
   render() {
@@ -838,12 +848,13 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 13) {
+    } else {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>Do you drink?</h1>
-            <Container fluid="md" className="text-center">
+            <h1>How often do you do the following?</h1>
+            <Container fluid="md">
+              <h2>Drink</h2>
               <Row>
                 <Row className="text-center">
                   <Col xs={6} md={4}>
@@ -884,35 +895,63 @@ class Profile extends React.Component {
                   </Col>
                 </Row>
               </Row>
-            </Container>
-          </Box>
-        </Box>
-      );
-    } else if (this.state.counter === 14) {
-      result = (
-        <Box display="flex" justifyContent="center" m={1} p={1}>
-          <Box>
-            <h1>Do you do drugs?</h1>
-            <Container fluid="md" className="text-center">
+
+              <h2>Drugs</h2>
               <Row>
                 <Row className="text-center">
                   <Col xs={6} md={4}>
                     <Drugs1
-                      value="often"
+                      value="desperately"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs1>
                   </Col>
                   <Col xs={6} md={4}>
                     <Drugs2
-                      value="sometimes"
+                      value="very often"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs2>
                   </Col>
                   <Col xs={6} md={4}>
                     <Drugs3
-                      value="never"
+                      value="often"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs3>
+                  </Col>
+                </Row>
+              </Row>
+
+              <h2>Smoke</h2>
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Smokes1
+                      value="yes"
+                      handleSmokes={this.handleSmokesChange}
+                    ></Smokes1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Smokes2
+                      value="sometimes"
+                      handleSmokes={this.handleSmokesChange}
+                    ></Smokes2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Smokes3
+                      value="when drinking"
+                      handleSmokes={this.handleSmokesChange}
+                    ></Smokes3>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Smokes4
+                      value="trying to quit"
+                      handleSmokes={this.handleSmokesChange}
+                    ></Smokes4>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Smokes5
+                      value="no"
+                      handleSmokes={this.handleSmokesChange}
+                    ></Smokes5>
                   </Col>
                 </Row>
               </Row>
@@ -920,139 +959,10 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else {
-      result = (
-        <div></div>
-        // <Box display="flex" justifyContent="center" m={1} p={1}>
-        //   <Box>
-        //     <h1>What best describes your career?</h1>
-        //     <Container fluid="md" className="text-center">
-        //       <Row>
-        //         <Row className="text-center">
-        //           <Col xs={6} md={3}>
-        //             <Job1
-        //               value="clerical/administrative"
-        //               handleJob={this.handleJobChange}
-        //             ></Job1>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job2
-        //               value="artistic/musical/writer"
-        //               handleJob={this.handleJobChange}
-        //             ></Job2>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job3
-        //               value="executive/management"
-        //               handleJob={this.handleJobChange}
-        //             ></Job3>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job4
-        //               value="construction/craftsmanship"
-        //               handleJob={this.handleJobChange}
-        //             ></Job4>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job5
-        //               value="education/academia"
-        //               handleJob={this.handleJobChange}
-        //             ></Job5>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job6
-        //               value="entertainment/media"
-        //               handleJob={this.handleJobChange}
-        //             ></Job6>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job7
-        //               value="banking/finance/real estate"
-        //               handleJob={this.handleJobChange}
-        //             ></Job7>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job8
-        //               value="medical/health"
-        //               handleJob={this.handleJobChange}
-        //             ></Job8>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job9
-        //               value="hospitality/travel"
-        //               handleJob={this.handleJobChange}
-        //             ></Job9>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job10
-        //               value="law/legal services"
-        //               handleJob={this.handleJobChange}
-        //             ></Job10>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job11
-        //               value="sales/marketing/biz dev"
-        //               handleJob={this.handleJobChange}
-        //             ></Job11>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job12
-        //               value="political/government"
-        //               handleJob={this.handleJobChange}
-        //             ></Job12>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job13
-        //               value="science/tech/engineering"
-        //               handleJob={this.handleJobChange}
-        //             ></Job13>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job14
-        //               value="student"
-        //               handleJob={this.handleJobChange}
-        //             ></Job14>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job15
-        //               value="computer/hardware/software"
-        //               handleJob={this.handleJobChange}
-        //             ></Job15>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job16
-        //               value="transportation"
-        //               handleJob={this.handleJobChange}
-        //             ></Job16>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job17
-        //               value="other"
-        //               handleJob={this.handleJobChange}
-        //             ></Job17>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job18
-        //               value="unemployed"
-        //               handleJob={this.handleJobChange}
-        //             ></Job18>
-        //           </Col>
-        //           <Col xs={6} md={3}>
-        //             <Job19
-        //               value="retired"
-        //               handleJob={this.handleJobChange}
-        //             ></Job19>
-        //           </Col>
-        //         </Row>
-        //       </Row>
-        //     </Container>
-        //   </Box>
-        // </Box>
-      );
     }
     return (
       <div className="profile">
-        {this.state.counter === 16 ? (
+        {this.state.counter === 15 ? (
           <ProfileDashboard
             firstName={this.state.firstName}
             lastName={this.state.lastName}
@@ -1073,7 +983,7 @@ class Profile extends React.Component {
             diet={this.state.diet}
             drinks={this.state.drinks}
             drugs={this.state.drugs}
-            substances={this.state.substances}
+            smokes={this.state.smokes}
             interest={this.state.interest}
           ></ProfileDashboard>
         ) : (

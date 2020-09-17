@@ -27,6 +27,7 @@ export default function App() {
   //     retrieveAllLikes();
   // },[]);
 
+  // Checks if user logged in before
   useEffect(() => {
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token");
@@ -67,12 +68,11 @@ export default function App() {
       .then((response) => {
         likesSet = [];
         likesSet = response.data;
-        console.log("response data" + response);
+
         setLikesArray([...likesSet]);
       })
       .catch((err) => console.log(err));
   };
-
 
   const updateLikesSet = (id) => {
     let newLikes = [];

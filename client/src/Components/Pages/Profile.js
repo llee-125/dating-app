@@ -42,6 +42,13 @@ import HavePets3 from "../Options/HavePets/HavePets3";
 import WantPets1 from "../Options/WantPets/WantPets1";
 import WantPets2 from "../Options/WantPets/WantPets2";
 import WantPets3 from "../Options/WantPets/WantPets3";
+import Education1 from "../Options/Education/Education1";
+import Education2 from "../Options/Education/Education2";
+import Education3 from "../Options/Education/Education3";
+import Education4 from "../Options/Education/Education4";
+import Education5 from "../Options/Education/Education5";
+import Education6 from "../Options/Education/Education6";
+import Education7 from "../Options/Education/Education7";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -117,6 +124,10 @@ class Profile extends React.Component {
   handleWantPetsChange = (value) => {
     console.log(value);
     this.setState({ wantPets: value });
+  };
+  handleEducationChange = (value) => {
+    console.log(value);
+    this.setState({ education: value });
   };
 
   render() {
@@ -464,14 +475,59 @@ class Profile extends React.Component {
       );
     } else if (this.state.counter === 9) {
       result = (
-        <div>
-          {/* <input
-            name="politics"
-            placeholder="politics"
-            value={this.state.politics}
-            onChange={this.handleChange}
-          ></input> */}
-        </div>
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>What is the highest level of education you have completed?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Education1
+                      value="High school"
+                      handleEducation={this.handleEducationChange}
+                    ></Education1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Education2
+                      value="Two-year college"
+                      handleEducation={this.handleEducationChange}
+                    ></Education2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Education3
+                      value="College/university"
+                      handleEducation={this.handleEducationChange}
+                    ></Education3>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Education4
+                      value="Masters program"
+                      handleEducation={this.handleEducationChange}
+                    ></Education4>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Education5
+                      value="PhD"
+                      handleEducation={this.handleEducationChange}
+                    ></Education5>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Education6
+                      value="Law school"
+                      handleEducation={this.handleEducationChange}
+                    ></Education6>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Education7
+                      value="Space camp"
+                      handleEducation={this.handleEducationChange}
+                    ></Education7>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
       );
     } else if (this.state.counter === 10) {
       result = (

@@ -983,7 +983,6 @@ class Profile extends React.Component {
             drinks={this.state.drinks}
             drugs={this.state.drugs}
             smokes={this.state.smokes}
-            interest={this.state.interest}
           ></ProfileDashboard>
         ) : (
           <Box>

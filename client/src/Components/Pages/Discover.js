@@ -10,18 +10,18 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
+// import Menu from "@material-ui/core/Menu";
+// import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
-import { withStyles } from "@material-ui/core/styles";
+//import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import HeightOutlinedIcon from "@material-ui/icons/HeightOutlined";
 import LocalBarOutlinedIcon from "@material-ui/icons/LocalBarOutlined";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import ShareIcon from "@material-ui/icons/Share";
+// import MoreVertIcon from "@material-ui/icons/MoreVert";
+// import ShareIcon from "@material-ui/icons/Share";
 import SmokingRoomsOutlinedIcon from "@material-ui/icons/SmokingRoomsOutlined";
 import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
 import axios from "axios";
@@ -29,7 +29,7 @@ import clsx from "clsx";
 import React from "react";
 
 import avatar1 from "../BottomNavigation/mumble-logo.png";
-import Search from "./Search";
+//import Search from "./Search";
 
 // axios
 //   .get("http://localhost:3000/users/tokenIsValid")
@@ -63,47 +63,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Discover = (props) => {
-  const StyledMenu = withStyles({
-    paper: {
-      border: "1px solid #d3d4d5",
-    },
-  })((props) => (
-    <Menu
-      elevation={0}
-      getContentAnchorEl={null}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "center",
-      }}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "center",
-      }}
-      {...props}
-    />
-  ));
-
-  const StyledMenuItem = withStyles((theme) => ({
-    root: {
-      "&:focus": {
-        backgroundColor: theme.palette.primary.main,
-        "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-          color: theme.palette.common.white,
-        },
-      },
-    },
-  }))(MenuItem);
-
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  
 
   const handleExpandClick = (e) => {
     console.log(e);
@@ -120,27 +82,7 @@ const Discover = (props) => {
             src={avatar1}
           />
         }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon
-              aria-controls="customized-menu"
-              aria-haspopup="true"
-              variant="contained"
-              onClick={handleClick}
-            />
-            <StyledMenu
-              id="customized-menu"
-              anchorEl={anchorEl}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <StyledMenuItem>
-                <ListItemText primary="Details" />
-              </StyledMenuItem>
-            </StyledMenu>
-          </IconButton>
-        }
+       
         title={props.children.first_name}
         subheader={props.children.age}
       />
@@ -211,14 +153,27 @@ const Discover = (props) => {
             <ExpandMoreIcon />
           </IconButton>
         </List>
-        {/* <IconButton aria-label="share">
-          <CakeOutlinedIcon />
-        </IconButton> */}
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Essay:</Typography>
+          <Typography paragraph>Bio:</Typography>
           <Typography paragraph>{props.children.essay}</Typography>
+          <Typography paragraph>Sex: {props.children.sex}</Typography>
+          <Typography paragraph>Status: {props.children.status}</Typography>
+          <Typography paragraph>Body type: {props.children.body_type}</Typography>
+          <Typography paragraph>Diet: {props.children.diet}</Typography>
+          <Typography paragraph>Drugs: {props.children.drugs}</Typography>
+          <Typography paragraph>Ethnicity: {props.children.ethnicity}</Typography>
+          <Typography paragraph>Education: {props.children.education}</Typography>
+          <Typography paragraph>Income: {props.children.income}</Typography>
+          <Typography paragraph>Offspring: {props.children.offspring}</Typography>
+          <Typography paragraph>Orientation: {props.children.orientation}</Typography>
+          <Typography paragraph>Pets: {props.children.pets}</Typography>
+          <Typography paragraph>Religion: {props.children.religion}</Typography>
+          <Typography paragraph>Sign: {props.children.sign}</Typography>
+          <Typography paragraph>Speaks: {props.children.speaks}</Typography>
+          <Typography paragraph>Mumble_email: {props.children.mumble_email}</Typography>
+
         </CardContent>
       </Collapse>
     </Card>

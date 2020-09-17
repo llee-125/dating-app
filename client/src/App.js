@@ -1,7 +1,6 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
 import Login from "./Components/auth/Login.js";
 import Register from "./Components/auth/Register.js";
 import BottomNavigation from "./Components/BottomNavigation/BottomNavigation.js";

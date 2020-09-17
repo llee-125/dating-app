@@ -20,7 +20,6 @@ import WorkOutlineOutlinedIcon from '@material-ui/icons/WorkOutlineOutlined';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import LocalBarOutlinedIcon from '@material-ui/icons/LocalBarOutlined';
 import SmokingRoomsOutlinedIcon from '@material-ui/icons/SmokingRoomsOutlined';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import avatar1 from "../BottomNavigation/mumble-logo.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -67,11 +66,7 @@ const Discover = (props) =>{
       
           </Avatar>
         }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
+        
         title={props.children.first_name}
         subheader={props.children.age}
       />
@@ -129,21 +124,27 @@ const Discover = (props) =>{
           <ExpandMoreIcon />
         </IconButton>
      </List>
-        {/* <IconButton aria-label="share">
-          <CakeOutlinedIcon />
-        </IconButton> */}
-        
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Essay:</Typography>
-          <Typography paragraph>
-           {props.children.essay}
-          </Typography>
-      
-          
-         
-        </CardContent>
+          <Typography paragraph>Bio:</Typography>
+          <Typography paragraph>{props.children.essay}</Typography>
+          <Typography paragraph>Sex: {props.children.sex}</Typography>
+          <Typography paragraph>Status: {props.children.status}</Typography>
+          <Typography paragraph>Body type: {props.children.body_type}</Typography>
+          <Typography paragraph>Diet: {props.children.diet}</Typography>
+          <Typography paragraph>Drugs: {props.children.drugs}</Typography>
+          <Typography paragraph>Ethnicity: {props.children.ethnicity}</Typography>
+          <Typography paragraph>Education: {props.children.education}</Typography>
+          <Typography paragraph>Income: {props.children.income}</Typography>
+          <Typography paragraph>Offspring: {props.children.offspring}</Typography>
+          <Typography paragraph>Orientation: {props.children.orientation}</Typography>
+          <Typography paragraph>Pets: {props.children.pets}</Typography>
+          <Typography paragraph>Religion: {props.children.religion}</Typography>
+          <Typography paragraph>Sign: {props.children.sign}</Typography>
+          <Typography paragraph>Speaks: {props.children.speaks}</Typography>
+          <Typography paragraph>Mumble_email: {props.children.mumble_email}</Typography>
+       </CardContent>
       </Collapse>
      
     </Card>

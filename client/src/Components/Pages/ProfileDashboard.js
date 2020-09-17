@@ -10,11 +10,14 @@ class ProfileDashboard extends React.Component {
     gender: "",
     orientation: "",
     ethnicity: "",
-    body: "",
+    height: "",
+    offspring: "",
+    wantOffspring: "",
+    havePets: "",
+    wantPets: "",
     education: "",
     religion: "",
     politics: "",
-    children: "",
     substances: "",
     interest: "",
   };
@@ -28,39 +31,28 @@ class ProfileDashboard extends React.Component {
         <form>
           <input value={this.props.firstName} />
           <input value={this.props.lastName} />
-
           <input value={this.props.phone} />
-
           <input value={this.props.email} />
-
           <input value={this.props.age} />
-
           <input value={this.props.gender} />
           {/* select from  */}
-
           <input value={this.props.orientation} />
-
           <input value={this.props.ethnicity} />
           {/* select from  */}
-
-          <input value={this.props.body} />
-          {/* sliders: height, body type,  diet*/}
-
+          <input value={this.props.height} />
+          <input value={this.props.offspring} />
+          {/* do you have/do you want? select yes/no/undecided*/}
+          <input value={this.props.wantOffspring} />
+          <input value={this.props.havePets} />
+          <input value={this.props.wantPets} />
           <input value={this.props.education} />
           {/* highest level completed */}
-
           <input value={this.props.religion} />
           {/* select from  */}
-
           <input value={this.props.politics} />
           {/* select from  */}
-
-          <input value={this.props.children} />
-          {/* do you have/do you want? select yes/no/undecided*/}
-
           <input value={this.props.substances} />
           {/* sliders: will include alcohol, weed, cigs, drugs*/}
-
           <input value={this.props.interest} />
           {/* select from  */}
         </form>

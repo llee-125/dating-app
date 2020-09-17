@@ -1,13 +1,24 @@
-import React from "react";
-import ProfileDashboard from "./ProfileDashboard";
-import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
-import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-import TextField from "@material-ui/core/TextField";
-// import DatePicker from "../Inputs/DatePicker";
-import Button from "@material-ui/core/Button";
-import "./profile.css";
 // import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
+// import DatePicker from "../Inputs/DatePicker";
+import Button from "@material-ui/core/Button";
+import Slider from "@material-ui/core/Slider";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import React from "react";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+
+import Ethnicity1 from "../Options/Ethnicity/Ethnicity1";
+import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
+import Ethnicity3 from "../Options/Ethnicity/Ethnicity3";
+import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
+import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
+import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
+import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
 // import Box from "../Box/Box";
 // import styled from "styled-components";
 // import { spacing } from "@material-ui/system";
@@ -19,35 +30,26 @@ import Gender1 from "../Options/Gender/Gender1";
 import Gender2 from "../Options/Gender/Gender2";
 import Gender3 from "../Options/Gender/Gender3";
 import Gender4 from "../Options/Gender/Gender4";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Ethnicity1 from "../Options/Ethnicity/Ethnicity1";
-import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
-import Ethnicity3 from "../Options/Ethnicity/Ethnicity3";
-import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
-import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
-import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
-import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
-import Slider from "@material-ui/core/Slider";
+import HavePets1 from "../Options/HavePets/HavePets1";
+import HavePets2 from "../Options/HavePets/HavePets2";
+import HavePets3 from "../Options/HavePets/HavePets3";
+// import Offspring from "../Options/Offspring/Offspring";
+import Offspring1 from "../Options/Offspring/Offspring1";
+import Offspring2 from "../Options/Offspring/Offspring2";
 import Orientation1 from "../Options/Orientation/Orientation1";
 import Orientation2 from "../Options/Orientation/Orientation2";
 import Orientation3 from "../Options/Orientation/Orientation3";
 import Orientation4 from "../Options/Orientation/Orientation4";
-// import Offspring from "../Options/Offspring/Offspring";
-import Offspring1 from "../Options/Offspring/Offspring1";
-import Offspring2 from "../Options/Offspring/Offspring2";
 import WantOffspring1 from "../Options/WantOffspring/WantOffspring1";
 import WantOffspring2 from "../Options/WantOffspring/WantOffspring2";
 import WantOffspring3 from "../Options/WantOffspring/WantOffspring3";
-import HavePets1 from "../Options/HavePets/HavePets1";
-import HavePets2 from "../Options/HavePets/HavePets2";
-import HavePets3 from "../Options/HavePets/HavePets3";
 import WantPets1 from "../Options/WantPets/WantPets1";
 import WantPets2 from "../Options/WantPets/WantPets2";
 import WantPets3 from "../Options/WantPets/WantPets3";
+import ProfileDashboard from "./ProfileDashboard";
 
-import { makeStyles } from "@material-ui/core/styles";
+import "./profile.css";
+import Orientation from "../Options/Orientation";
 
 class Profile extends React.Component {
   state = {
@@ -245,43 +247,7 @@ class Profile extends React.Component {
         </Box>
       );
     } else if (this.state.counter === 5) {
-      result = (
-        <Box display="flex" justifyContent="center" m={1} p={1}>
-          <Box>
-            <h1>What best describes your orientation?</h1>
-            <Container fluid="md" className="text-center">
-              <Row>
-                <Row className="text-center">
-                  <Col xs={6} md={4}>
-                    <Orientation1
-                      value="Straight"
-                      handleOrientation={this.handleOrientationChange}
-                    ></Orientation1>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Orientation2
-                      value="Gay"
-                      handleOrientation={this.handleOrientationChange}
-                    ></Orientation2>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Orientation3
-                      value="Bisexual"
-                      handleOrientation={this.handleOrientationChange}
-                    ></Orientation3>
-                  </Col>
-                  <Col xs={6} md={4}>
-                    <Orientation4
-                      value="Other"
-                      handleOrientation={this.handleOrientationChange}
-                    ></Orientation4>
-                  </Col>
-                </Row>
-              </Row>
-            </Container>
-          </Box>
-        </Box>
-      );
+      result = <Orientation />;
     } else if (this.state.counter === 6) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>

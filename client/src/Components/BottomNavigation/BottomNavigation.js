@@ -107,12 +107,10 @@ export default function LabelBottomNavigation() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <StyledMenuItem
-        //  component={Link} to="/profile/likes"
-        >
+        <StyledMenuItem component={Link} to="/profile/likes">
           <ListItemText label="YouLikes" value="Youlikes" primary="You Like" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem component={Link} to="/profile/likes">
           <ListItemText primary="Likes You" />
         </StyledMenuItem>
         <StyledMenuItem>

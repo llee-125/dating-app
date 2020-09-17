@@ -1,33 +1,31 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Collapse from '@material-ui/core/Collapse';
-import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import clsx from 'clsx';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import HeightOutlinedIcon from '@material-ui/icons/HeightOutlined';
-import WorkOutlineOutlinedIcon from '@material-ui/icons/WorkOutlineOutlined';
-import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
-import LocalBarOutlinedIcon from '@material-ui/icons/LocalBarOutlined';
-import SmokingRoomsOutlinedIcon from '@material-ui/icons/SmokingRoomsOutlined';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import avatar1 from "../BottomNavigation/mumble-logo.png";
-import Search from "./Search"
-import { withStyles } from "@material-ui/core/styles";
+import Avatar from "@material-ui/core/Avatar";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import Collapse from "@material-ui/core/Collapse";
+import IconButton from "@material-ui/core/IconButton";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import { makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import HeightOutlinedIcon from "@material-ui/icons/HeightOutlined";
+import LocalBarOutlinedIcon from "@material-ui/icons/LocalBarOutlined";
+import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import ShareIcon from "@material-ui/icons/Share";
+import SmokingRoomsOutlinedIcon from "@material-ui/icons/SmokingRoomsOutlined";
+import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
+import clsx from "clsx";
+import React from "react";
 
 import avatar1 from "../BottomNavigation/mumble-logo.png";
 import Search from "./Search";
@@ -57,38 +55,37 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Discover = (props) => {
-const StyledMenu = withStyles({
-  paper: {
-    border: "1px solid #d3d4d5",
-  },
-})((props) => (
-  <Menu
-    elevation={0}
-    getContentAnchorEl={null}
-    anchorOrigin={{
-      vertical: "bottom",
-      horizontal: "center",
-    }}
-    transformOrigin={{
-      vertical: "top",
-      horizontal: "center",
-    }}
-    {...props}
-  />
-));
+  const StyledMenu = withStyles({
+    paper: {
+      border: "1px solid #d3d4d5",
+    },
+  })((props) => (
+    <Menu
+      elevation={0}
+      getContentAnchorEl={null}
+      anchorOrigin={{
+        vertical: "bottom",
+        horizontal: "center",
+      }}
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "center",
+      }}
+      {...props}
+    />
+  ));
 
-const StyledMenuItem = withStyles((theme) => ({
-  root: {
-    "&:focus": {
-      backgroundColor: theme.palette.primary.main,
-      "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-        color: theme.palette.common.white,
+  const StyledMenuItem = withStyles((theme) => ({
+    root: {
+      "&:focus": {
+        backgroundColor: theme.palette.primary.main,
+        "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
+          color: theme.palette.common.white,
+        },
       },
     },
-  },
-}))(MenuItem);
+  }))(MenuItem);
 
-const Discover = (props) =>{
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -99,7 +96,6 @@ const Discover = (props) =>{
   const handleClose = () => {
     setAnchorEl(null);
   };
-
 
   const handleExpandClick = (e) => {
     console.log(e);
@@ -117,24 +113,24 @@ const Discover = (props) =>{
           />
         }
         action={
-          <IconButton aria-label="settings">  
+          <IconButton aria-label="settings">
             <MoreVertIcon
-            aria-controls="customized-menu"
-            aria-haspopup="true"
-            variant="contained"
-            onClick={handleClick} />
-       <StyledMenu
-        id="customized-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        <StyledMenuItem>
-          <ListItemText primary="Details" />
-        </StyledMenuItem>
-      </StyledMenu>
-
+              aria-controls="customized-menu"
+              aria-haspopup="true"
+              variant="contained"
+              onClick={handleClick}
+            />
+            <StyledMenu
+              id="customized-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <StyledMenuItem>
+                <ListItemText primary="Details" />
+              </StyledMenuItem>
+            </StyledMenu>
           </IconButton>
         }
         title={props.children.first_name}
@@ -220,5 +216,4 @@ const Discover = (props) =>{
     </Card>
   );
 };
-
 export default Discover;

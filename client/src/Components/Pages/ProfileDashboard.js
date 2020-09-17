@@ -18,6 +18,7 @@ class ProfileDashboard extends React.Component {
     education: "",
     job: "",
     religion: "",
+    diet: "",
     substances: "",
     interest: "",
   };
@@ -49,8 +50,7 @@ class ProfileDashboard extends React.Component {
           <input value={this.props.job} />
           <input value={this.props.religion} />
           {/* select from  */}
-          <input value={this.props.politics} />
-          {/* select from  */}
+          <input value={this.props.diet} />
           <input value={this.props.substances} />
           {/* sliders: will include alcohol, weed, cigs, drugs*/}
           <input value={this.props.interest} />

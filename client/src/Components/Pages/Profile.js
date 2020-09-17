@@ -3,10 +3,8 @@ import ProfileDashboard from "./ProfileDashboard";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import TextField from "@material-ui/core/TextField";
-// import DatePicker from "../Inputs/DatePicker";
 import Button from "@material-ui/core/Button";
 import "./profile.css";
-// import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 // import Box from "../Box/Box";
 // import styled from "styled-components";
@@ -29,12 +27,10 @@ import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
 import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
 import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
 import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
-import Slider from "@material-ui/core/Slider";
 import Orientation1 from "../Options/Orientation/Orientation1";
 import Orientation2 from "../Options/Orientation/Orientation2";
 import Orientation3 from "../Options/Orientation/Orientation3";
 import Orientation4 from "../Options/Orientation/Orientation4";
-// import Offspring from "../Options/Offspring/Offspring";
 import Offspring1 from "../Options/Offspring/Offspring1";
 import Offspring2 from "../Options/Offspring/Offspring2";
 import WantOffspring1 from "../Options/WantOffspring/WantOffspring1";
@@ -54,7 +50,7 @@ class Profile extends React.Component {
     firstName: "",
     lastName: "",
     phone: "",
-    email: "",
+    // email: "",
     age: "",
     gender: "",
     orientation: "",
@@ -177,22 +173,25 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 2) {
-      result = (
-        <Box display="flex" justifyContent="center" m={1} p={1}>
-          <Box>
-            <h1>What is your email?</h1>
-            <TextField
-              label="Email"
-              placeholder="name@email.com"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-          </Box>
-        </Box>
-      );
-    } else if (this.state.counter === 3) {
+    }
+    // else if (this.state.counter === 2) {
+    //   result = (
+    //     <div></div>
+    //     <Box display="flex" justifyContent="center" m={1} p={1}>
+    //       <Box>
+    //         <h1>What is your email?</h1>
+    //         <TextField
+    //           label="Email"
+    //           placeholder="name@email.com"
+    //           name="email"
+    //           value={this.state.email}
+    //           onChange={this.handleChange}
+    //         />
+    //       </Box>
+    //     </Box>
+    //   );
+    // }
+    else if (this.state.counter === 2) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -206,7 +205,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 4) {
+    } else if (this.state.counter === 3) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -244,7 +243,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 5) {
+    } else if (this.state.counter === 4) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -282,7 +281,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 6) {
+    } else if (this.state.counter === 5) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -338,7 +337,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 7) {
+    } else if (this.state.counter === 6) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -353,7 +352,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 8) {
+    } else if (this.state.counter === 7) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -405,7 +404,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 9) {
+    } else if (this.state.counter === 8) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -463,7 +462,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 10) {
+    } else if (this.state.counter === 9) {
       result = (
         <div>
           {/* <input
@@ -474,7 +473,7 @@ class Profile extends React.Component {
           ></input> */}
         </div>
       );
-    } else if (this.state.counter === 11) {
+    } else if (this.state.counter === 10) {
       result = (
         <div>
           <input
@@ -485,7 +484,7 @@ class Profile extends React.Component {
           ></input>
         </div>
       );
-    } else if (this.state.counter === 12) {
+    } else if (this.state.counter === 11) {
       result = (
         <div>
           <input
@@ -510,12 +509,12 @@ class Profile extends React.Component {
     }
     return (
       <div className="profile">
-        {this.state.counter === 14 ? (
+        {this.state.counter === 13 ? (
           <ProfileDashboard
             firstName={this.state.firstName}
             lastName={this.state.lastName}
             phone={this.state.phone}
-            email={this.state.email}
+            // email={this.state.email}
             birthday={this.state.birthday}
             gender={this.state.gender}
             orientation={this.state.orientation}

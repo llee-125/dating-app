@@ -5,7 +5,7 @@ class ProfileDashboard extends React.Component {
     firstName: "",
     lastName: "",
     phone: "",
-    email: "",
+    // email: "",
     age: "",
     gender: "",
     orientation: "",
@@ -16,8 +16,8 @@ class ProfileDashboard extends React.Component {
     havePets: "",
     wantPets: "",
     education: "",
+    job: "",
     religion: "",
-    politics: "",
     substances: "",
     interest: "",
   };
@@ -32,7 +32,7 @@ class ProfileDashboard extends React.Component {
           <input value={this.props.firstName} />
           <input value={this.props.lastName} />
           <input value={this.props.phone} />
-          <input value={this.props.email} />
+          {/* <input value={this.props.email} /> */}
           <input value={this.props.age} />
           <input value={this.props.gender} />
           {/* select from  */}
@@ -46,7 +46,7 @@ class ProfileDashboard extends React.Component {
           <input value={this.props.havePets} />
           <input value={this.props.wantPets} />
           <input value={this.props.education} />
-          {/* highest level completed */}
+          <input value={this.props.job} />
           <input value={this.props.religion} />
           {/* select from  */}
           <input value={this.props.politics} />

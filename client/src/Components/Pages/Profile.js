@@ -34,6 +34,18 @@ import Orientation1 from "../Options/Orientation/Orientation1";
 import Orientation2 from "../Options/Orientation/Orientation2";
 import Orientation3 from "../Options/Orientation/Orientation3";
 import Orientation4 from "../Options/Orientation/Orientation4";
+// import Offspring from "../Options/Offspring/Offspring";
+import Offspring1 from "../Options/Offspring/Offspring1";
+import Offspring2 from "../Options/Offspring/Offspring2";
+import WantOffspring1 from "../Options/WantOffspring/WantOffspring1";
+import WantOffspring2 from "../Options/WantOffspring/WantOffspring2";
+import WantOffspring3 from "../Options/WantOffspring/WantOffspring3";
+import HavePets1 from "../Options/HavePets/HavePets1";
+import HavePets2 from "../Options/HavePets/HavePets2";
+import HavePets3 from "../Options/HavePets/HavePets3";
+import WantPets1 from "../Options/WantPets/WantPets1";
+import WantPets2 from "../Options/WantPets/WantPets2";
+import WantPets3 from "../Options/WantPets/WantPets3";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -47,11 +59,14 @@ class Profile extends React.Component {
     gender: "",
     orientation: "",
     ethnicity: "",
-    body: "",
+    height: "",
+    offspring: "",
+    wantOffspring: "",
+    havePets: "",
+    wantPets: "",
     education: "",
     religion: "",
     politics: "",
-    children: "",
     substances: "",
     interest: "",
     counter: 0,
@@ -90,6 +105,22 @@ class Profile extends React.Component {
   handleOrientationChange = (value) => {
     console.log(value);
     this.setState({ orientation: value });
+  };
+  handleOffspringChange = (value) => {
+    console.log(value);
+    this.setState({ offspring: value });
+  };
+  handleWantOffspringChange = (value) => {
+    console.log(value);
+    this.setState({ wantOffspring: value });
+  };
+  handleHavePetsChange = (value) => {
+    console.log(value);
+    this.setState({ havePets: value });
+  };
+  handleWantPetsChange = (value) => {
+    console.log(value);
+    this.setState({ wantPets: value });
   };
 
   render() {
@@ -136,7 +167,8 @@ class Profile extends React.Component {
             <h1>What is your phone number?</h1>
             <form>
               <TextField
-                label="555-555-5555"
+                label="Phone number"
+                placeholder="555-555-5555"
                 name="phone"
                 value={this.state.phone}
                 onChange={this.handleChange}
@@ -151,7 +183,8 @@ class Profile extends React.Component {
           <Box>
             <h1>What is your email?</h1>
             <TextField
-              label="name@email.com"
+              label="Email"
+              placeholder="name@email.com"
               name="email"
               value={this.state.email}
               onChange={this.handleChange}
@@ -309,50 +342,136 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>How would you describe your body type?</h1>
-            <Slider></Slider>
-            {/* <input
-            name="body"
-            placeholder="body"
-            value={this.state.body}
-            onChange={this.handleChange}
-          ></input> */}
+            <h1>How tall are you? (inches)</h1>
+            <TextField
+              label="Height"
+              placeholder="72"
+              name="height"
+              value={this.state.height}
+              onChange={this.handleChange}
+            />
           </Box>
         </Box>
       );
     } else if (this.state.counter === 8) {
       result = (
-        <div>
-          <h1>What is the highest level of education you have completed?</h1>
-          <input
-            name="education"
-            placeholder="education"
-            value={this.state.education}
-            onChange={this.handleChange}
-          ></input>
-        </div>
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>Do you have any children?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={6}>
+                    <Offspring1
+                      value="Yes"
+                      handleOffspring={this.handleOffspringChange}
+                    ></Offspring1>
+                  </Col>
+                  <Col xs={6} md={6}>
+                    <Offspring2
+                      value="No"
+                      handleOffspring={this.handleOffspringChange}
+                    ></Offspring2>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+            <br></br>
+            <h1>Do you want more children than you currently have?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <WantOffspring1
+                      value="Yes"
+                      handleWantOffspring={this.handleWantOffspringChange}
+                    ></WantOffspring1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <WantOffspring2
+                      value="No"
+                      handleWantOffspring={this.handleWantOffspringChange}
+                    ></WantOffspring2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <WantOffspring3
+                      value="Maybe"
+                      handleWantOffspring={this.handleWantOffspringChange}
+                    ></WantOffspring3>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
       );
     } else if (this.state.counter === 9) {
       result = (
-        <div>
-          <h1>What is your religion?</h1>
-          <input
-            name="religion"
-            placeholder="religion"
-            value={this.state.religion}
-            onChange={this.handleChange}
-          ></input>
-        </div>
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>I have...</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <HavePets1
+                      value="Dogs"
+                      handleHavePets={this.handleHavePetsChange}
+                    ></HavePets1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <HavePets2
+                      value="Cats"
+                      handleHavePets={this.handleHavePetsChange}
+                    ></HavePets2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <HavePets3
+                      value="No pets"
+                      handleHavePets={this.handleHavePetsChange}
+                    ></HavePets3>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+            <br></br>
+            <h1>I want...</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <WantPets1
+                      value="Dogs"
+                      handleWantPets={this.handleWantPetsChange}
+                    ></WantPets1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <WantPets2
+                      value="Cats"
+                      handleWantPets={this.handleWantPetsChange}
+                    ></WantPets2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <WantPets3
+                      value="No more pets"
+                      handleWantPets={this.handleWantPetsChange}
+                    ></WantPets3>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
       );
     } else if (this.state.counter === 10) {
       result = (
         <div>
-          <input
+          {/* <input
             name="politics"
             placeholder="politics"
             value={this.state.politics}
             onChange={this.handleChange}
-          ></input>
+          ></input> */}
         </div>
       );
     } else if (this.state.counter === 11) {
@@ -401,11 +520,14 @@ class Profile extends React.Component {
             gender={this.state.gender}
             orientation={this.state.orientation}
             ethnicity={this.state.ethnicity}
-            body={this.state.body}
+            height={this.state.height}
+            offspring={this.state.offspring}
+            wantOffspring={this.state.wantOffspring}
+            havePets={this.state.havePets}
+            wantPets={this.state.wantPets}
             education={this.state.education}
             religion={this.state.religion}
             politics={this.state.politics}
-            children={this.state.children}
             substances={this.state.substances}
             interest={this.state.interest}
           ></ProfileDashboard>

@@ -12,7 +12,7 @@ const WantPets3 = (props) => {
         }}
         disableElevation
       >
-        No pets
+        No more pets
       </Button>
     </div>
   );

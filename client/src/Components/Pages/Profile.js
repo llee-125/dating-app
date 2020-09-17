@@ -46,6 +46,7 @@ import HavePets3 from "../Options/HavePets/HavePets3";
 import WantPets1 from "../Options/WantPets/WantPets1";
 import WantPets2 from "../Options/WantPets/WantPets2";
 import WantPets3 from "../Options/WantPets/WantPets3";
+import MultipleSelect from "../Options/test";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -416,19 +417,19 @@ class Profile extends React.Component {
                   <Col xs={6} md={4}>
                     <HavePets1
                       value="Dogs"
-                      handleOffspring={this.handleOffspringChange}
+                      handleHavePets={this.handleHavePetsChange}
                     ></HavePets1>
                   </Col>
                   <Col xs={6} md={4}>
                     <HavePets2
                       value="Cats"
-                      handleOffspring={this.handleOffspringChange}
+                      handleHavePets={this.handleHavePetsChange}
                     ></HavePets2>
                   </Col>
                   <Col xs={6} md={4}>
                     <HavePets3
                       value="No pets"
-                      handleOffspring={this.handleOffspringChange}
+                      handleHavePets={this.handleHavePetsChange}
                     ></HavePets3>
                   </Col>
                 </Row>
@@ -453,7 +454,7 @@ class Profile extends React.Component {
                   </Col>
                   <Col xs={6} md={4}>
                     <WantPets3
-                      value="No pets"
+                      value="No more pets"
                       handleWantPets={this.handleWantPetsChange}
                     ></WantPets3>
                   </Col>
@@ -466,12 +467,13 @@ class Profile extends React.Component {
     } else if (this.state.counter === 10) {
       result = (
         <div>
-          <input
+          <MultipleSelect></MultipleSelect>
+          {/* <input
             name="politics"
             placeholder="politics"
             value={this.state.politics}
             onChange={this.handleChange}
-          ></input>
+          ></input> */}
         </div>
       );
     } else if (this.state.counter === 11) {

@@ -71,6 +71,15 @@ import Job17 from "../Options/Job/Job17";
 import Job18 from "../Options/Job/Job18";
 import Job19 from "../Options/Job/Job19";
 
+import Religion1 from "../Options/Religion/Religion1";
+import Religion2 from "../Options/Religion/Religion2";
+import Religion3 from "../Options/Religion/Religion3";
+import Religion4 from "../Options/Religion/Religion4";
+import Religion5 from "../Options/Religion/Religion5";
+import Religion6 from "../Options/Religion/Religion6";
+import Religion7 from "../Options/Religion/Religion7";
+import Religion8 from "../Options/Religion/Religion8";
+
 class Profile extends React.Component {
   state = {
     firstName: "",
@@ -151,6 +160,10 @@ class Profile extends React.Component {
   handleJobChange = (value) => {
     console.log(value);
     this.setState({ job: value });
+  };
+  handleReligionChange = (value) => {
+    console.log(value);
+    this.setState({ religion: value });
   };
 
   render() {
@@ -682,14 +695,65 @@ class Profile extends React.Component {
       );
     } else if (this.state.counter === 11) {
       result = (
-        <div>
-          <input
-            name="substances"
-            placeholder="substances"
-            value={this.state.substances}
-            onChange={this.handleChange}
-          ></input>
-        </div>
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>Which religion do you most identify with?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Religion1
+                      value="agonosticism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion2
+                      value="atheism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion3
+                      value="buddhism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion3>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion4
+                      value="catholicism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion4>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion5
+                      value="christianity"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion5>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion6
+                      value="hinduism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion6>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion7
+                      value="judaism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion7>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion8
+                      value="other"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion8>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
       );
     } else {
       result = (

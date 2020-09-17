@@ -87,6 +87,13 @@ import Diet4 from "../Options/Diet/Diet4";
 import Diet5 from "../Options/Diet/Diet5";
 import Diet6 from "../Options/Diet/Diet6";
 
+import Drinks1 from "../Options/Drinks/Drinks1";
+import Drinks2 from "../Options/Drinks/Drinks2";
+import Drinks3 from "../Options/Drinks/Drinks3";
+import Drinks4 from "../Options/Drinks/Drinks4";
+import Drinks5 from "../Options/Drinks/Drinks5";
+import Drinks6 from "../Options/Drinks/Drinks6";
+
 class Profile extends React.Component {
   state = {
     firstName: "",
@@ -106,6 +113,7 @@ class Profile extends React.Component {
     job: "",
     religion: "",
     diet: "",
+
     substances: "",
     interest: "",
     counter: 0,
@@ -176,6 +184,10 @@ class Profile extends React.Component {
   handleDietChange = (value) => {
     console.log(value);
     this.setState({ diet: value });
+  };
+  handleDrinksChange = (value) => {
+    console.log(value);
+    this.setState({ drinks: value });
   };
 
   render() {
@@ -817,127 +829,49 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else {
+    } else if (this.state.counter === 13) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>What best describes your career?</h1>
+            <h1>Do you drink?</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">
-                  <Col xs={6} md={3}>
-                    <Job1
-                      value="clerical/administrative"
-                      handleJob={this.handleJobChange}
-                    ></Job1>
+                  <Col xs={6} md={4}>
+                    <Drinks1
+                      value="desperately"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks1>
                   </Col>
-                  <Col xs={6} md={3}>
-                    <Job2
-                      value="artistic/musical/writer"
-                      handleJob={this.handleJobChange}
-                    ></Job2>
+                  <Col xs={6} md={4}>
+                    <Drinks2
+                      value="very often"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks2>
                   </Col>
-                  <Col xs={6} md={3}>
-                    <Job3
-                      value="executive/management"
-                      handleJob={this.handleJobChange}
-                    ></Job3>
+                  <Col xs={6} md={4}>
+                    <Drinks3
+                      value="often"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks3>
                   </Col>
-                  <Col xs={6} md={3}>
-                    <Job4
-                      value="construction/craftsmanship"
-                      handleJob={this.handleJobChange}
-                    ></Job4>
+                  <Col xs={6} md={4}>
+                    <Drinks4
+                      value="socially"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks4>
                   </Col>
-                  <Col xs={6} md={3}>
-                    <Job5
-                      value="education/academia"
-                      handleJob={this.handleJobChange}
-                    ></Job5>
+                  <Col xs={6} md={4}>
+                    <Drinks5
+                      value="rarely"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks5>
                   </Col>
-                  <Col xs={6} md={3}>
-                    <Job6
-                      value="entertainment/media"
-                      handleJob={this.handleJobChange}
-                    ></Job6>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job7
-                      value="banking/finance/real estate"
-                      handleJob={this.handleJobChange}
-                    ></Job7>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job8
-                      value="medical/health"
-                      handleJob={this.handleJobChange}
-                    ></Job8>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job9
-                      value="hospitality/travel"
-                      handleJob={this.handleJobChange}
-                    ></Job9>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job10
-                      value="law/legal services"
-                      handleJob={this.handleJobChange}
-                    ></Job10>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job11
-                      value="sales/marketing/biz dev"
-                      handleJob={this.handleJobChange}
-                    ></Job11>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job12
-                      value="political/government"
-                      handleJob={this.handleJobChange}
-                    ></Job12>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job13
-                      value="science/tech/engineering"
-                      handleJob={this.handleJobChange}
-                    ></Job13>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job14
-                      value="student"
-                      handleJob={this.handleJobChange}
-                    ></Job14>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job15
-                      value="computer/hardware/software"
-                      handleJob={this.handleJobChange}
-                    ></Job15>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job16
-                      value="transportation"
-                      handleJob={this.handleJobChange}
-                    ></Job16>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job17
-                      value="other"
-                      handleJob={this.handleJobChange}
-                    ></Job17>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job18
-                      value="unemployed"
-                      handleJob={this.handleJobChange}
-                    ></Job18>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job19
-                      value="retired"
-                      handleJob={this.handleJobChange}
-                    ></Job19>
+                  <Col xs={6} md={4}>
+                    <Drinks6
+                      value="not at all"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks6>
                   </Col>
                 </Row>
               </Row>
@@ -945,10 +879,139 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
+    } else {
+      result = (
+        <div></div>
+        // <Box display="flex" justifyContent="center" m={1} p={1}>
+        //   <Box>
+        //     <h1>What best describes your career?</h1>
+        //     <Container fluid="md" className="text-center">
+        //       <Row>
+        //         <Row className="text-center">
+        //           <Col xs={6} md={3}>
+        //             <Job1
+        //               value="clerical/administrative"
+        //               handleJob={this.handleJobChange}
+        //             ></Job1>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job2
+        //               value="artistic/musical/writer"
+        //               handleJob={this.handleJobChange}
+        //             ></Job2>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job3
+        //               value="executive/management"
+        //               handleJob={this.handleJobChange}
+        //             ></Job3>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job4
+        //               value="construction/craftsmanship"
+        //               handleJob={this.handleJobChange}
+        //             ></Job4>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job5
+        //               value="education/academia"
+        //               handleJob={this.handleJobChange}
+        //             ></Job5>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job6
+        //               value="entertainment/media"
+        //               handleJob={this.handleJobChange}
+        //             ></Job6>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job7
+        //               value="banking/finance/real estate"
+        //               handleJob={this.handleJobChange}
+        //             ></Job7>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job8
+        //               value="medical/health"
+        //               handleJob={this.handleJobChange}
+        //             ></Job8>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job9
+        //               value="hospitality/travel"
+        //               handleJob={this.handleJobChange}
+        //             ></Job9>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job10
+        //               value="law/legal services"
+        //               handleJob={this.handleJobChange}
+        //             ></Job10>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job11
+        //               value="sales/marketing/biz dev"
+        //               handleJob={this.handleJobChange}
+        //             ></Job11>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job12
+        //               value="political/government"
+        //               handleJob={this.handleJobChange}
+        //             ></Job12>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job13
+        //               value="science/tech/engineering"
+        //               handleJob={this.handleJobChange}
+        //             ></Job13>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job14
+        //               value="student"
+        //               handleJob={this.handleJobChange}
+        //             ></Job14>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job15
+        //               value="computer/hardware/software"
+        //               handleJob={this.handleJobChange}
+        //             ></Job15>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job16
+        //               value="transportation"
+        //               handleJob={this.handleJobChange}
+        //             ></Job16>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job17
+        //               value="other"
+        //               handleJob={this.handleJobChange}
+        //             ></Job17>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job18
+        //               value="unemployed"
+        //               handleJob={this.handleJobChange}
+        //             ></Job18>
+        //           </Col>
+        //           <Col xs={6} md={3}>
+        //             <Job19
+        //               value="retired"
+        //               handleJob={this.handleJobChange}
+        //             ></Job19>
+        //           </Col>
+        //         </Row>
+        //       </Row>
+        //     </Container>
+        //   </Box>
+        // </Box>
+      );
     }
     return (
       <div className="profile">
-        {this.state.counter === 14 ? (
+        {this.state.counter === 15 ? (
           <ProfileDashboard
             firstName={this.state.firstName}
             lastName={this.state.lastName}
@@ -967,6 +1030,7 @@ class Profile extends React.Component {
             job={this.state.job}
             religion={this.state.religion}
             diet={this.state.diet}
+            drinks={this.state.drinks}
             substances={this.state.substances}
             interest={this.state.interest}
           ></ProfileDashboard>

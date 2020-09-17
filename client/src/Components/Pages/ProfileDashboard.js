@@ -41,7 +41,7 @@ class ProfileDashboard extends React.Component {
           {/* select from  */}
           <input value={this.props.height} />
           <input value={this.props.offspring} />
-          {/* do you have/do you want? select yes/no/undecided*/}=
+          {/* do you have/do you want? select yes/no/undecided*/}
           <input value={this.props.wantOffspring} />
           <input value={this.props.havePets} />
           <input value={this.props.wantPets} />

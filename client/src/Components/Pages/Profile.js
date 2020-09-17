@@ -46,7 +46,6 @@ import HavePets3 from "../Options/HavePets/HavePets3";
 import WantPets1 from "../Options/WantPets/WantPets1";
 import WantPets2 from "../Options/WantPets/WantPets2";
 import WantPets3 from "../Options/WantPets/WantPets3";
-import MultipleSelect from "../Options/test";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -467,7 +466,6 @@ class Profile extends React.Component {
     } else if (this.state.counter === 10) {
       result = (
         <div>
-          <MultipleSelect></MultipleSelect>
           {/* <input
             name="politics"
             placeholder="politics"

@@ -334,7 +334,7 @@ form.form {
     margin: 1rem 0rem;
     padding: 0.5rem;
     border: 1px solid rgb(207, 96, 96);
-    border: radius 8;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -344,7 +344,7 @@ form.form {
   .error-notice button {
     width: 20px;
     height: 20px;
-    border: radius 50%;
+    border-radius: 50%;
     background-color: #df4343;
     color: #ffffff;
   }

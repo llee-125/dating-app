@@ -85,16 +85,17 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.delete("/delete", auth, async (req, res) => {
-  try {
-    const deletedUser = await User.findByIdAndDelete(req.user);
-    res.json(deletedUser);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+// router.delete("/delete", auth, async (req, res) => {
+//   try {
+//     const deletedUser = await User.findByIdAndDelete(req.user);
+//     res.json(deletedUser);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// });
 
 router.post("/tokenIsValid", async (req, res) => {
+  console.log("Hitting this route");
   try {
     const token = req.header("x-auth-token");
     if (!token) return res.status(401).json({ msg: "No token" });
@@ -111,9 +112,9 @@ router.post("/tokenIsValid", async (req, res) => {
   }
 });
 
-router.get("/", auth, async (req, res) => {
-  const user = await User.findById(req.user);
-  res.json({ id: user._id });
-});
+// router.get("/", auth, async (req, res) => {
+//   const user = await User.findById(req.user);
+//   res.json({ id: user._id });
+// });
 
 module.exports = router;

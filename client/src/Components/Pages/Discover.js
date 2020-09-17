@@ -24,11 +24,16 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ShareIcon from "@material-ui/icons/Share";
 import SmokingRoomsOutlinedIcon from "@material-ui/icons/SmokingRoomsOutlined";
 import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
+import axios from "axios";
 import clsx from "clsx";
 import React from "react";
 
 import avatar1 from "../BottomNavigation/mumble-logo.png";
 import Search from "./Search";
+
+// axios
+//   .get("http://localhost:3000/users/tokenIsValid")
+//   .then((res) => console.log(res));
 
 const useStyles = makeStyles((theme) => ({
   root: {

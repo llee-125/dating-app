@@ -20,7 +20,8 @@ class ProfileDashboard extends React.Component {
     religion: "",
     diet: "",
     drinks: "",
-    substances: "",
+    drugs: "",
+
     interest: "",
   };
   componentDidMount = () => {
@@ -53,7 +54,7 @@ class ProfileDashboard extends React.Component {
           {/* select from  */}
           <input value={this.props.diet} />
           <input value={this.props.drinks} />
-          <input value={this.props.substances} />
+          <input value={this.props.drugs} />
           {/* sliders: will include alcohol, weed, cigs, drugs*/}
           <input value={this.props.interest} />
           {/* select from  */}

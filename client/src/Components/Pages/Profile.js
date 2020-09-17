@@ -94,6 +94,10 @@ import Drinks4 from "../Options/Drinks/Drinks4";
 import Drinks5 from "../Options/Drinks/Drinks5";
 import Drinks6 from "../Options/Drinks/Drinks6";
 
+import Drugs1 from "../Options/Drugs/Drugs1";
+import Drugs2 from "../Options/Drugs/Drugs2";
+import Drugs3 from "../Options/Drugs/Drugs3";
+
 class Profile extends React.Component {
   state = {
     firstName: "",
@@ -113,8 +117,9 @@ class Profile extends React.Component {
     job: "",
     religion: "",
     diet: "",
+    drinks: "",
+    drugs: "",
 
-    substances: "",
     interest: "",
     counter: 0,
   };
@@ -188,6 +193,10 @@ class Profile extends React.Component {
   handleDrinksChange = (value) => {
     console.log(value);
     this.setState({ drinks: value });
+  };
+  handleDrugsChange = (value) => {
+    console.log(value);
+    this.setState({ drugs: value });
   };
 
   render() {
@@ -879,6 +888,38 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
+    } else if (this.state.counter === 14) {
+      result = (
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>Do you do drugs?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Drugs1
+                      value="often"
+                      handleDrugs={this.handleDrugsChange}
+                    ></Drugs1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Drugs2
+                      value="sometimes"
+                      handleDrugs={this.handleDrugsChange}
+                    ></Drugs2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Drugs3
+                      value="never"
+                      handleDrugs={this.handleDrugsChange}
+                    ></Drugs3>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
+      );
     } else {
       result = (
         <div></div>
@@ -1011,7 +1052,7 @@ class Profile extends React.Component {
     }
     return (
       <div className="profile">
-        {this.state.counter === 15 ? (
+        {this.state.counter === 16 ? (
           <ProfileDashboard
             firstName={this.state.firstName}
             lastName={this.state.lastName}
@@ -1031,6 +1072,7 @@ class Profile extends React.Component {
             religion={this.state.religion}
             diet={this.state.diet}
             drinks={this.state.drinks}
+            drugs={this.state.drugs}
             substances={this.state.substances}
             interest={this.state.interest}
           ></ProfileDashboard>

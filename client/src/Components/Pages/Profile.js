@@ -151,10 +151,6 @@ class Profile extends React.Component {
     console.log(value);
     this.setState({ gender: value });
   };
-  // handleDateChange = (value) => {
-  //   console.log(value);
-  //   this.setState({ age: value });
-  // };
   handleEthnicityChange = (value) => {
     console.log(value);
     this.setState({ ethnicity: value });
@@ -262,25 +258,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    }
-    // else if (this.state.counter === 2) {
-    //   result = (
-    //     <div></div>
-    //     <Box display="flex" justifyContent="center" m={1} p={1}>
-    //       <Box>
-    //         <h1>What is your email?</h1>
-    //         <TextField
-    //           label="Email"
-    //           placeholder="name@email.com"
-    //           name="email"
-    //           value={this.state.email}
-    //           onChange={this.handleChange}
-    //         />
-    //       </Box>
-    //     </Box>
-    //   );
-    // }
-    else if (this.state.counter === 2) {
+    } else if (this.state.counter === 2) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -966,7 +944,6 @@ class Profile extends React.Component {
             firstName={this.state.firstName}
             lastName={this.state.lastName}
             phone={this.state.phone}
-            // email={this.state.email}
             age={this.state.age}
             height={this.state.height}
             gender={this.state.gender}

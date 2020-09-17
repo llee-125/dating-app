@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const auth = require("../middleware/auth");
 let db = require("../models/profileModel");
-let likesDb = require("../models/likesModel")
+let likesDb = require("../models/likesModel");
 require("dotenv").config();
 
 router.get("/test", (req, res) => {
@@ -20,11 +20,11 @@ router.get("/discover", (req, res) => {
   db.Profile.find().then((profiles) => res.send(profiles));
 });
 
-router.get("/likes",(req, res) => {
+router.get("/likes", (req, res) => {
   likesDb.LikesModel.find().then((likes) => res.send(likes));
 });
 
-router.post("/newlikes",(req, res) => {
+router.post("/newlikes", (req, res) => {
   likesDb.LikesModel.create(req.body).then((likes) => res.send(likes));
 });
 router.delete("/remove/:id", (req, res) => {
@@ -32,6 +32,7 @@ router.delete("/remove/:id", (req, res) => {
 });
 
 router.post("/new", (req, res) => {
+  console.log(req.body);
   db.Profile.create(req.body).then((profile) => res.send(profile));
 });
 

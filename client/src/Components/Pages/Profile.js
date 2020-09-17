@@ -4,41 +4,21 @@ import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import TextField from "@material-ui/core/TextField";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
-// import TextField from "@material-ui/core/TextField";
-// import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
-// import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-// import React from "react";
-// import Col from "react-bootstrap/Col";
-// // import Container from "react-bootstrap/Container";
-// import Row from "react-bootstrap/Row";
-// import Ethnicity1 from "../Options/Ethnicity/Ethnicity1";
-// import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
-// import Ethnicity3 from "../Options/Ethnicity/Ethnicity3";
-// import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
-// import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
-// import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
-// import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
-// import Box from "../Box/Box";
-// import styled from "styled-components";
-// import { spacing } from "@material-ui/system";
-// import FixedColumnLayout from "../Grid/FixedColumnLayout";
-// import { withStyles } from "@material-ui/core/styles";
-// import Grid from "@material-ui/core/Grid";
-// import Options from "../Grid/Options";
+// import Button from "@material-ui/core/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "./profile.css";
+
 import Gender1 from "../Options/Gender/Gender1";
 import Gender2 from "../Options/Gender/Gender2";
 import Gender3 from "../Options/Gender/Gender3";
 import Gender4 from "../Options/Gender/Gender4";
-import HavePets1 from "../Options/HavePets/HavePets1";
-import HavePets2 from "../Options/HavePets/HavePets2";
-import HavePets3 from "../Options/HavePets/HavePets3";
-// import Offspring from "../Options/Offspring/Offspring";
-// import Offspring1 from "../Options/Offspring/Offspring1";
-// import Offspring2 from "../Options/Offspring/Offspring2";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
+import Orientation1 from "../Options/Orientation/Orientation1";
+import Orientation2 from "../Options/Orientation/Orientation2";
+import Orientation3 from "../Options/Orientation/Orientation3";
+import Orientation4 from "../Options/Orientation/Orientation4";
 
 import Ethnicity1 from "../Options/Ethnicity/Ethnicity1";
 import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
@@ -48,11 +28,6 @@ import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
 import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
 import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
 
-import Orientation1 from "../Options/Orientation/Orientation1";
-import Orientation2 from "../Options/Orientation/Orientation2";
-import Orientation3 from "../Options/Orientation/Orientation3";
-import Orientation4 from "../Options/Orientation/Orientation4";
-
 import Offspring1 from "../Options/Offspring/Offspring1";
 import Offspring2 from "../Options/Offspring/Offspring2";
 
@@ -60,10 +35,14 @@ import WantOffspring1 from "../Options/WantOffspring/WantOffspring1";
 import WantOffspring2 from "../Options/WantOffspring/WantOffspring2";
 import WantOffspring3 from "../Options/WantOffspring/WantOffspring3";
 
+import HavePets1 from "../Options/HavePets/HavePets1";
+import HavePets2 from "../Options/HavePets/HavePets2";
+import HavePets3 from "../Options/HavePets/HavePets3";
+
 import WantPets1 from "../Options/WantPets/WantPets1";
 import WantPets2 from "../Options/WantPets/WantPets2";
 import WantPets3 from "../Options/WantPets/WantPets3";
-// import ProfileDashboard from "./ProfileDashboard";
+
 import Education1 from "../Options/Education/Education1";
 import Education2 from "../Options/Education/Education2";
 import Education3 from "../Options/Education/Education3";
@@ -92,20 +71,49 @@ import Job17 from "../Options/Job/Job17";
 import Job18 from "../Options/Job/Job18";
 import Job19 from "../Options/Job/Job19";
 
-import "./profile.css";
-// import Orientation from "../Options/Orientation";
+import Religion1 from "../Options/Religion/Religion1";
+import Religion2 from "../Options/Religion/Religion2";
+import Religion3 from "../Options/Religion/Religion3";
+import Religion4 from "../Options/Religion/Religion4";
+import Religion5 from "../Options/Religion/Religion5";
+import Religion6 from "../Options/Religion/Religion6";
+import Religion7 from "../Options/Religion/Religion7";
+import Religion8 from "../Options/Religion/Religion8";
+
+import Diet1 from "../Options/Diet/Diet1";
+import Diet2 from "../Options/Diet/Diet2";
+import Diet3 from "../Options/Diet/Diet3";
+import Diet4 from "../Options/Diet/Diet4";
+import Diet5 from "../Options/Diet/Diet5";
+import Diet6 from "../Options/Diet/Diet6";
+
+import Drinks1 from "../Options/Drinks/Drinks1";
+import Drinks2 from "../Options/Drinks/Drinks2";
+import Drinks3 from "../Options/Drinks/Drinks3";
+import Drinks4 from "../Options/Drinks/Drinks4";
+import Drinks5 from "../Options/Drinks/Drinks5";
+import Drinks6 from "../Options/Drinks/Drinks6";
+
+import Drugs1 from "../Options/Drugs/Drugs1";
+import Drugs2 from "../Options/Drugs/Drugs2";
+import Drugs3 from "../Options/Drugs/Drugs3";
+
+import Smokes1 from "../Options/Smokes/Smokes1";
+import Smokes2 from "../Options/Smokes/Smokes2";
+import Smokes3 from "../Options/Smokes/Smokes3";
+import Smokes4 from "../Options/Smokes/Smokes4";
+import Smokes5 from "../Options/Smokes/Smokes5";
 
 class Profile extends React.Component {
   state = {
     firstName: "",
     lastName: "",
     phone: "",
-    // email: "",
     age: "",
+    height: "",
     gender: "",
     orientation: "",
     ethnicity: "",
-    height: "",
     offspring: "",
     wantOffspring: "",
     havePets: "",
@@ -113,8 +121,11 @@ class Profile extends React.Component {
     education: "",
     job: "",
     religion: "",
-    substances: "",
-    interest: "",
+    diet: "",
+    drinks: "",
+    drugs: "",
+    smokes: "",
+
     counter: 0,
   };
   handleLeftCounter = () => {
@@ -140,10 +151,10 @@ class Profile extends React.Component {
     console.log(value);
     this.setState({ gender: value });
   };
-  handleDateChange = (value) => {
-    console.log(value);
-    this.setState({ birthday: value });
-  };
+  // handleDateChange = (value) => {
+  //   console.log(value);
+  //   this.setState({ age: value });
+  // };
   handleEthnicityChange = (value) => {
     console.log(value);
     this.setState({ ethnicity: value });
@@ -175,6 +186,26 @@ class Profile extends React.Component {
   handleJobChange = (value) => {
     console.log(value);
     this.setState({ job: value });
+  };
+  handleReligionChange = (value) => {
+    console.log(value);
+    this.setState({ religion: value });
+  };
+  handleDietChange = (value) => {
+    console.log(value);
+    this.setState({ diet: value });
+  };
+  handleDrinksChange = (value) => {
+    console.log(value);
+    this.setState({ drinks: value });
+  };
+  handleDrugsChange = (value) => {
+    console.log(value);
+    this.setState({ drugs: value });
+  };
+  handleSmokesChange = (value) => {
+    console.log(value);
+    this.setState({ smokes: value });
   };
 
   render() {
@@ -267,6 +298,21 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
+            <h1>How tall are you? (inches)</h1>
+            <TextField
+              label="Height"
+              placeholder="72"
+              name="height"
+              value={this.state.height}
+              onChange={this.handleChange}
+            />
+          </Box>
+        </Box>
+      );
+    } else if (this.state.counter === 4) {
+      result = (
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
             <h1 className="text-center">How do you self-identify?</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -301,7 +347,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 4) {
+    } else if (this.state.counter === 5) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -339,7 +385,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 5) {
+    } else if (this.state.counter === 6) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -392,21 +438,6 @@ class Profile extends React.Component {
                 </Row>
               </Row>
             </Container>
-          </Box>
-        </Box>
-      );
-    } else if (this.state.counter === 6) {
-      result = (
-        <Box display="flex" justifyContent="center" m={1} p={1}>
-          <Box>
-            <h1>How tall are you? (inches)</h1>
-            <TextField
-              label="Height"
-              placeholder="72"
-              name="height"
-              value={this.state.height}
-              onChange={this.handleChange}
-            />
           </Box>
         </Box>
       );
@@ -628,73 +659,73 @@ class Profile extends React.Component {
                   </Col>
                   <Col xs={6} md={3}>
                     <Job8
-                      value="banking/finance/real estate"
+                      value="medical/health"
                       handleJob={this.handleJobChange}
                     ></Job8>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job9
-                      value="banking/finance/real estate"
+                      value="hospitality/travel"
                       handleJob={this.handleJobChange}
                     ></Job9>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job10
-                      value="banking/finance/real estate"
+                      value="law/legal services"
                       handleJob={this.handleJobChange}
                     ></Job10>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job11
-                      value="banking/finance/real estate"
+                      value="sales/marketing/biz dev"
                       handleJob={this.handleJobChange}
                     ></Job11>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job12
-                      value="banking/finance/real estate"
+                      value="political/government"
                       handleJob={this.handleJobChange}
                     ></Job12>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job13
-                      value="banking/finance/real estate"
+                      value="science/tech/engineering"
                       handleJob={this.handleJobChange}
                     ></Job13>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job14
-                      value="banking/finance/real estate"
+                      value="student"
                       handleJob={this.handleJobChange}
                     ></Job14>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job15
-                      value="banking/finance/real estate"
+                      value="computer/hardware/software"
                       handleJob={this.handleJobChange}
                     ></Job15>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job16
-                      value="banking/finance/real estate"
+                      value="transportation"
                       handleJob={this.handleJobChange}
                     ></Job16>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job17
-                      value="banking/finance/real estate"
+                      value="other"
                       handleJob={this.handleJobChange}
                     ></Job17>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job18
-                      value="banking/finance/real estate"
+                      value="unemployed"
                       handleJob={this.handleJobChange}
                     ></Job18>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job19
-                      value="banking/finance/real estate"
+                      value="retired"
                       handleJob={this.handleJobChange}
                     ></Job19>
                   </Col>
@@ -706,40 +737,241 @@ class Profile extends React.Component {
       );
     } else if (this.state.counter === 11) {
       result = (
-        <div>
-          <input
-            name="substances"
-            placeholder="substances"
-            value={this.state.substances}
-            onChange={this.handleChange}
-          ></input>
-        </div>
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>Which religion do you most identify with?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Religion1
+                      value="agonosticism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion2
+                      value="atheism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion3
+                      value="buddhism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion3>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion4
+                      value="catholicism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion4>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion5
+                      value="christianity"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion5>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion6
+                      value="hinduism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion6>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion7
+                      value="judaism"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion7>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Religion8
+                      value="other"
+                      handleReligion={this.handleReligionChange}
+                    ></Religion8>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
+      );
+    } else if (this.state.counter === 12) {
+      result = (
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>What is your diet?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Diet1
+                      value="anything"
+                      handleDiet={this.handleDietChange}
+                    ></Diet1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Diet2
+                      value="vegetarian"
+                      handleDiet={this.handleDietChange}
+                    ></Diet2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Diet3
+                      value="vegan"
+                      handleDiet={this.handleDietChange}
+                    ></Diet3>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Diet4
+                      value="kosher"
+                      handleDiet={this.handleDietChange}
+                    ></Diet4>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Diet5
+                      value="halal"
+                      handleDiet={this.handleDietChange}
+                    ></Diet5>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Diet6
+                      value="other"
+                      handleDiet={this.handleDietChange}
+                    ></Diet6>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
       );
     } else {
       result = (
-        <div>
-          <input
-            name="interest"
-            placeholder="interest"
-            value={this.state.interest}
-            onChange={this.handleChange}
-          ></input>
-        </div>
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>How often do you do the following?</h1>
+            <Container fluid="md">
+              <h2>Drink</h2>
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Drinks1
+                      value="desperately"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Drinks2
+                      value="very often"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Drinks3
+                      value="often"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks3>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Drinks4
+                      value="socially"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks4>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Drinks5
+                      value="rarely"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks5>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Drinks6
+                      value="not at all"
+                      handleDrinks={this.handleDrinksChange}
+                    ></Drinks6>
+                  </Col>
+                </Row>
+              </Row>
+
+              <h2>Drugs</h2>
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Drugs1
+                      value="desperately"
+                      handleDrugs={this.handleDrugsChange}
+                    ></Drugs1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Drugs2
+                      value="very often"
+                      handleDrugs={this.handleDrugsChange}
+                    ></Drugs2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Drugs3
+                      value="often"
+                      handleDrugs={this.handleDrugsChange}
+                    ></Drugs3>
+                  </Col>
+                </Row>
+              </Row>
+
+              <h2>Smoke</h2>
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={4}>
+                    <Smokes1
+                      value="yes"
+                      handleSmokes={this.handleSmokesChange}
+                    ></Smokes1>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Smokes2
+                      value="sometimes"
+                      handleSmokes={this.handleSmokesChange}
+                    ></Smokes2>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Smokes3
+                      value="when drinking"
+                      handleSmokes={this.handleSmokesChange}
+                    ></Smokes3>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Smokes4
+                      value="trying to quit"
+                      handleSmokes={this.handleSmokesChange}
+                    ></Smokes4>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <Smokes5
+                      value="no"
+                      handleSmokes={this.handleSmokesChange}
+                    ></Smokes5>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
       );
     }
     return (
       <div className="profile">
-        {this.state.counter === 13 ? (
+        {this.state.counter === 15 ? (
           <ProfileDashboard
             firstName={this.state.firstName}
             lastName={this.state.lastName}
             phone={this.state.phone}
             // email={this.state.email}
-            birthday={this.state.birthday}
+            age={this.state.age}
+            height={this.state.height}
             gender={this.state.gender}
             orientation={this.state.orientation}
             ethnicity={this.state.ethnicity}
-            height={this.state.height}
             offspring={this.state.offspring}
             wantOffspring={this.state.wantOffspring}
             havePets={this.state.havePets}
@@ -747,8 +979,10 @@ class Profile extends React.Component {
             education={this.state.education}
             job={this.state.job}
             religion={this.state.religion}
-            politics={this.state.politics}
-            substances={this.state.substances}
+            diet={this.state.diet}
+            drinks={this.state.drinks}
+            drugs={this.state.drugs}
+            smokes={this.state.smokes}
             interest={this.state.interest}
           ></ProfileDashboard>
         ) : (

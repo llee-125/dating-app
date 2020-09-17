@@ -3,10 +3,12 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 5000;
 const path = require("path");
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/profile";
+const Cors = require("cors");
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(Cors());
 
 app.use("/users", require("./routes/userRouter"));
 app.use("/profile", require("./routes/profileRouter"));

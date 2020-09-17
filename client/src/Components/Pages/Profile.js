@@ -4,41 +4,21 @@ import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import TextField from "@material-ui/core/TextField";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
-// import TextField from "@material-ui/core/TextField";
-// import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
-// import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-// import React from "react";
-// import Col from "react-bootstrap/Col";
-// // import Container from "react-bootstrap/Container";
-// import Row from "react-bootstrap/Row";
-// import Ethnicity1 from "../Options/Ethnicity/Ethnicity1";
-// import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
-// import Ethnicity3 from "../Options/Ethnicity/Ethnicity3";
-// import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
-// import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
-// import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
-// import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
-// import Box from "../Box/Box";
-// import styled from "styled-components";
-// import { spacing } from "@material-ui/system";
-// import FixedColumnLayout from "../Grid/FixedColumnLayout";
-// import { withStyles } from "@material-ui/core/styles";
-// import Grid from "@material-ui/core/Grid";
-// import Options from "../Grid/Options";
+// import Button from "@material-ui/core/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "./profile.css";
+
 import Gender1 from "../Options/Gender/Gender1";
 import Gender2 from "../Options/Gender/Gender2";
 import Gender3 from "../Options/Gender/Gender3";
 import Gender4 from "../Options/Gender/Gender4";
-import HavePets1 from "../Options/HavePets/HavePets1";
-import HavePets2 from "../Options/HavePets/HavePets2";
-import HavePets3 from "../Options/HavePets/HavePets3";
-// import Offspring from "../Options/Offspring/Offspring";
-// import Offspring1 from "../Options/Offspring/Offspring1";
-// import Offspring2 from "../Options/Offspring/Offspring2";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
+import Orientation1 from "../Options/Orientation/Orientation1";
+import Orientation2 from "../Options/Orientation/Orientation2";
+import Orientation3 from "../Options/Orientation/Orientation3";
+import Orientation4 from "../Options/Orientation/Orientation4";
 
 import Ethnicity1 from "../Options/Ethnicity/Ethnicity1";
 import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
@@ -48,11 +28,6 @@ import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
 import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
 import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
 
-import Orientation1 from "../Options/Orientation/Orientation1";
-import Orientation2 from "../Options/Orientation/Orientation2";
-import Orientation3 from "../Options/Orientation/Orientation3";
-import Orientation4 from "../Options/Orientation/Orientation4";
-
 import Offspring1 from "../Options/Offspring/Offspring1";
 import Offspring2 from "../Options/Offspring/Offspring2";
 
@@ -60,10 +35,14 @@ import WantOffspring1 from "../Options/WantOffspring/WantOffspring1";
 import WantOffspring2 from "../Options/WantOffspring/WantOffspring2";
 import WantOffspring3 from "../Options/WantOffspring/WantOffspring3";
 
+import HavePets1 from "../Options/HavePets/HavePets1";
+import HavePets2 from "../Options/HavePets/HavePets2";
+import HavePets3 from "../Options/HavePets/HavePets3";
+
 import WantPets1 from "../Options/WantPets/WantPets1";
 import WantPets2 from "../Options/WantPets/WantPets2";
 import WantPets3 from "../Options/WantPets/WantPets3";
-// import ProfileDashboard from "./ProfileDashboard";
+
 import Education1 from "../Options/Education/Education1";
 import Education2 from "../Options/Education/Education2";
 import Education3 from "../Options/Education/Education3";
@@ -92,9 +71,6 @@ import Job17 from "../Options/Job/Job17";
 import Job18 from "../Options/Job/Job18";
 import Job19 from "../Options/Job/Job19";
 
-import "./profile.css";
-// import Orientation from "../Options/Orientation";
-
 class Profile extends React.Component {
   state = {
     firstName: "",
@@ -102,10 +78,10 @@ class Profile extends React.Component {
     phone: "",
     // email: "",
     age: "",
+    height: "",
     gender: "",
     orientation: "",
     ethnicity: "",
-    height: "",
     offspring: "",
     wantOffspring: "",
     havePets: "",
@@ -140,10 +116,10 @@ class Profile extends React.Component {
     console.log(value);
     this.setState({ gender: value });
   };
-  handleDateChange = (value) => {
-    console.log(value);
-    this.setState({ birthday: value });
-  };
+  // handleDateChange = (value) => {
+  //   console.log(value);
+  //   this.setState({ age: value });
+  // };
   handleEthnicityChange = (value) => {
     console.log(value);
     this.setState({ ethnicity: value });
@@ -267,6 +243,21 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
+            <h1>How tall are you? (inches)</h1>
+            <TextField
+              label="Height"
+              placeholder="72"
+              name="height"
+              value={this.state.height}
+              onChange={this.handleChange}
+            />
+          </Box>
+        </Box>
+      );
+    } else if (this.state.counter === 4) {
+      result = (
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
             <h1 className="text-center">How do you self-identify?</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -301,7 +292,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 4) {
+    } else if (this.state.counter === 5) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -339,7 +330,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 5) {
+    } else if (this.state.counter === 6) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -392,21 +383,6 @@ class Profile extends React.Component {
                 </Row>
               </Row>
             </Container>
-          </Box>
-        </Box>
-      );
-    } else if (this.state.counter === 6) {
-      result = (
-        <Box display="flex" justifyContent="center" m={1} p={1}>
-          <Box>
-            <h1>How tall are you? (inches)</h1>
-            <TextField
-              label="Height"
-              placeholder="72"
-              name="height"
-              value={this.state.height}
-              onChange={this.handleChange}
-            />
           </Box>
         </Box>
       );
@@ -735,11 +711,11 @@ class Profile extends React.Component {
             lastName={this.state.lastName}
             phone={this.state.phone}
             // email={this.state.email}
-            birthday={this.state.birthday}
+            age={this.state.age}
+            height={this.state.height}
             gender={this.state.gender}
             orientation={this.state.orientation}
             ethnicity={this.state.ethnicity}
-            height={this.state.height}
             offspring={this.state.offspring}
             wantOffspring={this.state.wantOffspring}
             havePets={this.state.havePets}

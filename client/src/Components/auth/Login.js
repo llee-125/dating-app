@@ -16,7 +16,7 @@ export default function Login(props) {
   useEffect(() => {
     console.log(userData);
     if (userData.user.email) {
-      history.push("/profile");
+      history.push("/profile/discover");
     }
   }, [userData]);
 

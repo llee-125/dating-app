@@ -49,6 +49,25 @@ import Education4 from "../Options/Education/Education4";
 import Education5 from "../Options/Education/Education5";
 import Education6 from "../Options/Education/Education6";
 import Education7 from "../Options/Education/Education7";
+import Job1 from "../Options/Job/Job1";
+import Job2 from "../Options/Job/Job2";
+import Job3 from "../Options/Job/Job3";
+import Job4 from "../Options/Job/Job4";
+import Job5 from "../Options/Job/Job5";
+import Job6 from "../Options/Job/Job6";
+import Job7 from "../Options/Job/Job7";
+import Job8 from "../Options/Job/Job8";
+import Job9 from "../Options/Job/Job9";
+import Job10 from "../Options/Job/Job10";
+import Job11 from "../Options/Job/Job11";
+import Job12 from "../Options/Job/Job12";
+import Job13 from "../Options/Job/Job13";
+import Job14 from "../Options/Job/Job14";
+import Job15 from "../Options/Job/Job15";
+import Job16 from "../Options/Job/Job16";
+import Job17 from "../Options/Job/Job17";
+import Job18 from "../Options/Job/Job18";
+import Job19 from "../Options/Job/Job19";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -68,8 +87,8 @@ class Profile extends React.Component {
     havePets: "",
     wantPets: "",
     education: "",
+    job: "",
     religion: "",
-    politics: "",
     substances: "",
     interest: "",
     counter: 0,
@@ -128,6 +147,10 @@ class Profile extends React.Component {
   handleEducationChange = (value) => {
     console.log(value);
     this.setState({ education: value });
+  };
+  handleJobChange = (value) => {
+    console.log(value);
+    this.setState({ job: value });
   };
 
   render() {
@@ -531,14 +554,131 @@ class Profile extends React.Component {
       );
     } else if (this.state.counter === 10) {
       result = (
-        <div>
-          <input
-            name="children"
-            placeholder="children"
-            value={this.state.children}
-            onChange={this.handleChange}
-          ></input>
-        </div>
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>What best describes your career?</h1>
+            <Container fluid="md" className="text-center">
+              <Row>
+                <Row className="text-center">
+                  <Col xs={6} md={3}>
+                    <Job1
+                      value="clerical/administrative"
+                      handleJob={this.handleJobChange}
+                    ></Job1>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job2
+                      value="artistic/musical/writer"
+                      handleJob={this.handleJobChange}
+                    ></Job2>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job3
+                      value="executive/management"
+                      handleJob={this.handleJobChange}
+                    ></Job3>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job4
+                      value="construction/craftsmanship"
+                      handleJob={this.handleJobChange}
+                    ></Job4>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job5
+                      value="education/academia"
+                      handleJob={this.handleJobChange}
+                    ></Job5>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job6
+                      value="entertainment/media"
+                      handleJob={this.handleJobChange}
+                    ></Job6>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job7
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job7>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job8
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job8>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job9
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job9>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job10
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job10>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job11
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job11>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job12
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job12>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job13
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job13>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job14
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job14>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job15
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job15>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job16
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job16>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job17
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job17>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job18
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job18>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <Job19
+                      value="banking/finance/real estate"
+                      handleJob={this.handleJobChange}
+                    ></Job19>
+                  </Col>
+                </Row>
+              </Row>
+            </Container>
+          </Box>
+        </Box>
       );
     } else if (this.state.counter === 11) {
       result = (
@@ -581,6 +721,7 @@ class Profile extends React.Component {
             havePets={this.state.havePets}
             wantPets={this.state.wantPets}
             education={this.state.education}
+            job={this.state.job}
             religion={this.state.religion}
             politics={this.state.politics}
             substances={this.state.substances}

@@ -16,8 +16,8 @@ class ProfileDashboard extends React.Component {
     havePets: "",
     wantPets: "",
     education: "",
+    job: "",
     religion: "",
-    politics: "",
     substances: "",
     interest: "",
   };
@@ -46,7 +46,7 @@ class ProfileDashboard extends React.Component {
           <input value={this.props.havePets} />
           <input value={this.props.wantPets} />
           <input value={this.props.education} />
-          {/* highest level completed */}
+          <input value={this.props.job} />
           <input value={this.props.religion} />
           {/* select from  */}
           <input value={this.props.politics} />

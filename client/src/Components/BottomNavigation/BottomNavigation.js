@@ -1,22 +1,18 @@
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import Button from "@material-ui/core/Button";
 import ListItemText from "@material-ui/core/ListItemText";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
 import { withStyles } from "@material-ui/core/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import FolderIcon from "@material-ui/icons/Folder";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import RestoreIcon from "@material-ui/icons/Restore";
+import LogoutIcon from "@material-ui/icons/MeetingRoom";
+import ProfileIcon from "@material-ui/icons/Person";
 import React from "react";
 // import Icon from "@material-ui/core/Icon";
 import { Link } from "react-router-dom";
 
 import SvgMumble from "./MumbleIcon/Mumble";
-
-// import MumbleIcon from "./Mumble.svg";
 
 const useStyles = makeStyles({
   root: {
@@ -80,22 +76,12 @@ export default function LabelBottomNavigation() {
       onChange={handleChange}
       className={classes.root}
     >
-      {/* <SvgIcon component={MumbleIcon} viewBox="0 0 600 476.6" /> */}
-      {/* <Icon className={classes.iconRoot}>
-        <img className={classes.imageIcon} src={"/mumble-logo.png"} alt={""} />
-      </Icon> */}
-
       <BottomNavigationAction
         label="Discover"
         value="discover"
         component={Link}
         to="/profile/discover"
         icon={<SvgMumble />}
-      />
-      <BottomNavigationAction
-        label="Recents"
-        value="recents"
-        icon={<RestoreIcon />}
       />
 
       <BottomNavigationAction
@@ -117,7 +103,7 @@ export default function LabelBottomNavigation() {
         <StyledMenuItem component={Link} to="/profile/likes">
           <ListItemText label="YouLikes" value="Youlikes" primary="You Like" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem component={Link} to="/profile/likes">
           <ListItemText primary="Likes You" />
         </StyledMenuItem>
         <StyledMenuItem>
@@ -126,15 +112,17 @@ export default function LabelBottomNavigation() {
       </StyledMenu>
 
       <BottomNavigationAction
-        label="Nearby"
-        value="nearby"
-        icon={<LocationOnIcon />}
+        label="Profile"
+        value="profile"
+        icon={<ProfileIcon />}
       />
 
       <BottomNavigationAction
-        label="Folder"
-        value="folder"
-        icon={<FolderIcon />}
+        label="Logout"
+        value="logout"
+        icon={<LogoutIcon />}
+        component={Link}
+        to="/logout"
       />
     </BottomNavigation>
   );

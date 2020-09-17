@@ -1,30 +1,27 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5050;
 const path = require("path");
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/profile";
-const Cors = require("cors");
+// const Cors = require("cors");
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(Cors());
-
-app.use("/users", require("./routes/userRouter"));
-app.use("/profile", require("./routes/profileRouter"));
+// app.use(Cors());
 
 // logs any request
-var myLogger = function (req, res, next) {
-  console.log(req.path);
-  next();
-};
-app.use(myLogger);
+// var myLogger = function (req, res, next) {
+//   console.log(req.path);
+//   next();
+// };
+// app.use(myLogger);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  // });
 }
 
 mongoose.connect(
@@ -39,6 +36,9 @@ mongoose.connect(
     console.log("MongoDB connection established.");
   }
 );
+
+app.use("/users", require("./routes/userRouter"));
+app.use("/profile", require("./routes/profileRouter"));
 
 app.listen(PORT, () => {
   console.log(`listening at http://localhost:${PORT}`);

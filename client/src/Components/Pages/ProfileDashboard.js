@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import axios from "axios";
 
 class ProfileDashboard extends React.Component {
   state = {
@@ -35,6 +36,26 @@ class ProfileDashboard extends React.Component {
   };
   saveProfile = () => {
     console.log(this.state);
+    const profileRec = {
+      first_name: this.state.firstName,
+      last_name: this.state.lastName,
+      age: this.state.age,
+      diet: this.state.diet,
+      drinks: this.state.drinks,
+      drugs: this.state.drugs,
+      education: this.state.education,
+      ethnicity: this.state.ethnicity,
+      height: this.state.height,
+      job: this.state.job,
+      offspring: this.state.offspring,
+      orientation: this.state.orientation,
+      religion: this.state.religion,
+      sex: this.state.gender,
+      smokes: this.state.smokes,
+    };
+    axios.post("/new", profileRec).then((saveRec) => {
+      console.log("Profile Updated");
+    });
   };
   render() {
     return (
@@ -138,7 +159,14 @@ class ProfileDashboard extends React.Component {
           />
         </form>
 
-        <Button onClick={this.saveProfile}>Submit</Button>
+        <Button
+          variant="contained"
+          color="primary"
+          disableElevation
+          onClick={this.saveProfile}
+        >
+          Submit
+        </Button>
       </div>
     );
   }

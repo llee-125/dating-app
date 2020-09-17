@@ -1,17 +1,24 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
 import ErrorNotice from "../../../src/ErrorHandling/ErrorNotice";
 import Register from "../../../src/Components/auth/Register";
 
-export default function Login() {
+export default function Login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [error, setError] = useState();
 
-  const { setUserData } = useContext(UserContext);
+  const { userData, setUserData } = useContext(UserContext);
   const history = useHistory();
+
+  useEffect(() => {
+    console.log(userData);
+    if (userData.user.email) {
+      history.push("/profile");
+    }
+  }, [userData]);
 
   const submit = async (e) => {
     e.preventDefault();

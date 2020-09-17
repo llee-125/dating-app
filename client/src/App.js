@@ -1,7 +1,6 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
 import Login from "./Components/auth/Login.js";
 import Register from "./Components/auth/Register.js";
 import BottomNavigation from "./Components/BottomNavigation/BottomNavigation.js";
@@ -16,8 +15,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
   const [userData, setUserData] = useState({
-    token: undefined,
-    user: undefined,
+    token: "",
+    user: "",
   });
   let profileSet = [];
   let likesSet = [];
@@ -35,19 +34,21 @@ export default function App() {
         localStorage.setItem("auth-token", "");
         token = "";
       }
+      console.log(token);
       const tokenRes = await Axios.post(
         "http://localhost:5000/users/tokenIsValid",
         null,
-        { headers: { "x-auth-token": token } }
+        {
+          headers: { "x-auth-token": token },
+        }
       );
       if (tokenRes.data) {
-        const userRes = await Axios.get("http://localhost:5000/users/", {
-          headers: { "x-auth-token": token },
-        });
-        setUserData({ token, user: userRes.data });
+        // const userRes = await Axios.get("/users/", {
+        //   headers: { "x-auth-token": token },
+        // });
+        setUserData({ token, user: tokenRes.data });
       }
     };
-
     checkLoggedIn();
     retrieveAllPersons();
     retrieveAllLikes();

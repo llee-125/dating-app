@@ -27,6 +27,7 @@ export default function App() {
   //     retrieveAllLikes();
   // },[]);
 
+  // Checks if user logged in before
   useEffect(() => {
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token");
@@ -67,26 +68,7 @@ export default function App() {
       .then((response) => {
         likesSet = [];
         likesSet = response.data;
-        console.log("response data" + response);
-        setLikesArray([...likesSet]);
-      })
-      .catch((err) => console.log(err));
-  };
-  const retrieveAllPersons = () => {
-    Axios.get("/profile/discover")
-      .then((response) => {
-        profileSet = [];
-        profileSet = response.data;
-        setProfileArray([...profileSet]);
-      })
-      .catch((err) => console.log(err));
-  };
 
-  const retrieveAllLikes = () => {
-    Axios.get("/profile/likes")
-      .then((response) => {
-        likesSet = [];
-        likesSet = response.data;
         setLikesArray([...likesSet]);
       })
       .catch((err) => console.log(err));

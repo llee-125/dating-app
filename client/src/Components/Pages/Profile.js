@@ -109,7 +109,6 @@ class Profile extends React.Component {
     firstName: "",
     lastName: "",
     phone: "",
-    // email: "",
     age: "",
     height: "",
     gender: "",
@@ -125,8 +124,8 @@ class Profile extends React.Component {
     diet: "",
     drinks: "",
     drugs: "",
+    smokes: "",
 
-    interest: "",
     counter: 0,
   };
   handleLeftCounter = () => {

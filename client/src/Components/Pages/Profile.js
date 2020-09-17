@@ -604,73 +604,73 @@ class Profile extends React.Component {
                   </Col>
                   <Col xs={6} md={3}>
                     <Job8
-                      value="banking/finance/real estate"
+                      value="medical/health"
                       handleJob={this.handleJobChange}
                     ></Job8>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job9
-                      value="banking/finance/real estate"
+                      value="hospitality/travel"
                       handleJob={this.handleJobChange}
                     ></Job9>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job10
-                      value="banking/finance/real estate"
+                      value="law/legal services"
                       handleJob={this.handleJobChange}
                     ></Job10>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job11
-                      value="banking/finance/real estate"
+                      value="sales/marketing/biz dev"
                       handleJob={this.handleJobChange}
                     ></Job11>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job12
-                      value="banking/finance/real estate"
+                      value="political/government"
                       handleJob={this.handleJobChange}
                     ></Job12>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job13
-                      value="banking/finance/real estate"
+                      value="science/tech/engineering"
                       handleJob={this.handleJobChange}
                     ></Job13>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job14
-                      value="banking/finance/real estate"
+                      value="student"
                       handleJob={this.handleJobChange}
                     ></Job14>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job15
-                      value="banking/finance/real estate"
+                      value="computer/hardware/software"
                       handleJob={this.handleJobChange}
                     ></Job15>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job16
-                      value="banking/finance/real estate"
+                      value="transportation"
                       handleJob={this.handleJobChange}
                     ></Job16>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job17
-                      value="banking/finance/real estate"
+                      value="other"
                       handleJob={this.handleJobChange}
                     ></Job17>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job18
-                      value="banking/finance/real estate"
+                      value="unemployed"
                       handleJob={this.handleJobChange}
                     ></Job18>
                   </Col>
                   <Col xs={6} md={3}>
                     <Job19
-                      value="banking/finance/real estate"
+                      value="retired"
                       handleJob={this.handleJobChange}
                     ></Job19>
                   </Col>

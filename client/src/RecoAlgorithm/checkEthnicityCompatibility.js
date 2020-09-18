@@ -3,136 +3,116 @@ const checkEthnicityCompatibility = (myProfile, userProfile) => {
     case "asian":
       if (userProfile.ethnicity === "asian") {
         userProfile.loveFactor += 20;
-        break;
       }
       if (userProfile.ethnicity === "asian, white") {
         userProfile.loveFactor += 7;
-        break;
       }
       if (userProfile.ethnicity === "asian, pacific islander") {
         userProfile.loveFactor += 5;
-        break;
       }
+      break;
     case "black":
       if (userProfile.ethnicity === "black") {
         userProfile.loveFactor += 20;
-        break;
       }
       if (userProfile.ethnicity === "black, white") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.ethnicity === "black, hispanic / latin") {
         userProfile.loveFactor += 7;
-        break;
       }
+      break;
     case "hispanic / latin":
       if (userProfile.ethnicity === "hispanic / latin") {
         userProfile.loveFactor += 20;
-        break;
       }
       if (userProfile.ethnicity === "hispanic / latin, white") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.ethnicity === "hispanic / latin, white, other") {
         userProfile.loveFactor += 7;
-        break;
       }
+      break;
     case "indian":
       if (userProfile.ethnicity === "indian") {
         userProfile.loveFactor += 20;
-        break;
       }
       if (userProfile.ethnicity === "indian, white") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.ethnicity === "indian, hispanic / latin") {
         userProfile.loveFactor += 7;
-        break;
       }
+      break;
     case "middle eastern":
       if (userProfile.ethnicity === "middle eastern") {
         userProfile.loveFactor += 20;
-        break;
       }
       if (userProfile.ethnicity === "middle eastern, white") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (
         userProfile.ethnicity ===
         "middle eastern, black, native american, white"
       ) {
         userProfile.loveFactor += 7;
-        break;
       }
+      break;
     case "native american, white":
       if (userProfile.ethnicity === "native american, white") {
         userProfile.loveFactor += 20;
-        break;
       }
       if (userProfile.ethnicity === "native american") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.ethnicity === "native american, white") {
         userProfile.loveFactor += 7;
-        break;
       }
+      break;
     case "pacific islander":
       if (userProfile.ethnicity === "pacific islander") {
         userProfile.loveFactor += 20;
-        break;
       }
       if (userProfile.ethnicity === "pacific islander, white") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (
         userProfile.ethnicity === "pacific islander, hispanic / latin, white"
       ) {
         userProfile.loveFactor += 7;
-        break;
       }
+      break;
     case "white":
       if (userProfile.ethnicity === "white") {
         userProfile.loveFactor += 20;
-        break;
       }
       if (userProfile.ethnicity === "white, other") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.ethnicity === "asian, white") {
         userProfile.loveFactor += 7;
-        break;
       }
       if (userProfile.ethnicity === "pacific islander, white") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.ethnicity === "native american, white") {
         userProfile.loveFactor += 20;
-        break;
       }
       if (userProfile.ethnicity === "middle eastern, white") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.ethnicity === "indian, white") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.ethnicity === "hispanic / latin, white") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.ethnicity === "black, white") {
         userProfile.loveFactor += 10;
-        break;
       }
+      break;
+    case "default":
+      break;
   }
 };
 export default checkEthnicityCompatibility;

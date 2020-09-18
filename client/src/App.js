@@ -1,15 +1,18 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import Login from "./Components/auth/Login.js";
 import Register from "./Components/auth/Register.js";
 import BottomNavigation from "./Components/BottomNavigation/BottomNavigation.js";
-import Home from "./Components/Pages/Home.js";
-import Profile from "./Components/Pages/Profile.js";
-import UserContext from "./context/UserContext";
 import Discover from "./Components/Pages/Discover";
+import Home from "./Components/Pages/Home.js";
 import Likes from "./Components/Pages/Likes";
+import Profile from "./Components/Pages/Profile.js";
 import Search from "./Components/Pages/Search";
+import UserContext from "./context/UserContext";
+// import RecoAlgo from "./Components/RecoAlgorithm/RecoAlgo.js";
+
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -34,18 +37,10 @@ export default function App() {
         localStorage.setItem("auth-token", "");
         token = "";
       }
-      console.log(token);
-      const tokenRes = await Axios.post(
-        "http://localhost:5000/users/tokenIsValid",
-        null,
-        {
-          headers: { "x-auth-token": token },
-        }
-      );
+      const tokenRes = await Axios.post("/users/tokenIsValid", null, {
+        headers: { "x-auth-token": token },
+      });
       if (tokenRes.data) {
-        // const userRes = await Axios.get("/users/", {
-        //   headers: { "x-auth-token": token },
-        // });
         setUserData({ token, user: tokenRes.data });
       }
     };
@@ -55,6 +50,14 @@ export default function App() {
   }, []);
 
   const retrieveAllPersons = () => {
+    // Axios.get("/profile/find/3000")
+    //   .then((res) => {
+    //     RecoAlgo(res).then((response) => {
+    //       profileSet = [];
+    //       profileSet = response.data;
+    //       setProfileArray([...profileSet]);
+    //     });
+    //   })
     Axios.get("/profile/discover")
       .then((response) => {
         profileSet = [];

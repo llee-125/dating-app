@@ -1,4 +1,4 @@
-module.exports = checkHeightCompatibility = (myProfile, userProfile) => {
+const checkHeightCompatibility = (myProfile, userProfile) => {
   if (
     userProfile.height > myProfile.height - 9 &&
     userProfile.height < myProfile.height + 9
@@ -18,3 +18,4 @@ module.exports = checkHeightCompatibility = (myProfile, userProfile) => {
     }
   }
 };
+export default checkHeightCompatibility;

@@ -1,4 +1,4 @@
-module.exports = checkEthnicityCompatibility = (myProfile, userProfile) => {
+const checkEthnicityCompatibility = (myProfile, userProfile) => {
   switch (myProfile.ethnicity) {
     case "asian":
       if (userProfile.ethnicity === "asian") {
@@ -135,3 +135,4 @@ module.exports = checkEthnicityCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+export default checkEthnicityCompatibility;

@@ -1,4 +1,4 @@
-module.exports = checkSexualPreference = (myProfile) => {
+const checkSexualPreference = (myProfile) => {
   if (myProfile.orientation === "straight") {
     return [
       myProfile.sex === "men" ? "women" : "men",
@@ -14,3 +14,4 @@ module.exports = checkSexualPreference = (myProfile) => {
     return ["men", "women", "gay", "bisexual"];
   }
 };
+export default checkSexualPreference;

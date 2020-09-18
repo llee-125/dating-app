@@ -1,4 +1,4 @@
-module.exports = checkDrugCompatibility = (myProfile, userProfile) => {
+const checkDrugCompatibility = (myProfile, userProfile) => {
   switch (myProfile.drugs) {
     case "often":
       if (userProfile.drugs === "often") {
@@ -39,3 +39,4 @@ module.exports = checkDrugCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+export default checkDrugCompatibility;

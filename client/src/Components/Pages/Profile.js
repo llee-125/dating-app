@@ -878,19 +878,19 @@ class Profile extends React.Component {
                 <Row className="text-center">
                   <Col xs={6} md={4}>
                     <Drugs1
-                      value="desperately"
+                      value="often"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs1>
                   </Col>
                   <Col xs={6} md={4}>
                     <Drugs2
-                      value="very often"
+                      value="sometimes"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs2>
                   </Col>
                   <Col xs={6} md={4}>
                     <Drugs3
-                      value="often"
+                      value="never"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs3>
                   </Col>

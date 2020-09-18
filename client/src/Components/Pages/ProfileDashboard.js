@@ -2,8 +2,6 @@ import Button from "@material-ui/core/Button";
 import axios from "axios";
 import React from "react";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 class ProfileDashboard extends React.Component {
   state = {
     firstName: this.props.firstName,
@@ -89,7 +87,6 @@ class ProfileDashboard extends React.Component {
             </Button>
           </form>
 
-          <form>
           <input
             name="firstName"
             onChange={this.handleChange}

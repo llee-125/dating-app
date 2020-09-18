@@ -1,4 +1,4 @@
-module.exports = checkEduCompatibility = (myProfile, userProfile) => {
+const checkEduCompatibility = (myProfile, userProfile) => {
   switch (myProfile.education) {
     case "graduated from ph.d program":
       if (userProfile.education === "graduated from ph.d program") {
@@ -106,3 +106,5 @@ module.exports = checkEduCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+
+export default checkEduCompatibility;

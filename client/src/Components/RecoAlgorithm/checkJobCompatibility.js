@@ -1,4 +1,4 @@
-module.exports = checkJobCompatibility = (myProfile, userProfile) => {
+const checkJobCompatibility = (myProfile, userProfile) => {
   switch (myProfile.job) {
     case "science / tech / engineering":
       if (userProfile.job === "science / tech / engineering") {
@@ -92,3 +92,4 @@ module.exports = checkJobCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+export default checkJobCompatibility;

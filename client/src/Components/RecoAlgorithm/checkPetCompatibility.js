@@ -1,4 +1,4 @@
-module.exports = checkPetCompatibility = (myProfile, userProfile) => {
+const checkPetCompatibility = (myProfile, userProfile) => {
   switch (myProfile.pets) {
     case "has dogs":
       if (
@@ -198,3 +198,5 @@ module.exports = checkPetCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+
+export default checkPetCompatibility;

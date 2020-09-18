@@ -24,7 +24,7 @@ import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 // import ShareIcon from "@material-ui/icons/Share";
 import SmokingRoomsOutlinedIcon from "@material-ui/icons/SmokingRoomsOutlined";
 import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
-import axios from "axios";
+// import axios from "axios";
 import clsx from "clsx";
 import React from "react";
 
@@ -65,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
 const Discover = (props) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  
 
   const handleExpandClick = (e) => {
     console.log(e);
@@ -82,7 +81,6 @@ const Discover = (props) => {
             src={avatar1}
           />
         }
-       
         title={props.children.first_name}
         subheader={props.children.age}
       />
@@ -160,20 +158,31 @@ const Discover = (props) => {
           <Typography paragraph>{props.children.essay}</Typography>
           <Typography paragraph>Sex: {props.children.sex}</Typography>
           <Typography paragraph>Status: {props.children.status}</Typography>
-          <Typography paragraph>Body type: {props.children.body_type}</Typography>
+          <Typography paragraph>
+            Body type: {props.children.body_type}
+          </Typography>
           <Typography paragraph>Diet: {props.children.diet}</Typography>
           <Typography paragraph>Drugs: {props.children.drugs}</Typography>
-          <Typography paragraph>Ethnicity: {props.children.ethnicity}</Typography>
-          <Typography paragraph>Education: {props.children.education}</Typography>
+          <Typography paragraph>
+            Ethnicity: {props.children.ethnicity}
+          </Typography>
+          <Typography paragraph>
+            Education: {props.children.education}
+          </Typography>
           <Typography paragraph>Income: {props.children.income}</Typography>
-          <Typography paragraph>Offspring: {props.children.offspring}</Typography>
-          <Typography paragraph>Orientation: {props.children.orientation}</Typography>
+          <Typography paragraph>
+            Offspring: {props.children.offspring}
+          </Typography>
+          <Typography paragraph>
+            Orientation: {props.children.orientation}
+          </Typography>
           <Typography paragraph>Pets: {props.children.pets}</Typography>
           <Typography paragraph>Religion: {props.children.religion}</Typography>
           <Typography paragraph>Sign: {props.children.sign}</Typography>
           <Typography paragraph>Speaks: {props.children.speaks}</Typography>
-          <Typography paragraph>Mumble_email: {props.children.mumble_email}</Typography>
-
+          <Typography paragraph>
+            Mumble_email: {props.children.mumble_email}
+          </Typography>
         </CardContent>
       </Collapse>
     </Card>

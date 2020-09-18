@@ -9,6 +9,7 @@ class ProfileDashboard extends React.Component {
     firstName: this.props.firstName,
     lastName: this.props.lastName,
     phone: this.props.phone,
+    location: this.props.location,
     age: this.props.age,
     height: this.props.height,
     gender: this.props.gender,
@@ -41,6 +42,8 @@ class ProfileDashboard extends React.Component {
     const profileRec = {
       first_name: this.state.firstName,
       last_name: this.state.lastName,
+      phone: this.state.phone,
+      location: this.state.location,
       age: this.state.age,
       diet: this.state.diet,
       drinks: this.state.drinks,
@@ -65,6 +68,28 @@ class ProfileDashboard extends React.Component {
       <div style={{ textAlign: "center" }}>
         <h1>Profile</h1>
         <form className="centerForm">
+          <form action="/profile" method="POST" enctype="multipart/form-data">
+            <div className="file-field input-field">
+              <div className="btn grey">
+                <span>Upload Image</span>
+                <input name="myImage" type="file" />
+              </div>
+              {/* <div className="file-path-wrapper">
+                <input className="file-path validate" type="text" />
+              </div> */}
+            </div>
+            <Button
+              variant="contained"
+              color="primary"
+              disableElevation
+              className="btn"
+              type="submit"
+            >
+              Upload
+            </Button>
+          </form>
+
+          <form>
           <input
             name="firstName"
             onChange={this.handleChange}
@@ -79,6 +104,11 @@ class ProfileDashboard extends React.Component {
             name="phone"
             onChange={this.handleChange}
             value={this.state.phone}
+          />
+          <input
+            name="location"
+            onChange={this.handleChange}
+            value={this.state.location}
           />
           <input
             name="age"
@@ -168,7 +198,7 @@ class ProfileDashboard extends React.Component {
           disableElevation
           onClick={this.saveProfile}
         >
-          Submit
+          Save Profile
         </Button>
       </div>
     );

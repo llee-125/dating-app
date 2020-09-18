@@ -98,6 +98,7 @@ router.post("/tokenIsValid", async (req, res) => {
   console.log("Hitting this route");
   try {
     const token = req.header("x-auth-token");
+    console.log(token);
     if (!token) return res.status(401).json({ msg: "No token" });
 
     const verified = jwt.verify(token, process.env.JWT_SECRET);

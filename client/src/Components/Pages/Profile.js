@@ -109,6 +109,7 @@ class Profile extends React.Component {
     firstName: "",
     lastName: "",
     phone: "",
+    location: "",
     age: "",
     height: "",
     gender: "",
@@ -151,10 +152,6 @@ class Profile extends React.Component {
     console.log(value);
     this.setState({ gender: value });
   };
-  // handleDateChange = (value) => {
-  //   console.log(value);
-  //   this.setState({ age: value });
-  // };
   handleEthnicityChange = (value) => {
     console.log(value);
     this.setState({ ethnicity: value });
@@ -262,25 +259,22 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    }
-    // else if (this.state.counter === 2) {
-    //   result = (
-    //     <div></div>
-    //     <Box display="flex" justifyContent="center" m={1} p={1}>
-    //       <Box>
-    //         <h1>What is your email?</h1>
-    //         <TextField
-    //           label="Email"
-    //           placeholder="name@email.com"
-    //           name="email"
-    //           value={this.state.email}
-    //           onChange={this.handleChange}
-    //         />
-    //       </Box>
-    //     </Box>
-    //   );
-    // }
-    else if (this.state.counter === 2) {
+    } else if (this.state.counter === 2) {
+      result = (
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>Where are you located?</h1>
+            <TextField
+              label="Location"
+              name="location"
+              placeholder="San Francisco, California"
+              value={this.state.location}
+              onChange={this.handleChange}
+            />
+          </Box>
+        </Box>
+      );
+    } else if (this.state.counter === 3) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -294,7 +288,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 3) {
+    } else if (this.state.counter === 4) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -309,7 +303,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 4) {
+    } else if (this.state.counter === 5) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -347,7 +341,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 5) {
+    } else if (this.state.counter === 6) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -385,7 +379,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 6) {
+    } else if (this.state.counter === 7) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -441,7 +435,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 7) {
+    } else if (this.state.counter === 8) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -493,7 +487,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 8) {
+    } else if (this.state.counter === 9) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -551,7 +545,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 9) {
+    } else if (this.state.counter === 10) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -607,7 +601,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 10) {
+    } else if (this.state.counter === 11) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -735,7 +729,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 11) {
+    } else if (this.state.counter === 12) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -797,7 +791,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else if (this.state.counter === 12) {
+    } else if (this.state.counter === 13) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -900,19 +894,19 @@ class Profile extends React.Component {
                 <Row className="text-center">
                   <Col xs={6} md={4}>
                     <Drugs1
-                      value="desperately"
+                      value="often"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs1>
                   </Col>
                   <Col xs={6} md={4}>
                     <Drugs2
-                      value="very often"
+                      value="sometimes"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs2>
                   </Col>
                   <Col xs={6} md={4}>
                     <Drugs3
-                      value="often"
+                      value="never"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs3>
                   </Col>
@@ -961,12 +955,12 @@ class Profile extends React.Component {
     }
     return (
       <div className="profile">
-        {this.state.counter === 15 ? (
+        {this.state.counter === 16 ? (
           <ProfileDashboard
             firstName={this.state.firstName}
             lastName={this.state.lastName}
             phone={this.state.phone}
-            // email={this.state.email}
+            location={this.state.location}
             age={this.state.age}
             height={this.state.height}
             gender={this.state.gender}

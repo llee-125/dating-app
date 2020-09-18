@@ -66,6 +66,8 @@ const checkDrinkCompatibility = (myProfile, userProfile) => {
         userProfile.loveFactor += 2;
       }
       break;
+    case "default":
+      break;
   }
 };
 export default checkDrinkCompatibility;

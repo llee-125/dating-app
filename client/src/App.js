@@ -50,20 +50,20 @@ export default function App() {
   }, []);
 
   const retrieveAllPersons = () => {
-    // Axios.get("/profile/find/3000")
-    //   .then((res) => {
-    //     RecoAlgo(res).then((response) => {
-    //       profileSet = [];
-    //       profileSet = response.data;
-    //       setProfileArray([...profileSet]);
-    //     });
-    //   })
-    Axios.get("/profile/discover")
-      .then((response) => {
-        profileSet = [];
-        profileSet = response.data;
-        setProfileArray([...profileSet]);
+    Axios.get("/profile/find/3000")
+      .then((res) => {
+        RecoAlgo(res).then((response) => {
+          profileSet = [];
+          profileSet = response.data;
+          setProfileArray([...profileSet]);
+        });
       })
+      // Axios.get("/profile/discover")
+      //   .then((response) => {
+      //     profileSet = [];
+      //     profileSet = response.data;
+      //     setProfileArray([...profileSet]);
+      //   })
       .catch((err) => console.log(err));
   };
 

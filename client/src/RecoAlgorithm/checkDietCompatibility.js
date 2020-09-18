@@ -3,25 +3,22 @@ const checkDietCompatibility = function (myProfile, userProfile) {
     case "strictly halal":
       if (userProfile.diet === "strictly halal") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.diet === "mostly halal") {
         userProfile.loveFactor += 7;
-        break;
       }
+      break;
     case "strictly kosher":
       if (userProfile.diet === "strictly kosher") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.diet === "mostly kosher") {
         userProfile.loveFactor += 7;
-        break;
       }
+      break;
     case "strictly vegetarian":
       if (userProfile.diet === "strictly vegetarian" || "strictly vegan") {
         userProfile.loveFactor += 10;
-        break;
       }
       if (
         userProfile.diet === "mostly vegetarian" ||
@@ -30,13 +27,13 @@ const checkDietCompatibility = function (myProfile, userProfile) {
         "vegan"
       ) {
         userProfile.loveFactor += 5;
-        break;
       }
+      break;
     case "strictly vegan":
       if (userProfile.diet === "strictly vegetarian" || "strictly vegan") {
         userProfile.loveFactor += 10;
-        break;
       }
+      break;
     // userProfile.diet === "mostly vegetarian" ||
     //   "mostly vegan" ||
     //   "vegetarian" ||
@@ -49,12 +46,11 @@ const checkDietCompatibility = function (myProfile, userProfile) {
         "vegan"
       ) {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.diet === "strictly vegetarian" || "strictly vegan") {
         userProfile.loveFactor += 5;
-        break;
       }
+      break;
     case "mostly vegetarian":
       if (
         userProfile.diet === "mostly vegetarian" ||
@@ -63,12 +59,11 @@ const checkDietCompatibility = function (myProfile, userProfile) {
         "vegan"
       ) {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.diet === "strictly vegetarian" || "strictly vegan") {
         userProfile.loveFactor += 5;
-        break;
       }
+      break;
     case "vegan":
       if (
         userProfile.diet === "mostly vegetarian" ||
@@ -77,12 +72,11 @@ const checkDietCompatibility = function (myProfile, userProfile) {
         "vegan"
       ) {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.diet === "strictly vegetarian" || "strictly vegan") {
         userProfile.loveFactor += 5;
-        break;
       }
+      break;
     case "vegetarian":
       if (
         userProfile.diet === "mostly vegetarian" ||
@@ -91,12 +85,13 @@ const checkDietCompatibility = function (myProfile, userProfile) {
         "vegan"
       ) {
         userProfile.loveFactor += 10;
-        break;
       }
       if (userProfile.diet === "strictly vegetarian" || "strictly vegan") {
         userProfile.loveFactor += 5;
-        break;
       }
+      break;
+    case "default":
+      break;
   }
 };
 export default checkDietCompatibility;

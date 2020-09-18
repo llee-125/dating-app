@@ -1,4 +1,4 @@
-module.exports = checkStatusCompatibility = (myProfile, userProfile) => {
+const checkStatusCompatibility = (myProfile, userProfile) => {
   switch (myProfile.status) {
     case "single":
       if (userProfile.status === "single") {
@@ -40,3 +40,4 @@ module.exports = checkStatusCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+export default checkStatusCompatibility;

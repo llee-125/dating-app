@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
 import ErrorNotice from "../../../src/ErrorHandling/ErrorNotice";
-import Login from "../../../src/Components/auth/Login";
+// import Login from "../../../src/Components/auth/Login";
 
 export default function Register() {
   const [email, setEmail] = useState();
@@ -39,6 +39,7 @@ export default function Register() {
     <div className="page">
       <div id="image">
         <img
+          alt="mumblelogo"
           className="Mumble"
           src={require("../BottomNavigation/mumble-logo.png")}
         />

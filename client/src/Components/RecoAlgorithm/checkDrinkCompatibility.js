@@ -1,4 +1,4 @@
-module.exports = checkDrinkCompatibility = (myProfile, userProfile) => {
+const checkDrinkCompatibility = (myProfile, userProfile) => {
   switch (myProfile.drinks) {
     case "desperately":
       if (userProfile.drinks === "desperately") {
@@ -68,3 +68,4 @@ module.exports = checkDrinkCompatibility = (myProfile, userProfile) => {
       break;
   }
 };
+export default checkDrinkCompatibility;

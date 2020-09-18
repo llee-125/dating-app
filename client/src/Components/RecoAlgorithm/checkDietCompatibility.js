@@ -1,4 +1,4 @@
-module.exports = checkDietCompatibility = (myProfile, userProfile) => {
+const checkDietCompatibility = function (myProfile, userProfile) {
   switch (myProfile.diet) {
     case "strictly halal":
       if (userProfile.diet === "strictly halal") {
@@ -99,3 +99,4 @@ module.exports = checkDietCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+export default checkDietCompatibility;

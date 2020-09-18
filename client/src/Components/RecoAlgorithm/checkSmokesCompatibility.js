@@ -1,4 +1,4 @@
-module.exports = checkSmokesCompatibility = (myProfile, userProfile) => {
+const checkSmokesCompatibility = (myProfile, userProfile) => {
   switch (myProfile.smokes) {
     case "yes":
       if (userProfile.smokes === "yes") {
@@ -69,3 +69,4 @@ module.exports = checkSmokesCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+export default checkSmokesCompatibility;

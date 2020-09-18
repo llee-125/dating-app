@@ -151,10 +151,6 @@ class Profile extends React.Component {
     console.log(value);
     this.setState({ gender: value });
   };
-  // handleDateChange = (value) => {
-  //   console.log(value);
-  //   this.setState({ age: value });
-  // };
   handleEthnicityChange = (value) => {
     console.log(value);
     this.setState({ ethnicity: value });
@@ -262,25 +258,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    }
-    // else if (this.state.counter === 2) {
-    //   result = (
-    //     <div></div>
-    //     <Box display="flex" justifyContent="center" m={1} p={1}>
-    //       <Box>
-    //         <h1>What is your email?</h1>
-    //         <TextField
-    //           label="Email"
-    //           placeholder="name@email.com"
-    //           name="email"
-    //           value={this.state.email}
-    //           onChange={this.handleChange}
-    //         />
-    //       </Box>
-    //     </Box>
-    //   );
-    // }
-    else if (this.state.counter === 2) {
+    } else if (this.state.counter === 2) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -900,19 +878,19 @@ class Profile extends React.Component {
                 <Row className="text-center">
                   <Col xs={6} md={4}>
                     <Drugs1
-                      value="desperately"
+                      value="often"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs1>
                   </Col>
                   <Col xs={6} md={4}>
                     <Drugs2
-                      value="very often"
+                      value="sometimes"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs2>
                   </Col>
                   <Col xs={6} md={4}>
                     <Drugs3
-                      value="often"
+                      value="never"
                       handleDrugs={this.handleDrugsChange}
                     ></Drugs3>
                   </Col>
@@ -966,7 +944,6 @@ class Profile extends React.Component {
             firstName={this.state.firstName}
             lastName={this.state.lastName}
             phone={this.state.phone}
-            // email={this.state.email}
             age={this.state.age}
             height={this.state.height}
             gender={this.state.gender}
@@ -983,7 +960,6 @@ class Profile extends React.Component {
             drinks={this.state.drinks}
             drugs={this.state.drugs}
             smokes={this.state.smokes}
-            interest={this.state.interest}
           ></ProfileDashboard>
         ) : (
           <Box>

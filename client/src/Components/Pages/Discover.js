@@ -24,6 +24,7 @@ import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 // import ShareIcon from "@material-ui/icons/Share";
 import SmokingRoomsOutlinedIcon from "@material-ui/icons/SmokingRoomsOutlined";
 import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
+import Box from '@material-ui/core/Box';
 import axios from "axios";
 import clsx from "clsx";
 import React from "react";
@@ -155,24 +156,24 @@ const Discover = (props) => {
         </List>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Bio:</Typography>
-          <Typography paragraph>{props.children.essay}</Typography>
-          <Typography paragraph>Sex: {props.children.sex}</Typography>
-          <Typography paragraph>Status: {props.children.status}</Typography>
-          <Typography paragraph>Body type: {props.children.body_type}</Typography>
-          <Typography paragraph>Diet: {props.children.diet}</Typography>
-          <Typography paragraph>Drugs: {props.children.drugs}</Typography>
-          <Typography paragraph>Ethnicity: {props.children.ethnicity}</Typography>
-          <Typography paragraph>Education: {props.children.education}</Typography>
-          <Typography paragraph>Income: {props.children.income}</Typography>
-          <Typography paragraph>Offspring: {props.children.offspring}</Typography>
-          <Typography paragraph>Orientation: {props.children.orientation}</Typography>
-          <Typography paragraph>Pets: {props.children.pets}</Typography>
-          <Typography paragraph>Religion: {props.children.religion}</Typography>
-          <Typography paragraph>Sign: {props.children.sign}</Typography>
-          <Typography paragraph>Speaks: {props.children.speaks}</Typography>
-          <Typography paragraph>Mumble_email: {props.children.mumble_email}</Typography>
+        <CardContent> 
+         
+          <Typography paragraph>SEX : {props.children.sex}</Typography>
+          <Typography paragraph>STATUS : {props.children.status}</Typography>
+          <Typography paragraph>BODY TYPE : {props.children.body_type}</Typography>
+          <Typography paragraph>DIET : {props.children.diet}</Typography>
+          <Typography paragraph>DRUGS : {props.children.drugs}</Typography>
+          <Typography paragraph>ETHNICITY : {props.children.ethnicity}</Typography>
+          <Typography paragraph>EDUCATION : {props.children.education}</Typography>
+          <Typography paragraph>INCOME : {props.children.income}</Typography>
+          <Typography paragraph>OFFSPRING : {props.children.offspring}</Typography>
+          <Typography paragraph>ORIENTATION : {props.children.orientation}</Typography>
+          <Typography paragraph>PETS : {props.children.pets}</Typography>
+          <Typography paragraph>RELIGION : {props.children.religion}</Typography>
+          <Typography paragraph>SIGN : {props.children.sign}</Typography>
+          <Typography paragraph>SPEAKS : {props.children.speaks}</Typography>
+          <Typography paragraph>BIO : {props.children.essay}</Typography>
+          <Typography paragraph>MUMBLE_EMAIL : {props.children.mumble_email}</Typography>
 
         </CardContent>
       </Collapse>

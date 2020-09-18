@@ -37,10 +37,10 @@ const checkDietCompatibility = function (myProfile, userProfile) {
         userProfile.loveFactor += 10;
         break;
       }
-      userProfile.diet === "mostly vegetarian" ||
-        "mostly vegan" ||
-        "vegetarian" ||
-        "vegan";
+    // userProfile.diet === "mostly vegetarian" ||
+    //   "mostly vegan" ||
+    //   "vegetarian" ||
+    //   "vegan";
     case "mostly vegan":
       if (
         userProfile.diet === "mostly vegetarian" ||

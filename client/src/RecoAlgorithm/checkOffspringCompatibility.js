@@ -1,9 +1,10 @@
 const checkOffspringCompatibility = (myProfile, userProfile) => {
   switch (myProfile.offspring) {
+    case "default":
+      break;
     case "doesnt have kids":
       if (userProfile.offspring === "doesnt have kids" || "doesnt want kids") {
         userProfile.loveFactor += 20;
-        break;
       }
       if (
         userProfile.offspring === "doesnt have kids, but might want them" ||
@@ -11,7 +12,6 @@ const checkOffspringCompatibility = (myProfile, userProfile) => {
         "doesnt have kids, and doesnt want any"
       ) {
         userProfile.loveFactor += 7;
-        break;
       }
       if (
         userProfile.offspring === "has kids" ||
@@ -20,13 +20,12 @@ const checkOffspringCompatibility = (myProfile, userProfile) => {
         "has kids, and might want more"
       ) {
         userProfile.loveFactor -= 10;
-        break;
       }
+      break;
 
     case "has kids":
       if (userProfile.offspring === "doesnt have kids" || "doesnt want kids") {
         userProfile.loveFactor -= 10;
-        break;
       }
       if (
         userProfile.offspring === "doesnt have kids, but might want them" ||
@@ -34,7 +33,6 @@ const checkOffspringCompatibility = (myProfile, userProfile) => {
         "doesnt have kids, and doesnt want any"
       ) {
         userProfile.loveFactor -= 7;
-        break;
       }
       if (
         userProfile.offspring === "has kids" ||
@@ -43,13 +41,12 @@ const checkOffspringCompatibility = (myProfile, userProfile) => {
         "has kids, and might want more"
       ) {
         userProfile.loveFactor += 20;
-        break;
       }
+      break;
 
     case "has a kid":
       if (userProfile.offspring === "doesnt have kids" || "doesnt want kids") {
         userProfile.loveFactor -= 10;
-        break;
       }
       if (
         userProfile.offspring === "doesnt have kids, but might want them" ||
@@ -57,7 +54,6 @@ const checkOffspringCompatibility = (myProfile, userProfile) => {
         "doesnt have kids, and doesnt want any"
       ) {
         userProfile.loveFactor -= 7;
-        break;
       }
       if (
         userProfile.offspring === "has kids" ||
@@ -66,8 +62,8 @@ const checkOffspringCompatibility = (myProfile, userProfile) => {
         "has kids, and might want more"
       ) {
         userProfile.loveFactor += 20;
-        break;
       }
+      break;
   }
 };
 export default checkOffspringCompatibility;

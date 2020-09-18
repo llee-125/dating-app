@@ -1,6 +1,8 @@
-import React from "react";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
+import React from "react";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class ProfileDashboard extends React.Component {
   state = {
@@ -57,11 +59,12 @@ class ProfileDashboard extends React.Component {
       console.log("Profile Updated");
     });
   };
+
   render() {
     return (
-      <div>
+      <div style={{ textAlign: "center" }}>
         <h1>Profile</h1>
-        <form>
+        <form className="centerForm">
           <input
             name="firstName"
             onChange={this.handleChange}

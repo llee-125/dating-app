@@ -180,6 +180,16 @@ form.form {
   text-align: center;
 }
 
+div .centerForm {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+div form input {
+  margin: 3px;
+}
+
 @media screen and (max-width: 550px) {
   #header .title {
     font-size: 1.2rem;

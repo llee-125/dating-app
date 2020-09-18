@@ -1,7 +1,5 @@
 const checkDietCompatibility = function (myProfile, userProfile) {
   switch (myProfile.diet) {
-    case "default":
-      break;
     case "strictly halal":
       if (userProfile.diet === "strictly halal") {
         userProfile.loveFactor += 10;
@@ -91,6 +89,8 @@ const checkDietCompatibility = function (myProfile, userProfile) {
       if (userProfile.diet === "strictly vegetarian" || "strictly vegan") {
         userProfile.loveFactor += 5;
       }
+      break;
+    case "default":
       break;
   }
 };

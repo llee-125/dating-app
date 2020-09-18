@@ -1,7 +1,5 @@
 const checkJobCompatibility = (myProfile, userProfile) => {
   switch (myProfile.job) {
-    case "default":
-      break;
     case "science / tech / engineering":
       if (userProfile.job === "science / tech / engineering") {
         userProfile.loveFactor += 20;
@@ -91,6 +89,8 @@ const checkJobCompatibility = (myProfile, userProfile) => {
       if (userProfile.job === "unemployed") {
         userProfile.loveFactor += 20;
       }
+      break;
+    case "default":
       break;
   }
 };

@@ -1,7 +1,5 @@
 const checkSmokesCompatibility = (myProfile, userProfile) => {
   switch (myProfile.smokes) {
-    case "default":
-      break;
     case "yes":
       if (userProfile.smokes === "yes") {
         userProfile.loveFactor += 9;
@@ -58,6 +56,8 @@ const checkSmokesCompatibility = (myProfile, userProfile) => {
       if (userProfile.smokes === "sometimes") {
         userProfile.loveFactor += 2;
       }
+      break;
+    case "default":
       break;
   }
 };

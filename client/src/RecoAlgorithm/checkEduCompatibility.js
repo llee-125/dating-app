@@ -1,7 +1,5 @@
 const checkEduCompatibility = (myProfile, userProfile) => {
   switch (myProfile.education) {
-    case "default":
-      break;
     case "graduated from ph.d program":
       if (userProfile.education === "graduated from ph.d program") {
         userProfile.loveFactor += 20;
@@ -89,6 +87,8 @@ const checkEduCompatibility = (myProfile, userProfile) => {
       if (userProfile.education === "working on masters program") {
         userProfile.loveFactor += 7;
       }
+      break;
+    case "default":
       break;
   }
 };

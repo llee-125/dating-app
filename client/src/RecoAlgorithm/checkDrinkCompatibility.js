@@ -1,7 +1,5 @@
 const checkDrinkCompatibility = (myProfile, userProfile) => {
   switch (myProfile.drinks) {
-    case "default":
-      break;
     case "desperately":
       if (userProfile.drinks === "desperately") {
         userProfile.loveFactor += 6;
@@ -67,6 +65,8 @@ const checkDrinkCompatibility = (myProfile, userProfile) => {
       if (userProfile.drinks === "socially") {
         userProfile.loveFactor += 2;
       }
+      break;
+    case "default":
       break;
   }
 };

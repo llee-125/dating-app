@@ -1,7 +1,5 @@
 const checkDrugCompatibility = (myProfile, userProfile) => {
   switch (myProfile.drugs) {
-    case "default":
-      break;
     case "often":
       if (userProfile.drugs === "often") {
         userProfile.loveFactor += 9;
@@ -33,6 +31,8 @@ const checkDrugCompatibility = (myProfile, userProfile) => {
       if (userProfile.drugs === "often") {
         userProfile.loveFactor += 1;
       }
+      break;
+    case "default":
       break;
   }
 };

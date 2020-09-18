@@ -1,7 +1,5 @@
 const checkStatusCompatibility = (myProfile, userProfile) => {
   switch (myProfile.status) {
-    case "default":
-      break;
     case "single":
       if (userProfile.status === "single") {
         userProfile.loveFactor += 10;
@@ -35,6 +33,8 @@ const checkStatusCompatibility = (myProfile, userProfile) => {
       if (userProfile.status === "married") {
         userProfile.loveFactor += 4;
       }
+      break;
+    case "default":
       break;
   }
 };

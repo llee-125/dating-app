@@ -1,7 +1,5 @@
 const checkBodyCompatibility = (myProfile, userProfile) => {
   switch (myProfile.body_type) {
-    case "default":
-      break;
     case "overweight":
       if (userProfile.body_type === "overweight") {
         userProfile.loveFactor += 6;
@@ -132,6 +130,8 @@ const checkBodyCompatibility = (myProfile, userProfile) => {
       if (userProfile.body_type === "average") {
         userProfile.loveFactor += 2;
       }
+      break;
+    case "default":
       break;
   }
 };

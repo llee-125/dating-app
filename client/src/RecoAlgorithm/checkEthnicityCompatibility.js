@@ -1,7 +1,5 @@
 const checkEthnicityCompatibility = (myProfile, userProfile) => {
   switch (myProfile.ethnicity) {
-    case "default":
-      break;
     case "asian":
       if (userProfile.ethnicity === "asian") {
         userProfile.loveFactor += 20;
@@ -112,6 +110,8 @@ const checkEthnicityCompatibility = (myProfile, userProfile) => {
       if (userProfile.ethnicity === "black, white") {
         userProfile.loveFactor += 10;
       }
+      break;
+    case "default":
       break;
   }
 };

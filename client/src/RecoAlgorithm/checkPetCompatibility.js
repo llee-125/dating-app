@@ -1,7 +1,5 @@
 const checkPetCompatibility = (myProfile, userProfile) => {
   switch (myProfile.pets) {
-    case "default":
-      break;
     case "has dogs":
       if (
         userProfile.pets === "has dogs" ||
@@ -183,6 +181,8 @@ const checkPetCompatibility = (myProfile, userProfile) => {
       ) {
         userProfile.loveFactor -= 10;
       }
+      break;
+    case "default":
       break;
   }
 };

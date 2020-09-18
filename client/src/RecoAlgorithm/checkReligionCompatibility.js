@@ -1,7 +1,5 @@
 const checkReligionCompatibility = (myProfile, userProfile) => {
   switch (myProfile.religion) {
-    case "default":
-      break;
     case "buddhism":
       if (userProfile.religion === "buddhism") {
         userProfile.loveFactor += 20;
@@ -133,6 +131,8 @@ const checkReligionCompatibility = (myProfile, userProfile) => {
       if (userProfile.religion === "other") {
         userProfile.loveFactor += 15;
       }
+      break;
+    case "default":
       break;
   }
 };

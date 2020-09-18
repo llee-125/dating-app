@@ -1,7 +1,5 @@
 const checkOffspringCompatibility = (myProfile, userProfile) => {
   switch (myProfile.offspring) {
-    case "default":
-      break;
     case "doesnt have kids":
       if (userProfile.offspring === "doesnt have kids" || "doesnt want kids") {
         userProfile.loveFactor += 20;
@@ -63,6 +61,8 @@ const checkOffspringCompatibility = (myProfile, userProfile) => {
       ) {
         userProfile.loveFactor += 20;
       }
+      break;
+    case "default":
       break;
   }
 };

@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  margin-bottom: 75px;
+}
+
 img.Mumble {
   height: auto;
   width: 45%;
@@ -191,7 +195,7 @@ div .centerForm {
 }
 
 div form input {
-  margin-top: 5px;
+  margin: 5px;
 }
 
 textarea:focus,
@@ -395,4 +399,10 @@ input {
   form.form {
     margin: 0;
   }
+}
+
+div form span {
+  margin-right: 4px;
+  color: #999;
+  font-size: 13px;
 }

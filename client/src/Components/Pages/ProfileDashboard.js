@@ -75,7 +75,9 @@ class ProfileDashboard extends React.Component {
       <div className="proDashMargin">
         <h1>Profile</h1>
         <form className="centerForm">
-          <span>Name &nbsp;</span>
+          <img src={this.state.profile_image} alt="" />
+          <span>Name</span>
+          <br />
           <input
             name="firstName"
             onChange={this.handleChange}
@@ -100,10 +102,12 @@ class ProfileDashboard extends React.Component {
           />
           <br />
           <span>Gender </span>
+          <br />
           <input
             name="gender"
             onChange={this.handleChange}
             value={this.state.gender}
+            size="8"
           />
           <br />
           <span>Number </span>

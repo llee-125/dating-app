@@ -36,7 +36,7 @@ class ProfileDashboard extends React.Component {
     });
   };
   saveProfile = () => {
-    console.log(this.state);
+    // console.log(this.state);
     const profileRec = {
       first_name: this.state.firstName,
       last_name: this.state.lastName,
@@ -56,7 +56,8 @@ class ProfileDashboard extends React.Component {
       sex: this.state.gender,
       smokes: this.state.smokes,
     };
-    axios.post("/new", profileRec).then((saveRec) => {
+    console.log(profileRec);
+    axios.post("/profile/new", profileRec).then((saveRec) => {
       console.log("Profile Updated");
     });
   };

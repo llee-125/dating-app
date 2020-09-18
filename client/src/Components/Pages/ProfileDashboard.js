@@ -165,7 +165,7 @@ class ProfileDashboard extends React.Component {
           disableElevation
           onClick={this.saveProfile}
         >
-          Submit
+          Save Profile
         </Button>
       </div>
     );

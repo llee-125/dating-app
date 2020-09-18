@@ -24,6 +24,7 @@ class ProfileDashboard extends React.Component {
     drinks: this.props.drinks,
     drugs: this.props.drugs,
     smokes: this.props.smokes,
+    profile_image: this.props.profile_image,
   };
   componentDidMount = () => {
     console.log(this.props);
@@ -55,6 +56,7 @@ class ProfileDashboard extends React.Component {
       religion: this.state.religion,
       sex: this.state.gender,
       smokes: this.state.smokes,
+      profile_image: this.state.profile_image,
     };
     console.log(profileRec);
     axios.post("/profile/new", profileRec).then((saveRec) => {
@@ -67,27 +69,6 @@ class ProfileDashboard extends React.Component {
       <div style={{ textAlign: "center" }}>
         <h1>Profile</h1>
         <form className="centerForm">
-          <form action="/profile" method="POST" enctype="multipart/form-data">
-            <div className="file-field input-field">
-              <div className="btn grey">
-                <span>Upload Image</span>
-                <input name="myImage" type="file" />
-              </div>
-              {/* <div className="file-path-wrapper">
-                <input className="file-path validate" type="text" />
-              </div> */}
-            </div>
-            <Button
-              variant="contained"
-              color="primary"
-              disableElevation
-              className="btn"
-              type="submit"
-            >
-              Upload
-            </Button>
-          </form>
-
           <input
             name="firstName"
             onChange={this.handleChange}

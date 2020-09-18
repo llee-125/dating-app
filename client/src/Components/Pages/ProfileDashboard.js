@@ -75,9 +75,12 @@ class ProfileDashboard extends React.Component {
       <div className="proDashMargin">
         <h1>Profile</h1>
         <form className="centerForm">
-          <img src={this.state.profile_image} alt="" />
-          <span>Name</span>
-          <br />
+          <img
+            onChange={this.handleChange}
+            src={this.state.profile_image}
+            alt=""
+          />
+          <span>Hi, I'm &nbsp;</span>
           <input
             name="firstName"
             onChange={this.handleChange}
@@ -92,17 +95,25 @@ class ProfileDashboard extends React.Component {
             size="8"
             style={{ fontSize: "24px", fontWeight: "bold" }}
           />
+
+          {/* Age, Orientation, Gender */}
+          <br />
+          <span style={{ marginRight: "-5px" }}>I am a &nbsp;</span>
           <input
             name="age"
             onChange={this.handleChange}
             value={this.state.age}
             size="2"
             maxlength="2"
-            style={{ fontSize: "24px", fontWeight: "bold" }}
+            style={{ marginRight: "2px" }}
           />
-          <br />
-          <span>Gender </span>
-          <br />
+          <span> year young &nbsp; </span>
+          <input
+            name="orientation"
+            onChange={this.handleChange}
+            value={this.state.orientation}
+            size="8"
+          />
           <input
             name="gender"
             onChange={this.handleChange}
@@ -110,114 +121,93 @@ class ProfileDashboard extends React.Component {
             size="8"
           />
           <br />
-          <span>Number </span>
-          <input
-            name="phone"
-            onChange={this.handleChange}
-            value={this.state.phone}
-            style={{ width: "auto" }}
-          />
-          <br />
-          <span>Location </span>
-          <input
-            name="location"
-            onChange={this.handleChange}
-            value={this.state.location}
-          />
-          <br />
-          <span>Orientation </span>
-          <input
-            name="orientation"
-            onChange={this.handleChange}
-            value={this.state.orientation}
-          />
-          <br />
-          <span>Ethnicity </span>
-          <input
-            name="ethnicity"
-            onChange={this.handleChange}
-            value={this.state.ethnicity}
-          />
-          <br />
-          <span>Height </span>
+          <p>Height</p>
           <input
             name="height"
             onChange={this.handleChange}
             value={this.state.height}
             size="2"
           />
-          <br />
-          <span>Current Offspring </span>
+          <p>Number </p>
+          <input
+            name="phone"
+            onChange={this.handleChange}
+            value={this.state.phone}
+            style={{ width: "auto" }}
+          />
+          <p>Location </p>
+          <input
+            name="location"
+            onChange={this.handleChange}
+            value={this.state.location}
+          />
+          <p>Ethnicity </p>
+          <input
+            name="ethnicity"
+            onChange={this.handleChange}
+            value={this.state.ethnicity}
+          />
+          <p>Current Offspring </p>
           <input
             name="offspring"
             onChange={this.handleChange}
             value={this.state.offspring}
           />
-          <br />
-          <span>Want Offspring </span>
+          <p>Want Offspring </p>
           <input
             name="wantOffspring"
             onChange={this.handleChange}
             value={this.state.wantOffspring}
           />
-          <br />
-          <span>Have Pets </span>
+          <p>Have Pets </p>
           <input
             name="havePets"
             onChange={this.handleChange}
             value={this.state.havePets}
           />
-          <br />
-          <span>Want Pets </span>
+          <p>Want Pets </p>
           <input
             name="wantPets"
             onChange={this.handleChange}
             value={this.state.wantPets}
           />
-          <br />
-          <span>Education </span>
+          <p>Education </p>
           <input
             name="education"
             onChange={this.handleChange}
             value={this.state.education}
           />
-          <br />
-          <span>Job</span>
+          <p>Job</p>
           <input
             name="job"
             onChange={this.handleChange}
             value={this.state.job}
           />
-          <br />
-          <span>Religion</span>
+          <p>Religion</p>
           <input
             name="religion"
             onChange={this.handleChange}
             value={this.state.religion}
           />
-          <br />
-          <span>Diet</span>
+          <p>Diet</p>
           <input
             name="diet"
             onChange={this.handleChange}
             value={this.state.diet}
           />
-          <br />
-          <span>Drinks</span>
+          <p>Drinks</p>
           <input
             name="drinks"
             onChange={this.handleChange}
             value={this.state.drinks}
           />
-          <br />
-          <span>Drugs</span>
+          <p>Drugs</p>
           <input
             name="drugs"
             onChange={this.handleChange}
             value={this.state.drugs}
           />
-          <br />
-          <span>Smokes</span>
+          <p>Smokes</p>
           <input
             name="smokes"
             onChange={this.handleChange}

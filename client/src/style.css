@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  margin-bottom: 75px;
+}
+
 img.Mumble {
   height: auto;
   width: 45%;
@@ -44,7 +48,7 @@ h1 {
   color: #ec646f;
   font-family: Roboto, sans-serif;
   text-decoration: bold;
-  font-size: 48px;
+  font-size: 36px !important;
   margin-top: 20px;
   fill: linear;
   text-align: center;
@@ -186,8 +190,26 @@ div .centerForm {
   position: relative;
 }
 
+.proDashMargin {
+  margin-left: 32px;
+}
+
 div form input {
-  margin: 3px;
+  margin: 5px;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+  outline-width: 0;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
 }
 
 @media screen and (max-width: 550px) {
@@ -377,4 +399,10 @@ div form input {
   form.form {
     margin: 0;
   }
+}
+
+div form span {
+  margin-right: 4px;
+  color: #999;
+  font-size: 13px;
 }

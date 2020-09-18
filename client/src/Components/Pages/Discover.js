@@ -66,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
 const Discover = (props) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  
 
   const handleExpandClick = (e) => {
     console.log(e);
@@ -83,7 +82,6 @@ const Discover = (props) => {
             src={avatar1}
           />
         }
-       
         title={props.children.first_name}
         subheader={props.children.age}
       />

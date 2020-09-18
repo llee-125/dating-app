@@ -1,4 +1,4 @@
-module.exports = checkBodyCompatibility = (myProfile, userProfile) => {
+const checkBodyCompatibility = (myProfile, userProfile) => {
   switch (myProfile.body_type) {
     case "overweight":
       if (userProfile.body_type === "overweight") {
@@ -155,3 +155,4 @@ module.exports = checkBodyCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+export default checkBodyCompatibility;

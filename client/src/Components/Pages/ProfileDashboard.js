@@ -2,62 +2,71 @@ import Button from "@material-ui/core/Button";
 import axios from "axios";
 import React from "react";
 
+// import UserContext from "../../context/UserContext";
+
 class ProfileDashboard extends React.Component {
   state = {
-    firstName: this.props.firstName,
-    lastName: this.props.lastName,
-    phone: this.props.phone,
-    location: this.props.location,
-    age: this.props.age,
-    height: this.props.height,
-    gender: this.props.gender,
-    orientation: this.props.orientation,
-    ethnicity: this.props.ethnicity,
-    offspring: this.props.offspring,
-    wantOffspring: this.props.wantOffspring,
-    havePets: this.props.havePets,
-    wantPets: this.props.wantPets,
-    education: this.props.education,
-    job: this.props.job,
-    religion: this.props.religion,
-    diet: this.props.diet,
-    drinks: this.props.drinks,
-    drugs: this.props.drugs,
-    smokes: this.props.smokes,
+    first_name: this.first_name,
+    last_name: this.last_name,
+    mumble_email: this.mumble_email,
+    age: this.age,
+    body_type: this.body_type,
+    diet: this.diet,
+    drinks: this.drinks,
+    drugs: this.drugs,
+    education: this.education,
+    ethnicity: this.ethnicity,
+    height: this.height,
+    income: this.income,
+    job: this.job,
+    location: this.location,
+    offspring: this.offspring,
+    orientation: this.orientation,
+    pets: this.pets,
+    religion: this.religion,
+    sex: this.sex,
+    smokes: this.smokes,
+    status: this.status,
+    profile_image: this.profile_image,
   };
   componentDidMount = () => {
     console.log(this.props);
   };
   handleChange = (event) => {
-    var name = event.target.name;
-    var value = event.target.value;
-    this.setState({
-      [name]: value,
-    });
+    event.preventDefault();
+    this.setState({ [event.currentTarget.name]: event.currentTarget.value });
   };
+
   saveProfile = () => {
-    console.log(this.state);
+    // console.log(this.state);
     const profileRec = {
-      first_name: this.state.firstName,
-      last_name: this.state.lastName,
-      phone: this.state.phone,
-      location: this.state.location,
-      age: this.state.age,
-      diet: this.state.diet,
-      drinks: this.state.drinks,
-      drugs: this.state.drugs,
-      education: this.state.education,
-      ethnicity: this.state.ethnicity,
-      height: this.state.height,
-      job: this.state.job,
-      offspring: this.state.offspring,
-      orientation: this.state.orientation,
-      religion: this.state.religion,
-      sex: this.state.gender,
-      smokes: this.state.smokes,
+      _id: 3000,
+      first_name: this.props.first_name,
+      last_name: this.props.last_name,
+      mumble_email: this.props.mumble_email,
+      age: this.props.age,
+      body_type: this.props.body_type,
+      diet: this.props.diet,
+      drinks: this.props.drinks,
+      drugs: this.props.drugs,
+      education: this.props.education,
+      ethnicity: this.props.ethnicity,
+      height: this.props.height,
+      income: this.props.income,
+      job: this.props.job,
+      location: this.props.location,
+      offspring: this.props.offspring,
+      orientation: this.props.orientation,
+      pets: this.props.pets,
+      religion: this.props.religion,
+      sex: this.props.sex,
+      smokes: this.props.smokes,
+      status: this.props.status,
+      profile_image: this.props.profile_image,
     };
-    axios.post("/new", profileRec).then((saveRec) => {
-      console.log("Profile Updated");
+    console.log(profileRec);
+    axios.post("/profile/new", profileRec).then((saveRec) => {
+      console.log(saveRec);
     });
   };
 
@@ -66,27 +75,6 @@ class ProfileDashboard extends React.Component {
       <div style={{ textAlign: "center" }}>
         <h1>Profile</h1>
         <form className="centerForm">
-          <form action="/profile" method="POST" enctype="multipart/form-data">
-            <div className="file-field input-field">
-              <div className="btn grey">
-                <span>Upload Image</span>
-                <input name="myImage" type="file" />
-              </div>
-              {/* <div className="file-path-wrapper">
-                <input className="file-path validate" type="text" />
-              </div> */}
-            </div>
-            <Button
-              variant="contained"
-              color="primary"
-              disableElevation
-              className="btn"
-              type="submit"
-            >
-              Upload
-            </Button>
-          </form>
-
           <input
             name="firstName"
             onChange={this.handleChange}

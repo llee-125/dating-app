@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!userData.user) history.push("/login");
-  }, [userData]);
+  }, [userData, history]);
 
   return <div className="page">Home</div>;
 }

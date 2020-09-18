@@ -1,4 +1,4 @@
-module.exports = checkOffspringCompatibility = (myProfile, userProfile) => {
+const checkOffspringCompatibility = (myProfile, userProfile) => {
   switch (myProfile.offspring) {
     case "doesnt have kids":
       if (userProfile.offspring === "doesnt have kids" || "doesnt want kids") {
@@ -70,3 +70,4 @@ module.exports = checkOffspringCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+export default checkOffspringCompatibility;

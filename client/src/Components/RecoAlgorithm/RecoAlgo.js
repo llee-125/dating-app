@@ -1,22 +1,22 @@
-const axios = require("axios");
-const checkDrinkCompatibility = require("./checkDrinkCompatibility");
-const checkDrugCompatibility = require("./checkDrugCompatibility");
-const checkBodyCompatibility = require("./checkBodyCompatibility");
-const checkHeightCompatibility = require("./checkHeightCompatibility");
-const checkSexualPreference = require("./checkSexualPreference");
-const checkSmokesCompatibility = require("./checkSmokesCompatibility");
-const checkStatusCompatibility = require("./checkStatusCompatibility");
-const checkDietCompatibility = require("./checkDietCompatibility");
-const checkEduCompatibility = require("./checkEduCompatibility");
-const checkEthnicityCompatibility = require("./checkEthnicityCompatibility");
-const checkPetCompatibility = require("./checkPetCompatibility");
-const checkReligionCompatibility = require("./checkReligionCompatibility");
-const checkOffspringCompatibility = require("./checkOffspringCompatibility");
-const checkJobCompatibility = require("./checkJobCompatibility");
+import axios from "axios";
+import checkDrinkCompatibility from "./checkDrinkCompatibility.js";
+import checkDrugCompatibility from "./checkDrugCompatibility.js";
+import checkBodyCompatibility from "./checkBodyCompatibility.js";
+import checkHeightCompatibility from "./checkHeightCompatibility.js";
+import checkSexualPreference from "./checkSexualPreference.js";
+import checkSmokesCompatibility from "./checkSmokesCompatibility.js";
+import checkStatusCompatibility from "./checkStatusCompatibility.js";
+import checkDietCompatibility from "./checkDietCompatibility.js";
+import checkEduCompatibility from "./checkEduCompatibility.js";
+import checkEthnicityCompatibility from "./checkEthnicityCompatibility.js";
+import checkPetCompatibility from "./checkPetCompatibility.js";
+import checkReligionCompatibility from "./checkReligionCompatibility.js";
+import checkOffspringCompatibility from "./checkOffspringCompatibility.js";
+import checkJobCompatibility from "./checkJobCompatibility.js";
 
-const getUserProfile = () => {
-  axios.get("http://localhost:3000/users/user_data").then(({ data }) => data);
-};
+// const getUserProfile = () => {
+//   axios.get("http://localhost:3000/users/user_data").then(({ data }) => data);
+// };
 
 const myProfile = {
   _id: 2243,
@@ -47,10 +47,10 @@ const myProfile = {
   profile_image: "https://randomuser.me/api/portraits/women/60.jpg",
 };
 
-const recoAlgo = (myProfile) => {
+const RecoAlgo = (myProfile) => {
   return new Promise((resolve, reject) => {
     axios
-      .get("http://localhost:3000/profile/all")
+      .get("profile/all")
       .then(({ data }) => {
         let sexualPreference = checkSexualPreference(myProfile);
         return data.filter(
@@ -96,4 +96,6 @@ const calculateLoveFactor = (myProfile, userProfile) => {
   checkJobCompatibility(myProfile, userProfile);
 };
 
-recoAlgo(myProfile).then((res) => console.log(res));
+// RecoAlgo(myProfile).then((res) => console.log(res));
+
+export default RecoAlgo;

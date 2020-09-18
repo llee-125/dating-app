@@ -1,7 +1,7 @@
-module.exports = checkReligionCompatibility = (myProfile, userProfile) => {
+const checkReligionCompatibility = (myProfile, userProfile) => {
   switch (myProfile.religion) {
-    case "buddhism but not too serious about it":
-      if (userProfile.religion === "buddhism but not too serious about it") {
+    case "buddhism":
+      if (userProfile.religion === "buddhism") {
         userProfile.loveFactor += 20;
         break;
       }
@@ -17,8 +17,8 @@ module.exports = checkReligionCompatibility = (myProfile, userProfile) => {
         userProfile.loveFactor += 5;
         break;
       }
-    case "agnosticism but not too serious about it":
-      if (userProfile.religion === "agnosticism but not too serious about it") {
+    case "agnosticism":
+      if (userProfile.religion === "agnosticism") {
         userProfile.loveFactor += 20;
         break;
       }
@@ -41,7 +41,7 @@ module.exports = checkReligionCompatibility = (myProfile, userProfile) => {
         userProfile.loveFactor += 20;
         break;
       }
-      if (userProfile.religion === "atheism but not too serious about it") {
+      if (userProfile.religion === "atheism") {
         userProfile.loveFactor += 20;
         break;
       }
@@ -53,8 +53,8 @@ module.exports = checkReligionCompatibility = (myProfile, userProfile) => {
         userProfile.loveFactor += 3;
         break;
       }
-    case "catholicism but not too serious about it":
-      if (userProfile.religion === "catholicism but not too serious about it") {
+    case "catholicism":
+      if (userProfile.religion === "catholicism") {
         userProfile.loveFactor += 20;
         break;
       }
@@ -72,10 +72,8 @@ module.exports = checkReligionCompatibility = (myProfile, userProfile) => {
         userProfile.loveFactor += 15;
         break;
       }
-    case "christianity but not too serious about it":
-      if (
-        userProfile.religion === "christianity but not too serious about it"
-      ) {
+    case "christianity":
+      if (userProfile.religion === "christianity") {
         userProfile.loveFactor += 20;
         break;
       }
@@ -93,8 +91,8 @@ module.exports = checkReligionCompatibility = (myProfile, userProfile) => {
         userProfile.loveFactor += 15;
         break;
       }
-    case "hinduism but not too serious about it":
-      if (userProfile.religion === "hinduism but not too serious about it") {
+    case "hinduism":
+      if (userProfile.religion === "hinduism") {
         userProfile.loveFactor += 20;
         break;
       }
@@ -110,8 +108,8 @@ module.exports = checkReligionCompatibility = (myProfile, userProfile) => {
         userProfile.loveFactor += 15;
         break;
       }
-    case "judaism but not too serious about it":
-      if (userProfile.religion === "judaism but not too serious about it") {
+    case "judaism":
+      if (userProfile.religion === "judaism") {
         userProfile.loveFactor += 20;
         break;
       }
@@ -127,8 +125,8 @@ module.exports = checkReligionCompatibility = (myProfile, userProfile) => {
         userProfile.loveFactor += 15;
         break;
       }
-    case "islam but not too serious about it":
-      if (userProfile.religion === "islam but not too serious about it") {
+    case "islam":
+      if (userProfile.religion === "islam") {
         userProfile.loveFactor += 20;
         break;
       }
@@ -144,8 +142,8 @@ module.exports = checkReligionCompatibility = (myProfile, userProfile) => {
         userProfile.loveFactor += 15;
         break;
       }
-    case "other but not too serious about it":
-      if (userProfile.religion === "other but not too serious about it") {
+    case "other":
+      if (userProfile.religion === "other") {
         userProfile.loveFactor += 20;
         break;
       }
@@ -163,3 +161,4 @@ module.exports = checkReligionCompatibility = (myProfile, userProfile) => {
       }
   }
 };
+export default checkReligionCompatibility;

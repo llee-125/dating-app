@@ -8,7 +8,7 @@ import { withStyles } from "@material-ui/core/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LogoutIcon from "@material-ui/icons/MeetingRoom";
 import ProfileIcon from "@material-ui/icons/Person";
-import Axios from "axios";
+// import Axios from "axios";
 import React, { useContext } from "react";
 // import Icon from "@material-ui/core/Icon";
 import { Link, useHistory } from "react-router-dom";
@@ -60,7 +60,7 @@ export default function LabelBottomNavigation() {
   const history = useHistory();
   const [value, setValue] = React.useState("recents");
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const { userData, setUserData } = useContext(UserContext);
+  const { setUserData } = useContext(UserContext);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);

@@ -180,6 +180,16 @@ form.form {
   text-align: center;
 }
 
+div .centerForm {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+div form input {
+  margin: 3px;
+}
+
 @media screen and (max-width: 550px) {
   #header .title {
     font-size: 1.2rem;
@@ -227,6 +237,7 @@ form.form {
   ul,
   ol {
     margin: 1em 0;
+    /* margin-bottom: 100px !important; */
   }
 
   h1 {
@@ -234,7 +245,8 @@ form.form {
     font-family: "Roboto", sans-serif;
     text-decoration: bold;
     font-size: 48px;
-    margin-top: 20px;
+    /* margin-top: 150px !important;
+    margin-bottom: 100px !important; */
     fill: linear;
     text-align: center;
   }

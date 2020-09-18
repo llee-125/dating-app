@@ -8,11 +8,13 @@ import { withStyles } from "@material-ui/core/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LogoutIcon from "@material-ui/icons/MeetingRoom";
 import ProfileIcon from "@material-ui/icons/Person";
-import React from "react";
+import Axios from "axios";
+import React, { useContext } from "react";
 // import Icon from "@material-ui/core/Icon";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import SvgMumble from "./MumbleIcon/Mumble";
+import UserContext from "../../context/UserContext";
 
 const useStyles = makeStyles({
   root: {
@@ -55,8 +57,10 @@ const StyledMenuItem = withStyles((theme) => ({
 
 export default function LabelBottomNavigation() {
   const classes = useStyles();
+  const history = useHistory();
   const [value, setValue] = React.useState("recents");
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { userData, setUserData } = useContext(UserContext);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -68,6 +72,12 @@ export default function LabelBottomNavigation() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const logout = () => {
+    setUserData({ token: "", user: "" });
+    localStorage.setItem("auth-token", "");
+    history.push("/login");
   };
 
   return (
@@ -121,8 +131,7 @@ export default function LabelBottomNavigation() {
         label="Logout"
         value="logout"
         icon={<LogoutIcon />}
-        component={Link}
-        to="/logout"
+        onClick={logout}
       />
     </BottomNavigation>
   );

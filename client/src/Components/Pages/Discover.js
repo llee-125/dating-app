@@ -20,8 +20,6 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import HeightOutlinedIcon from "@material-ui/icons/HeightOutlined";
 import LocalBarOutlinedIcon from "@material-ui/icons/LocalBarOutlined";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
-// import MoreVertIcon from "@material-ui/icons/MoreVert";
-// import ShareIcon from "@material-ui/icons/Share";
 import SmokingRoomsOutlinedIcon from "@material-ui/icons/SmokingRoomsOutlined";
 import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
 import Box from '@material-ui/core/Box';
@@ -30,11 +28,7 @@ import clsx from "clsx";
 import React from "react";
 
 import avatar1 from "../BottomNavigation/mumble-logo.png";
-//import Search from "./Search";
 
-// axios
-//   .get("http://localhost:3000/users/tokenIsValid")
-//   .then((res) => console.log(res));
 
 const useStyles = makeStyles((theme) => ({
   root: {

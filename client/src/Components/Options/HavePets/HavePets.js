@@ -12,7 +12,7 @@ const HavePets2 = (props) => {
         }}
         disableElevation
       >
-        Cats
+        {props.children}
       </Button>
     </div>
   );

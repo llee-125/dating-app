@@ -1,48 +1,28 @@
-import React from "react";
-import ProfileDashboard from "./ProfileDashboard";
+import Box from "@material-ui/core/Box";
+import TextField from "@material-ui/core/TextField";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-import TextField from "@material-ui/core/TextField";
-import Box from "@material-ui/core/Box";
+import React from "react";
+import Col from "react-bootstrap/Col";
 // import Button from "@material-ui/core/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import "./profile.css";
 
-import Gender1 from "../Options/Gender/Gender1";
-import Gender2 from "../Options/Gender/Gender2";
-import Gender3 from "../Options/Gender/Gender3";
-import Gender4 from "../Options/Gender/Gender4";
-
-import Orientation1 from "../Options/Orientation/Orientation1";
-import Orientation2 from "../Options/Orientation/Orientation2";
-import Orientation3 from "../Options/Orientation/Orientation3";
-import Orientation4 from "../Options/Orientation/Orientation4";
-
-import Ethnicity1 from "../Options/Ethnicity/Ethnicity1";
-import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
-import Ethnicity3 from "../Options/Ethnicity/Ethnicity3";
-import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
-import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
-import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
-import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
-
-import Offspring1 from "../Options/Offspring/Offspring1";
-import Offspring2 from "../Options/Offspring/Offspring2";
-
-import WantOffspring1 from "../Options/WantOffspring/WantOffspring1";
-import WantOffspring2 from "../Options/WantOffspring/WantOffspring2";
-import WantOffspring3 from "../Options/WantOffspring/WantOffspring3";
-
-import HavePets1 from "../Options/HavePets/HavePets1";
-import HavePets2 from "../Options/HavePets/HavePets2";
-import HavePets3 from "../Options/HavePets/HavePets3";
-
-import WantPets1 from "../Options/WantPets/WantPets1";
-import WantPets2 from "../Options/WantPets/WantPets2";
-import WantPets3 from "../Options/WantPets/WantPets3";
-
+import Diet1 from "../Options/Diet/Diet1";
+import Diet2 from "../Options/Diet/Diet2";
+import Diet3 from "../Options/Diet/Diet3";
+import Diet4 from "../Options/Diet/Diet4";
+import Diet5 from "../Options/Diet/Diet5";
+import Diet6 from "../Options/Diet/Diet6";
+import Drinks1 from "../Options/Drinks/Drinks1";
+import Drinks2 from "../Options/Drinks/Drinks2";
+import Drinks3 from "../Options/Drinks/Drinks3";
+import Drinks4 from "../Options/Drinks/Drinks4";
+import Drinks5 from "../Options/Drinks/Drinks5";
+import Drinks6 from "../Options/Drinks/Drinks6";
+import Drugs1 from "../Options/Drugs/Drugs1";
+import Drugs2 from "../Options/Drugs/Drugs2";
+import Drugs3 from "../Options/Drugs/Drugs3";
 import Education1 from "../Options/Education/Education1";
 import Education2 from "../Options/Education/Education2";
 import Education3 from "../Options/Education/Education3";
@@ -50,16 +30,20 @@ import Education4 from "../Options/Education/Education4";
 import Education5 from "../Options/Education/Education5";
 import Education6 from "../Options/Education/Education6";
 import Education7 from "../Options/Education/Education7";
+import Ethnicity1 from "../Options/Ethnicity/Ethnicity1";
+import Ethnicity2 from "../Options/Ethnicity/Ethnicity2";
+import Ethnicity3 from "../Options/Ethnicity/Ethnicity3";
+import Ethnicity4 from "../Options/Ethnicity/Ethnicity4";
+import Ethnicity5 from "../Options/Ethnicity/Ethnicity5";
+import Ethnicity6 from "../Options/Ethnicity/Ethnicity6";
+import Ethnicity7 from "../Options/Ethnicity/Ethnicity7";
+import Gender1 from "../Options/Gender/Gender1";
+import Gender2 from "../Options/Gender/Gender2";
+import Gender3 from "../Options/Gender/Gender3";
+import Gender4 from "../Options/Gender/Gender4";
+import HavePets from "../Options/HavePets/HavePets";
 
 import Job1 from "../Options/Job/Job1";
-import Job2 from "../Options/Job/Job2";
-import Job3 from "../Options/Job/Job3";
-import Job4 from "../Options/Job/Job4";
-import Job5 from "../Options/Job/Job5";
-import Job6 from "../Options/Job/Job6";
-import Job7 from "../Options/Job/Job7";
-import Job8 from "../Options/Job/Job8";
-import Job9 from "../Options/Job/Job9";
 import Job10 from "../Options/Job/Job10";
 import Job11 from "../Options/Job/Job11";
 import Job12 from "../Options/Job/Job12";
@@ -70,7 +54,19 @@ import Job16 from "../Options/Job/Job16";
 import Job17 from "../Options/Job/Job17";
 import Job18 from "../Options/Job/Job18";
 import Job19 from "../Options/Job/Job19";
-
+import Job2 from "../Options/Job/Job2";
+import Job3 from "../Options/Job/Job3";
+import Job4 from "../Options/Job/Job4";
+import Job5 from "../Options/Job/Job5";
+import Job6 from "../Options/Job/Job6";
+import Job7 from "../Options/Job/Job7";
+import Job8 from "../Options/Job/Job8";
+import Job9 from "../Options/Job/Job9";
+import Offspring from "../Options/Offspring/Offspring";
+import Orientation1 from "../Options/Orientation/Orientation1";
+import Orientation2 from "../Options/Orientation/Orientation2";
+import Orientation3 from "../Options/Orientation/Orientation3";
+import Orientation4 from "../Options/Orientation/Orientation4";
 import Religion1 from "../Options/Religion/Religion1";
 import Religion2 from "../Options/Religion/Religion2";
 import Religion3 from "../Options/Religion/Religion3";
@@ -79,30 +75,15 @@ import Religion5 from "../Options/Religion/Religion5";
 import Religion6 from "../Options/Religion/Religion6";
 import Religion7 from "../Options/Religion/Religion7";
 import Religion8 from "../Options/Religion/Religion8";
-
-import Diet1 from "../Options/Diet/Diet1";
-import Diet2 from "../Options/Diet/Diet2";
-import Diet3 from "../Options/Diet/Diet3";
-import Diet4 from "../Options/Diet/Diet4";
-import Diet5 from "../Options/Diet/Diet5";
-import Diet6 from "../Options/Diet/Diet6";
-
-import Drinks1 from "../Options/Drinks/Drinks1";
-import Drinks2 from "../Options/Drinks/Drinks2";
-import Drinks3 from "../Options/Drinks/Drinks3";
-import Drinks4 from "../Options/Drinks/Drinks4";
-import Drinks5 from "../Options/Drinks/Drinks5";
-import Drinks6 from "../Options/Drinks/Drinks6";
-
-import Drugs1 from "../Options/Drugs/Drugs1";
-import Drugs2 from "../Options/Drugs/Drugs2";
-import Drugs3 from "../Options/Drugs/Drugs3";
-
 import Smokes1 from "../Options/Smokes/Smokes1";
 import Smokes2 from "../Options/Smokes/Smokes2";
 import Smokes3 from "../Options/Smokes/Smokes3";
 import Smokes4 from "../Options/Smokes/Smokes4";
 import Smokes5 from "../Options/Smokes/Smokes5";
+
+import ProfileDashboard from "./ProfileDashboard";
+
+import "./profile.css";
 
 class Profile extends React.Component {
   state = {
@@ -116,9 +97,8 @@ class Profile extends React.Component {
     orientation: "",
     ethnicity: "",
     offspring: "",
-    wantOffspring: "",
+
     havePets: "",
-    wantPets: "",
     education: "",
     job: "",
     religion: "",
@@ -164,18 +144,12 @@ class Profile extends React.Component {
     console.log(value);
     this.setState({ offspring: value });
   };
-  handleWantOffspringChange = (value) => {
-    console.log(value);
-    this.setState({ wantOffspring: value });
-  };
+
   handleHavePetsChange = (value) => {
     console.log(value);
     this.setState({ havePets: value });
   };
-  handleWantPetsChange = (value) => {
-    console.log(value);
-    this.setState({ wantPets: value });
-  };
+
   handleEducationChange = (value) => {
     console.log(value);
     this.setState({ education: value });
@@ -219,13 +193,16 @@ class Profile extends React.Component {
           <Box>
             <h1>What is your name?</h1>
             <form>
+              <br />
+              <br />
+              <br />
               <TextField
                 label="First name"
                 name="firstName"
                 value={this.state.firstName}
                 onChange={this.handleChange}
               />
-              <br></br>
+              <br /> <br /> <br />
               <TextField
                 label="Last name"
                 name="lastName"
@@ -444,42 +421,52 @@ class Profile extends React.Component {
               <Row>
                 <Row className="text-center">
                   <Col xs={6} md={6}>
-                    <Offspring1
-                      value="Yes"
+                    <Offspring
+                      value="has kids"
                       handleOffspring={this.handleOffspringChange}
-                    ></Offspring1>
+                    >
+                      has kids
+                    </Offspring>
                   </Col>
                   <Col xs={6} md={6}>
-                    <Offspring2
-                      value="No"
+                    <Offspring
+                      value="doesnt have kids"
                       handleOffspring={this.handleOffspringChange}
-                    ></Offspring2>
+                    >
+                      doesnt have kids
+                    </Offspring>
                   </Col>
-                </Row>
-              </Row>
-            </Container>
-            <br></br>
-            <h1>Do you want more children than you currently have?</h1>
-            <Container fluid="md" className="text-center">
-              <Row>
-                <Row className="text-center">
-                  <Col xs={6} md={4}>
-                    <WantOffspring1
-                      value="Yes"
-                      handleWantOffspring={this.handleWantOffspringChange}
-                    ></WantOffspring1>
+                  <Col xs={6} md={6}>
+                    <Offspring
+                      value="doesnt have kids, but wants them"
+                      handleOffspring={this.handleOffspringChange}
+                    >
+                      doesnt have kids, but wants them
+                    </Offspring>
                   </Col>
-                  <Col xs={6} md={4}>
-                    <WantOffspring2
-                      value="No"
-                      handleWantOffspring={this.handleWantOffspringChange}
-                    ></WantOffspring2>
+                  <Col xs={6} md={6}>
+                    <Offspring
+                      value="doesnt want kids"
+                      handleOffspring={this.handleOffspringChange}
+                    >
+                      doesnt want kids
+                    </Offspring>
                   </Col>
-                  <Col xs={6} md={4}>
-                    <WantOffspring3
-                      value="Maybe"
-                      handleWantOffspring={this.handleWantOffspringChange}
-                    ></WantOffspring3>
+                  <Col xs={6} md={6}>
+                    <Offspring
+                      value="doesnt have kids, but might want them"
+                      handleOffspring={this.handleOffspringChange}
+                    >
+                      doesnt have kids, but might want them
+                    </Offspring>
+                  </Col>
+                  <Col xs={6} md={6}>
+                    <Offspring
+                      value="has a kid, and wants more"
+                      handleOffspring={this.handleOffspringChange}
+                    >
+                      has a kid, and wants more
+                    </Offspring>
                   </Col>
                 </Row>
               </Row>
@@ -491,53 +478,49 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>I have...</h1>
+            <h1>Do you like pets?</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">
                   <Col xs={6} md={4}>
-                    <HavePets1
-                      value="Dogs"
+                    <HavePets
+                      value="has cats"
                       handleHavePets={this.handleHavePetsChange}
-                    ></HavePets1>
+                    >
+                      has cats
+                    </HavePets>
                   </Col>
                   <Col xs={6} md={4}>
-                    <HavePets2
-                      value="Cats"
+                    <HavePets
+                      value="likes dogs"
                       handleHavePets={this.handleHavePetsChange}
-                    ></HavePets2>
+                    >
+                      likes dogs
+                    </HavePets>
                   </Col>
                   <Col xs={6} md={4}>
-                    <HavePets3
-                      value="No pets"
+                    <HavePets
+                      value="dislikes cats"
                       handleHavePets={this.handleHavePetsChange}
-                    ></HavePets3>
-                  </Col>
-                </Row>
-              </Row>
-            </Container>
-            <br></br>
-            <h1>I want...</h1>
-            <Container fluid="md" className="text-center">
-              <Row>
-                <Row className="text-center">
-                  <Col xs={6} md={4}>
-                    <WantPets1
-                      value="Dogs"
-                      handleWantPets={this.handleWantPetsChange}
-                    ></WantPets1>
+                    >
+                      dislikes cats
+                    </HavePets>
                   </Col>
                   <Col xs={6} md={4}>
-                    <WantPets2
-                      value="Cats"
-                      handleWantPets={this.handleWantPetsChange}
-                    ></WantPets2>
+                    <HavePets
+                      value="dislikes dogs and dislikes cats"
+                      handleHavePets={this.handleHavePetsChange}
+                    >
+                      dislikes dogs and dislikes cats
+                    </HavePets>
                   </Col>
                   <Col xs={6} md={4}>
-                    <WantPets3
-                      value="No more pets"
-                      handleWantPets={this.handleWantPetsChange}
-                    ></WantPets3>
+                    <HavePets
+                      value="dislikes dogs"
+                      handleHavePets={this.handleHavePetsChange}
+                    >
+                      dislikes dogs
+                    </HavePets>
                   </Col>
                 </Row>
               </Row>
@@ -607,123 +590,118 @@ class Profile extends React.Component {
           <Box>
             <h1>What best describes your career?</h1>
             <Container fluid="md" className="text-center">
-              <Row>
-                <Row className="text-center">
-                  <Col xs={6} md={3}>
-                    <Job1
-                      value="clerical/administrative"
-                      handleJob={this.handleJobChange}
-                    ></Job1>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job2
-                      value="artistic/musical/writer"
-                      handleJob={this.handleJobChange}
-                    ></Job2>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job3
-                      value="executive/management"
-                      handleJob={this.handleJobChange}
-                    ></Job3>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job4
-                      value="construction/craftsmanship"
-                      handleJob={this.handleJobChange}
-                    ></Job4>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job5
-                      value="education/academia"
-                      handleJob={this.handleJobChange}
-                    ></Job5>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job6
-                      value="entertainment/media"
-                      handleJob={this.handleJobChange}
-                    ></Job6>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job7
-                      value="banking/finance/real estate"
-                      handleJob={this.handleJobChange}
-                    ></Job7>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job8
-                      value="medical/health"
-                      handleJob={this.handleJobChange}
-                    ></Job8>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job9
-                      value="hospitality/travel"
-                      handleJob={this.handleJobChange}
-                    ></Job9>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job10
-                      value="law/legal services"
-                      handleJob={this.handleJobChange}
-                    ></Job10>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job11
-                      value="sales/marketing/biz dev"
-                      handleJob={this.handleJobChange}
-                    ></Job11>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job12
-                      value="political/government"
-                      handleJob={this.handleJobChange}
-                    ></Job12>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job13
-                      value="science/tech/engineering"
-                      handleJob={this.handleJobChange}
-                    ></Job13>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job14
-                      value="student"
-                      handleJob={this.handleJobChange}
-                    ></Job14>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job15
-                      value="computer/hardware/software"
-                      handleJob={this.handleJobChange}
-                    ></Job15>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job16
-                      value="transportation"
-                      handleJob={this.handleJobChange}
-                    ></Job16>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job17
-                      value="other"
-                      handleJob={this.handleJobChange}
-                    ></Job17>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job18
-                      value="unemployed"
-                      handleJob={this.handleJobChange}
-                    ></Job18>
-                  </Col>
-                  <Col xs={6} md={3}>
-                    <Job19
-                      value="retired"
-                      handleJob={this.handleJobChange}
-                    ></Job19>
-                  </Col>
-                </Row>
+              <Row className="text-center">
+                <Col xs={6} md={3}>
+                  <Job1
+                    value="clerical/administrative"
+                    handleJob={this.handleJobChange}
+                  ></Job1>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job2
+                    value="artistic/musical/writer"
+                    handleJob={this.handleJobChange}
+                  ></Job2>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job3
+                    value="executive/management"
+                    handleJob={this.handleJobChange}
+                  ></Job3>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job4
+                    value="construction/craftsmanship"
+                    handleJob={this.handleJobChange}
+                  ></Job4>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job5
+                    value="education/academia"
+                    handleJob={this.handleJobChange}
+                  ></Job5>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job6
+                    value="entertainment/media"
+                    handleJob={this.handleJobChange}
+                  ></Job6>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job7
+                    value="banking/finance/real estate"
+                    handleJob={this.handleJobChange}
+                  ></Job7>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job8
+                    value="medical/health"
+                    handleJob={this.handleJobChange}
+                  ></Job8>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job9
+                    value="hospitality/travel"
+                    handleJob={this.handleJobChange}
+                  ></Job9>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job10
+                    value="law/legal services"
+                    handleJob={this.handleJobChange}
+                  ></Job10>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job11
+                    value="sales/marketing/biz dev"
+                    handleJob={this.handleJobChange}
+                  ></Job11>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job12
+                    value="political/government"
+                    handleJob={this.handleJobChange}
+                  ></Job12>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job13
+                    value="science/tech/engineering"
+                    handleJob={this.handleJobChange}
+                  ></Job13>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job14
+                    value="student"
+                    handleJob={this.handleJobChange}
+                  ></Job14>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job15
+                    value="computer/hardware/software"
+                    handleJob={this.handleJobChange}
+                  ></Job15>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job16
+                    value="transportation"
+                    handleJob={this.handleJobChange}
+                  ></Job16>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job17 value="other" handleJob={this.handleJobChange}></Job17>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job18
+                    value="unemployed"
+                    handleJob={this.handleJobChange}
+                  ></Job18>
+                </Col>
+                <Col xs={6} md={3}>
+                  <Job19
+                    value="retired"
+                    handleJob={this.handleJobChange}
+                  ></Job19>
+                </Col>
               </Row>
             </Container>
           </Box>
@@ -967,9 +945,7 @@ class Profile extends React.Component {
             orientation={this.state.orientation}
             ethnicity={this.state.ethnicity}
             offspring={this.state.offspring}
-            wantOffspring={this.state.wantOffspring}
             havePets={this.state.havePets}
-            wantPets={this.state.wantPets}
             education={this.state.education}
             job={this.state.job}
             religion={this.state.religion}
@@ -987,7 +963,7 @@ class Profile extends React.Component {
               justifyContent="center"
               alignItems="center"
               mx={5}
-              mt={30}
+              mt={3}
               // p={2}
             >
               {this.state.counter !== 0 ? (

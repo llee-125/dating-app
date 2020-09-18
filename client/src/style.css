@@ -227,6 +227,7 @@ form.form {
   ul,
   ol {
     margin: 1em 0;
+    /* margin-bottom: 100px !important; */
   }
 
   h1 {
@@ -234,7 +235,8 @@ form.form {
     font-family: "Roboto", sans-serif;
     text-decoration: bold;
     font-size: 48px;
-    margin-top: 20px;
+    /* margin-top: 150px !important;
+    margin-bottom: 100px !important; */
     fill: linear;
     text-align: center;
   }

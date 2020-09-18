@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
 import ErrorNotice from "../../../src/ErrorHandling/ErrorNotice";
-import Register from "../../../src/Components/auth/Register";
+// import Register from "../../../src/Components/auth/Register";
 
 export default function Login(props) {
   const [email, setEmail] = useState();
@@ -18,7 +18,7 @@ export default function Login(props) {
     if (userData.user.email) {
       history.push("/profile/discover");
     }
-  }, [userData]);
+  }, [userData, history]);
 
   const submit = async (e) => {
     e.preventDefault();
@@ -41,6 +41,7 @@ export default function Login(props) {
     <div className="page">
       <div id="image">
         <img
+          alt="mumblelogo"
           className="Mumble"
           src={require("../BottomNavigation/mumble-logo.png")}
         />

@@ -1,7 +1,7 @@
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
-import { Autorenew } from "@material-ui/icons";
+// import { Autorenew } from "@material-ui/icons";
 import SearchIcon from "@material-ui/icons/Search";
 import React from "react";
 

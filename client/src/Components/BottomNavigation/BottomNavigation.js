@@ -124,6 +124,8 @@ export default function LabelBottomNavigation() {
       <BottomNavigationAction
         label="Profile"
         value="profile"
+        component={Link}
+        to="/profile"
         icon={<ProfileIcon />}
       />
 

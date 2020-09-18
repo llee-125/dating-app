@@ -106,6 +106,7 @@ class Profile extends React.Component {
     drinks: "",
     drugs: "",
     smokes: "",
+    profile_image: "",
 
     counter: 0,
   };
@@ -819,7 +820,7 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
-    } else {
+    } else if (this.state.counter === 14) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
@@ -930,10 +931,24 @@ class Profile extends React.Component {
           </Box>
         </Box>
       );
+    } else {
+      result = (
+        <Box display="flex" justifyContent="center" m={1} p={1}>
+          <Box>
+            <h1>Enter an image URL for your profile picture</h1>
+            <TextField
+              label="URL"
+              name="profile_image"
+              value={this.state.profile_image}
+              onChange={this.handleChange}
+            />
+          </Box>
+        </Box>
+      );
     }
     return (
       <div className="profile">
-        {this.state.counter === 16 ? (
+        {this.state.counter === 17 ? (
           <ProfileDashboard
             firstName={this.state.firstName}
             lastName={this.state.lastName}
@@ -953,6 +968,7 @@ class Profile extends React.Component {
             drinks={this.state.drinks}
             drugs={this.state.drugs}
             smokes={this.state.smokes}
+            profile_image={this.state.profile_image}
           ></ProfileDashboard>
         ) : (
           <Box>

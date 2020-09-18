@@ -1,6 +1,6 @@
-import React from "react";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
+import React from "react";
 
 class ProfileDashboard extends React.Component {
   state = {
@@ -61,33 +61,33 @@ class ProfileDashboard extends React.Component {
       console.log("Profile Updated");
     });
   };
+
   render() {
     return (
-      <div>
+      <div style={{ textAlign: "center" }}>
         <h1>Profile</h1>
-
-        <form action="/profile" method="POST" enctype="multipart/form-data">
-          <div className="file-field input-field">
-            <div className="btn grey">
-              <span>Upload Image</span>
-              <input name="myImage" type="file" />
+        <form className="centerForm">
+          <form action="/profile" method="POST" enctype="multipart/form-data">
+            <div className="file-field input-field">
+              <div className="btn grey">
+                <span>Upload Image</span>
+                <input name="myImage" type="file" />
+              </div>
+              {/* <div className="file-path-wrapper">
+                <input className="file-path validate" type="text" />
+              </div> */}
             </div>
-            {/* <div className="file-path-wrapper">
-              <input className="file-path validate" type="text" />
-            </div> */}
-          </div>
-          <Button
-            variant="contained"
-            color="primary"
-            disableElevation
-            className="btn"
-            type="submit"
-          >
-            Upload
-          </Button>
-        </form>
+            <Button
+              variant="contained"
+              color="primary"
+              disableElevation
+              className="btn"
+              type="submit"
+            >
+              Upload
+            </Button>
+          </form>
 
-        <form>
           <input
             name="firstName"
             onChange={this.handleChange}

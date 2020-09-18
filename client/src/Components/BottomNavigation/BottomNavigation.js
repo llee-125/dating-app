@@ -20,7 +20,8 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     bottom: 0,
-    position: "fixed",
+    // position: "fixed !important",
+    zIndex: "9999",
   },
 });
 
@@ -85,6 +86,7 @@ export default function LabelBottomNavigation() {
       value={value}
       onChange={handleChange}
       className={classes.root}
+      style={{ position: "fixed" }}
     >
       <BottomNavigationAction
         label="Discover"

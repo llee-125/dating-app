@@ -44,7 +44,7 @@ h1 {
   color: #ec646f;
   font-family: Roboto, sans-serif;
   text-decoration: bold;
-  font-size: 48px;
+  font-size: 36px !important;
   margin-top: 20px;
   fill: linear;
   text-align: center;

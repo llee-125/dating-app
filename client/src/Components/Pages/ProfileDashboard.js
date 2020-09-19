@@ -5,30 +5,30 @@ import React from "react";
 // import UserContext from "../../context/UserContext";
 
 class ProfileDashboard extends React.Component {
-  state = {
-    first_name: this.first_name,
-    last_name: this.last_name,
-    mumble_email: this.mumble_email,
-    age: this.age,
-    body_type: this.body_type,
-    diet: this.diet,
-    drinks: this.drinks,
-    drugs: this.drugs,
-    education: this.education,
-    ethnicity: this.ethnicity,
-    height: this.height,
-    income: this.income,
-    job: this.job,
-    location: this.location,
-    offspring: this.offspring,
-    orientation: this.orientation,
-    pets: this.pets,
-    religion: this.religion,
-    sex: this.sex,
-    smokes: this.smokes,
-    status: this.status,
-    profile_image: this.profile_image,
-  };
+  // state = {
+  //   first_name: this.props.first_name,
+  //   last_name: this.props.last_name,
+  //   mumble_email: this.props.mumble_email,
+  //   age: this.props.age,
+  //   body_type: this.props.body_type,
+  //   diet: this.props.diet,
+  //   drinks: this.props.drinks,
+  //   drugs: this.props.drugs,
+  //   education: this.props.education,
+  //   ethnicity: this.props.ethnicity,
+  //   height: this.props.height,
+  //   income: this.props.income,
+  //   job: this.props.job,
+  //   location: this.props.location,
+  //   offspring: this.props.offspring,
+  //   orientation: this.props.orientation,
+  //   pets: this.props.pets,
+  //   religion: this.props.religion,
+  //   sex: this.props.sex,
+  //   smokes: this.props.smokes,
+  //   status: this.props.status,
+  //   profile_image: this.props.profile_image,
+  // };
   componentDidMount = () => {
     console.log(this.props);
   };
@@ -40,7 +40,6 @@ class ProfileDashboard extends React.Component {
   saveProfile = () => {
     // console.log(this.state);
     const profileRec = {
-      _id: 3000,
       first_name: this.props.first_name,
       last_name: this.props.last_name,
       mumble_email: this.props.mumble_email,
@@ -65,7 +64,14 @@ class ProfileDashboard extends React.Component {
       profile_image: this.props.profile_image,
     };
     console.log(profileRec);
-    axios.post("/profile/new", profileRec).then((saveRec) => {
+
+    const token = localStorage.getItem("auth-token");
+    axios({
+      method: "POST",
+      url: "/profile/new",
+      headers: { "x-auth-token": token },
+      data: profileRec,
+    }).then((saveRec) => {
       console.log(saveRec);
     });
   };
@@ -75,27 +81,27 @@ class ProfileDashboard extends React.Component {
       <div className="proDashMargin">
         <h1>Profile</h1>
         <form className="centerForm">
-          <img src={this.state.profile_image} alt="" />
+          <img src={this.props.profile_image} alt="" />
           <span>Name</span>
           <br />
           <input
             name="firstName"
             onChange={this.handleChange}
-            value={this.state.firstName}
+            value={this.props.first_name}
             size="8"
             style={{ fontSize: "24px", fontWeight: "bold" }}
           />
           <input
             name="lastName"
             onChange={this.handleChange}
-            value={this.state.lastName}
+            value={this.props.lastName}
             size="8"
             style={{ fontSize: "24px", fontWeight: "bold" }}
           />
           <input
             name="age"
             onChange={this.handleChange}
-            value={this.state.age}
+            value={this.props.age}
             size="2"
             maxlength="2"
             style={{ fontSize: "24px", fontWeight: "bold" }}
@@ -106,7 +112,7 @@ class ProfileDashboard extends React.Component {
           <input
             name="gender"
             onChange={this.handleChange}
-            value={this.state.gender}
+            value={this.props.gender}
             size="8"
           />
           <br />
@@ -114,7 +120,7 @@ class ProfileDashboard extends React.Component {
           <input
             name="phone"
             onChange={this.handleChange}
-            value={this.state.phone}
+            value={this.props.phone}
             style={{ width: "auto" }}
           />
           <br />
@@ -122,28 +128,28 @@ class ProfileDashboard extends React.Component {
           <input
             name="location"
             onChange={this.handleChange}
-            value={this.state.location}
+            value={this.props.location}
           />
           <br />
           <span>Orientation </span>
           <input
             name="orientation"
             onChange={this.handleChange}
-            value={this.state.orientation}
+            value={this.props.orientation}
           />
           <br />
           <span>Ethnicity </span>
           <input
             name="ethnicity"
             onChange={this.handleChange}
-            value={this.state.ethnicity}
+            value={this.props.ethnicity}
           />
           <br />
           <span>Height </span>
           <input
             name="height"
             onChange={this.handleChange}
-            value={this.state.height}
+            value={this.props.height}
             size="2"
           />
           <br />
@@ -151,77 +157,77 @@ class ProfileDashboard extends React.Component {
           <input
             name="offspring"
             onChange={this.handleChange}
-            value={this.state.offspring}
+            value={this.props.offspring}
           />
           <br />
           <span>Want Offspring </span>
           <input
             name="wantOffspring"
             onChange={this.handleChange}
-            value={this.state.wantOffspring}
+            value={this.props.wantOffspring}
           />
           <br />
           <span>Have Pets </span>
           <input
             name="havePets"
             onChange={this.handleChange}
-            value={this.state.havePets}
+            value={this.props.havePets}
           />
           <br />
           <span>Want Pets </span>
           <input
             name="wantPets"
             onChange={this.handleChange}
-            value={this.state.wantPets}
+            value={this.props.wantPets}
           />
           <br />
           <span>Education </span>
           <input
             name="education"
             onChange={this.handleChange}
-            value={this.state.education}
+            value={this.props.education}
           />
           <br />
           <span>Job</span>
           <input
             name="job"
             onChange={this.handleChange}
-            value={this.state.job}
+            value={this.props.job}
           />
           <br />
           <span>Religion</span>
           <input
             name="religion"
             onChange={this.handleChange}
-            value={this.state.religion}
+            value={this.props.religion}
           />
           <br />
           <span>Diet</span>
           <input
             name="diet"
             onChange={this.handleChange}
-            value={this.state.diet}
+            value={this.props.diet}
           />
           <br />
           <span>Drinks</span>
           <input
             name="drinks"
             onChange={this.handleChange}
-            value={this.state.drinks}
+            value={this.props.drinks}
           />
           <br />
           <span>Drugs</span>
           <input
             name="drugs"
             onChange={this.handleChange}
-            value={this.state.drugs}
+            value={this.props.drugs}
           />
           <br />
           <span>Smokes</span>
           <input
             name="smokes"
             onChange={this.handleChange}
-            value={this.state.smokes}
+            value={this.props.smokes}
           />
         </form>
 

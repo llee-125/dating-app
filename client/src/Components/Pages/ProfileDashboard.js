@@ -80,18 +80,19 @@ class ProfileDashboard extends React.Component {
             src={this.state.profile_image}
             alt=""
           />
+          <br />
           <span>Hi, I'm &nbsp;</span>
           <input
-            name="firstName"
+            name="first_name"
             onChange={this.handleChange}
-            value={this.state.firstName}
+            value={this.state.first_name}
             size="8"
             style={{ fontSize: "24px", fontWeight: "bold" }}
           />
           <input
-            name="lastName"
+            name="last_name"
             onChange={this.handleChange}
-            value={this.state.lastName}
+            value={this.state.last_name}
             size="8"
             style={{ fontSize: "24px", fontWeight: "bold" }}
           />
@@ -115,12 +116,11 @@ class ProfileDashboard extends React.Component {
             size="8"
           />
           <input
-            name="gender"
+            name="sex"
             onChange={this.handleChange}
-            value={this.state.gender}
+            value={this.state.sex}
             size="8"
           />
-          <br />
           <p>Height</p>
           <input
             name="height"
@@ -128,13 +128,27 @@ class ProfileDashboard extends React.Component {
             value={this.state.height}
             size="2"
           />
-          <p>Number </p>
+          <p>Body Type</p>
+          <input
+            name="body_type"
+            onChange={this.handleChange}
+            value={this.state.body_type}
+            size="2"
+          />
+          <p>Mumble Email</p>
+          <input
+            name="mumble_email"
+            onChange={this.handleChange}
+            value={this.state.mumble_email}
+            size="8"
+          />
+          {/* <p>Number </p>
           <input
             name="phone"
             onChange={this.handleChange}
             value={this.state.phone}
             style={{ width: "auto" }}
-          />
+          /> */}
           <p>Location </p>
           <input
             name="location"
@@ -147,30 +161,30 @@ class ProfileDashboard extends React.Component {
             onChange={this.handleChange}
             value={this.state.ethnicity}
           />
-          <p>Current Offspring </p>
+          <p>Offspring </p>
           <input
             name="offspring"
             onChange={this.handleChange}
             value={this.state.offspring}
           />
-          <p>Want Offspring </p>
+          {/* <p>Want Offspring </p>
           <input
             name="wantOffspring"
             onChange={this.handleChange}
             value={this.state.wantOffspring}
-          />
-          <p>Have Pets </p>
+          /> */}
+          <p>Have Pets</p>
           <input
-            name="havePets"
+            name="pets"
             onChange={this.handleChange}
-            value={this.state.havePets}
+            value={this.state.pets}
           />
-          <p>Want Pets </p>
-          <input
+          {/* <p>Want Pets </p> */}
+          {/* <input
             name="wantPets"
             onChange={this.handleChange}
             value={this.state.wantPets}
-          />
+          /> */}
           <p>Education </p>
           <input
             name="education"
@@ -212,6 +226,12 @@ class ProfileDashboard extends React.Component {
             name="smokes"
             onChange={this.handleChange}
             value={this.state.smokes}
+          />
+          <p>Status</p>
+          <input
+            name="status"
+            onChange={this.handleChange}
+            value={this.state.status}
           />
         </form>
 

@@ -180,7 +180,7 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1 style={style}>{options[1]}</h1>
+            <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items}</Row>

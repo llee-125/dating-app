@@ -23,6 +23,10 @@ const style = {
   boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
 };
 
+const style1 = {
+  margin: "20px 0px 40px 0px",
+};
+
 class Profile extends React.Component {
   state = {
     first_name: "",
@@ -231,7 +235,7 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[1]}</h1>
+            <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items}</Row>
@@ -244,7 +248,7 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>How tall are you? (inches)</h1>
+            <h1 style={style1}>How tall are you? (inches)</h1>
             <TextField
               label="Height"
               placeholder="72"
@@ -256,7 +260,7 @@ class Profile extends React.Component {
             <br />
             <br />
 
-            <h1>What is your income in $</h1>
+            <h1 style={style1}>What is your income in $</h1>
             <TextField
               label="income"
               placeholder="1,000,000"
@@ -268,7 +272,7 @@ class Profile extends React.Component {
             <br />
             <br />
 
-            <h1>Where do you live?</h1>
+            <h1 style={style1}>Where do you live?</h1>
             <TextField
               label="location"
               placeholder="San Francisco, CA"
@@ -314,7 +318,7 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[1]}</h1>
+            <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items}</Row>
@@ -367,13 +371,13 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[0][1]}</h1>
+            <h1 style={style1}>{options[0][1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items[0]}</Row>
               </Row>
             </Container>
-            <h1>{options[1][1]}</h1>
+            <h1 style={style1}>{options[1][1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items[1]}</Row>
@@ -427,7 +431,7 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[1]}</h1>
+            <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items}</Row>
@@ -480,7 +484,7 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[1]}</h1>
+            <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items}</Row>
@@ -536,7 +540,7 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[1]}</h1>
+            <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items}</Row>
@@ -586,7 +590,7 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[1]}</h1>
+            <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items}</Row>
@@ -638,7 +642,7 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[1]}</h1>
+            <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items}</Row>
@@ -692,7 +696,7 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[1]}</h1>
+            <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items}</Row>
@@ -743,13 +747,13 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[0][1]}</h1>
+            <h1 style={style1}>{options[0][1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items[0]}</Row>
               </Row>
             </Container>
-            <h1>{options[1][1]}</h1>
+            <h1 style={style1}>{options[1][1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items[1]}</Row>
@@ -793,7 +797,7 @@ class Profile extends React.Component {
           p={1}
         >
           <Box>
-            <h1>{options[1]}</h1>
+            <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
                 <Row className="text-center">{items}</Row>
@@ -806,7 +810,7 @@ class Profile extends React.Component {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
           <Box>
-            <h1>Enter an image URL for your profile picture</h1>
+            <h1 style={style1}>Enter an image URL for your profile picture</h1>
             <TextField
               label="URL"
               name="profile_image"

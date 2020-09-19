@@ -22,13 +22,13 @@ import LocalBarOutlinedIcon from "@material-ui/icons/LocalBarOutlined";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import SmokingRoomsOutlinedIcon from "@material-ui/icons/SmokingRoomsOutlined";
 import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
-import Box from '@material-ui/core/Box';
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
+import Box from "@material-ui/core/Box";
 import axios from "axios";
 import clsx from "clsx";
 import React from "react";
 
 import avatar1 from "../BottomNavigation/mumble-logo.png";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -91,13 +91,20 @@ const Discover = (props) => {
             <IconButton
               aria-label="add to favorites"
               onClick={(e) => {
+                console.log("discover pros child _id", props.children._id);
                 props.updateLikes(props.children._id);
               }}
-              text={props.children._id}
+              text="likes"
             >
               <FavoriteIcon />
             </IconButton>
             <ListItemText />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <LoyaltyIcon/>
+            </ListItemIcon>
+            <ListItemText primary={props.children.loveFactor} />
           </ListItem>
 
           <ListItem>
@@ -148,25 +155,37 @@ const Discover = (props) => {
         </List>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent> 
-         
+        <CardContent>
           <Typography paragraph>SEX : {props.children.sex}</Typography>
           <Typography paragraph>STATUS : {props.children.status}</Typography>
-          <Typography paragraph>BODY TYPE : {props.children.body_type}</Typography>
+          <Typography paragraph>
+            BODY TYPE : {props.children.body_type}
+          </Typography>
           <Typography paragraph>DIET : {props.children.diet}</Typography>
           <Typography paragraph>DRUGS : {props.children.drugs}</Typography>
-          <Typography paragraph>ETHNICITY : {props.children.ethnicity}</Typography>
-          <Typography paragraph>EDUCATION : {props.children.education}</Typography>
+          <Typography paragraph>
+            ETHNICITY : {props.children.ethnicity}
+          </Typography>
+          <Typography paragraph>
+            EDUCATION : {props.children.education}
+          </Typography>
           <Typography paragraph>INCOME : {props.children.income}</Typography>
-          <Typography paragraph>OFFSPRING : {props.children.offspring}</Typography>
-          <Typography paragraph>ORIENTATION : {props.children.orientation}</Typography>
+          <Typography paragraph>
+            OFFSPRING : {props.children.offspring}
+          </Typography>
+          <Typography paragraph>
+            ORIENTATION : {props.children.orientation}
+          </Typography>
           <Typography paragraph>PETS : {props.children.pets}</Typography>
-          <Typography paragraph>RELIGION : {props.children.religion}</Typography>
+          <Typography paragraph>
+            RELIGION : {props.children.religion}
+          </Typography>
           <Typography paragraph>SIGN : {props.children.sign}</Typography>
           <Typography paragraph>SPEAKS : {props.children.speaks}</Typography>
           <Typography paragraph>BIO : {props.children.essay}</Typography>
-          <Typography paragraph>MUMBLE_EMAIL : {props.children.mumble_email}</Typography>
-
+          <Typography paragraph>
+            MUMBLE_EMAIL : {props.children.mumble_email}
+          </Typography>
         </CardContent>
       </Collapse>
     </Card>

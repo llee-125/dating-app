@@ -92,10 +92,9 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1>What is your name?</h1>
             <form>
-              <br />
               <br />
               <br />
               <TextField
@@ -116,7 +115,7 @@ class Profile extends React.Component {
             <h1>What is your age?</h1>
             <form>
               <br />
-              <br />
+
               <br />
               <TextField
                 label="Age"

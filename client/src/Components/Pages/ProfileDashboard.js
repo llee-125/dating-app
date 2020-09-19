@@ -72,104 +72,142 @@ class ProfileDashboard extends React.Component {
 
   render() {
     return (
-      <div style={{ textAlign: "center" }}>
+      <div className="proDashMargin">
         <h1>Profile</h1>
         <form className="centerForm">
+          <img
+            onChange={this.handleChange}
+            src={this.state.profile_image}
+            alt=""
+          />
+          <span>Hi, I'm &nbsp;</span>
           <input
             name="firstName"
             onChange={this.handleChange}
             value={this.state.firstName}
+            size="8"
+            style={{ fontSize: "24px", fontWeight: "bold" }}
           />
           <input
             name="lastName"
             onChange={this.handleChange}
             value={this.state.lastName}
+            size="8"
+            style={{ fontSize: "24px", fontWeight: "bold" }}
           />
-          <input
-            name="phone"
-            onChange={this.handleChange}
-            value={this.state.phone}
-          />
-          <input
-            name="location"
-            onChange={this.handleChange}
-            value={this.state.location}
-          />
+
+          {/* Age, Orientation, Gender */}
+          <br />
+          <span style={{ marginRight: "-5px" }}>I am a &nbsp;</span>
           <input
             name="age"
             onChange={this.handleChange}
             value={this.state.age}
+            size="2"
+            maxlength="2"
+            style={{ marginRight: "2px" }}
+          />
+          <span> year young &nbsp; </span>
+          <input
+            name="orientation"
+            onChange={this.handleChange}
+            value={this.state.orientation}
+            size="8"
           />
           <input
             name="gender"
             onChange={this.handleChange}
             value={this.state.gender}
+            size="8"
           />
+          <br />
+          <p>Height</p>
           <input
-            name="orientation"
+            name="height"
             onChange={this.handleChange}
-            value={this.state.orientation}
+            value={this.state.height}
+            size="2"
           />
+          <p>Number </p>
+          <input
+            name="phone"
+            onChange={this.handleChange}
+            value={this.state.phone}
+            style={{ width: "auto" }}
+          />
+          <p>Location </p>
+          <input
+            name="location"
+            onChange={this.handleChange}
+            value={this.state.location}
+          />
+          <p>Ethnicity </p>
           <input
             name="ethnicity"
             onChange={this.handleChange}
             value={this.state.ethnicity}
           />
-          <input
-            name="height"
-            onChange={this.handleChange}
-            value={this.state.height}
-          />
+          <p>Current Offspring </p>
           <input
             name="offspring"
             onChange={this.handleChange}
             value={this.state.offspring}
           />
+          <p>Want Offspring </p>
           <input
             name="wantOffspring"
             onChange={this.handleChange}
             value={this.state.wantOffspring}
           />
+          <p>Have Pets </p>
           <input
             name="havePets"
             onChange={this.handleChange}
             value={this.state.havePets}
           />
+          <p>Want Pets </p>
           <input
             name="wantPets"
             onChange={this.handleChange}
             value={this.state.wantPets}
           />
+          <p>Education </p>
           <input
             name="education"
             onChange={this.handleChange}
             value={this.state.education}
           />
+          <p>Job</p>
           <input
             name="job"
             onChange={this.handleChange}
             value={this.state.job}
           />
+          <p>Religion</p>
           <input
             name="religion"
             onChange={this.handleChange}
             value={this.state.religion}
           />
+          <p>Diet</p>
           <input
             name="diet"
             onChange={this.handleChange}
             value={this.state.diet}
           />
+          <p>Drinks</p>
           <input
             name="drinks"
             onChange={this.handleChange}
             value={this.state.drinks}
           />
+          <p>Drugs</p>
           <input
             name="drugs"
             onChange={this.handleChange}
             value={this.state.drugs}
           />
+          <p>Smokes</p>
           <input
             name="smokes"
             onChange={this.handleChange}
@@ -182,6 +220,7 @@ class ProfileDashboard extends React.Component {
           color="primary"
           disableElevation
           onClick={this.saveProfile}
+          style={{ textAlign: "center" }}
         >
           Save Profile
         </Button>

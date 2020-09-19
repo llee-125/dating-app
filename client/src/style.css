@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  margin-bottom: 75px;
+}
+
 img.Mumble {
   height: auto;
   width: 45%;
@@ -44,7 +48,7 @@ h1 {
   color: #ec646f;
   font-family: Roboto, sans-serif;
   text-decoration: bold;
-  font-size: 48px;
+  font-size: 36px !important;
   margin-top: 20px;
   fill: linear;
   text-align: center;
@@ -186,8 +190,28 @@ div .centerForm {
   position: relative;
 }
 
-div form input {
-  margin: 3px;
+.proDashMargin {
+  margin-left: 32px;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+  outline-width: 0;
+}
+
+.centerForm input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: #d3d3d3;
+  border-bottom-style: groove;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-top: -5px;
+  border-radius: 3px;
 }
 
 @media screen and (max-width: 550px) {
@@ -376,5 +400,12 @@ div form input {
   }
   form.form {
     margin: 0;
+  }
+
+  div .centerForm p {
+    margin: 0;
+    color: #bbbbbb;
+    font-size: 13px;
+    font-weight: bold;
   }
 }

@@ -383,6 +383,7 @@ class Profile extends React.Component {
               onClick={(e) => this.handleChange(e)}
               name={options[0]}
               disableElevation
+              style={{ overflowWrap: "anywhere" }}
             >
               {el}
             </Button>

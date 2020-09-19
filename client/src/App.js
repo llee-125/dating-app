@@ -11,7 +11,7 @@ import Likes from "./Components/Pages/Likes";
 import Profile from "./Components/Pages/Profile.js";
 import Search from "./Components/Pages/Search";
 import UserContext from "./context/UserContext";
-// import RecoAlgo from "./Components/RecoAlgorithm/RecoAlgo.js";
+import RecoAlgo from "./RecoAlgorithm/RecoAlgo.js";
 
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -50,20 +50,20 @@ export default function App() {
   }, []);
 
   const retrieveAllPersons = () => {
-    // Axios.get("/profile/find/3000")
-    //   .then((res) => {
-    //     RecoAlgo(res).then((response) => {
-    //       profileSet = [];
-    //       profileSet = response.data;
-    //       setProfileArray([...profileSet]);
-    //     });
-    //   })
-    Axios.get("/profile/discover")
-      .then((response) => {
-        profileSet = [];
-        profileSet = response.data;
-        setProfileArray([...profileSet]);
+    Axios.get("/profile/find/3000")
+      .then((res) => {
+        RecoAlgo(res).then((response) => {
+          profileSet = [];
+          profileSet = response.data;
+          setProfileArray([...profileSet]);
+        });
       })
+      // Axios.get("/profile/discover")
+      //   .then((response) => {
+      //     profileSet = [];
+      //     profileSet = response.data;
+      //     setProfileArray([...profileSet]);
+      //   })
       .catch((err) => console.log(err));
   };
 

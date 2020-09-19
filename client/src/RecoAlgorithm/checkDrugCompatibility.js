@@ -3,40 +3,37 @@ const checkDrugCompatibility = (myProfile, userProfile) => {
     case "often":
       if (userProfile.drugs === "often") {
         userProfile.loveFactor += 9;
-        break;
       }
       if (userProfile.drugs === "sometimes") {
         userProfile.loveFactor += 6;
-        break;
       }
       if (userProfile.drugs === "never") {
         userProfile.loveFactor += 1;
-        break;
       }
+      break;
 
     case "sometimes":
       if (userProfile.drugs === "sometimes") {
         userProfile.loveFactor += 9;
-        break;
       }
       if (userProfile.drugs === "often" || "never") {
         userProfile.loveFactor += 6;
-        break;
       }
+      break;
 
     case "never":
       if (userProfile.drugs === "never") {
         userProfile.loveFactor += 9;
-        break;
       }
       if (userProfile.drugs === "sometimes") {
         userProfile.loveFactor += 6;
-        break;
       }
       if (userProfile.drugs === "often") {
         userProfile.loveFactor += 1;
-        break;
       }
+      break;
+    case "default":
+      break;
   }
 };
 export default checkDrugCompatibility;

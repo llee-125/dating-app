@@ -9,7 +9,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "has cat"
       ) {
         userProfile.loveFactor += 20;
-        break;
       }
       if (
         userProfile.pets === "likes dogs" ||
@@ -17,7 +16,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "likes cats"
       ) {
         userProfile.loveFactor += 7;
-        break;
       }
       if (
         userProfile.pets === "dislikes dogs" ||
@@ -26,8 +24,8 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "dislikes dogs and likes cats"
       ) {
         userProfile.loveFactor -= 10;
-        break;
       }
+      break;
     case "has cats":
       if (
         userProfile.pets === "has dogs" ||
@@ -37,7 +35,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "has cat"
       ) {
         userProfile.loveFactor += 20;
-        break;
       }
       if (
         userProfile.pets === "likes dogs" ||
@@ -45,7 +42,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "likes cats"
       ) {
         userProfile.loveFactor += 7;
-        break;
       }
       if (
         userProfile.pets === "dislikes dogs" ||
@@ -54,8 +50,8 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "dislikes dogs and likes cats"
       ) {
         userProfile.loveFactor -= 10;
-        break;
       }
+      break;
     case "dislikes dogs":
       if (
         userProfile.pets === "has dogs" ||
@@ -65,7 +61,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "has cat"
       ) {
         userProfile.loveFactor -= 20;
-        break;
       }
       if (
         userProfile.pets === "likes dogs" ||
@@ -73,7 +68,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "likes cats"
       ) {
         userProfile.loveFactor -= 7;
-        break;
       }
       if (
         userProfile.pets === "dislikes dogs" ||
@@ -82,8 +76,8 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "dislikes dogs and likes cats"
       ) {
         userProfile.loveFactor += 20;
-        break;
       }
+      break;
     case "dislikes cats":
       if (
         userProfile.pets === "has dogs" ||
@@ -93,7 +87,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "has cat"
       ) {
         userProfile.loveFactor -= 20;
-        break;
       }
       if (
         userProfile.pets === "likes dogs" ||
@@ -101,7 +94,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "likes cats"
       ) {
         userProfile.loveFactor -= 7;
-        break;
       }
       if (
         userProfile.pets === "dislikes dogs" ||
@@ -110,8 +102,8 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "dislikes dogs and likes cats"
       ) {
         userProfile.loveFactor += 20;
-        break;
       }
+      break;
     case "dislikes dogs and dislikes cats":
       if (
         userProfile.pets === "has dogs" ||
@@ -121,7 +113,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "has cat"
       ) {
         userProfile.loveFactor -= 20;
-        break;
       }
       if (
         userProfile.pets === "likes dogs" ||
@@ -129,7 +120,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "likes cats"
       ) {
         userProfile.loveFactor -= 7;
-        break;
       }
       if (
         userProfile.pets === "dislikes dogs" ||
@@ -138,8 +128,8 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "dislikes dogs and likes cats"
       ) {
         userProfile.loveFactor += 20;
-        break;
       }
+      break;
     case "likes dogs":
       if (
         userProfile.pets === "has dogs" ||
@@ -149,7 +139,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "has cat"
       ) {
         userProfile.loveFactor += 20;
-        break;
       }
       if (
         userProfile.pets === "likes dogs" ||
@@ -157,7 +146,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "likes cats"
       ) {
         userProfile.loveFactor += 7;
-        break;
       }
       if (
         userProfile.pets === "dislikes dogs" ||
@@ -166,8 +154,8 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "dislikes dogs and likes cats"
       ) {
         userProfile.loveFactor -= 10;
-        break;
       }
+      break;
     case "likes cats":
       if (
         userProfile.pets === "has dogs" ||
@@ -177,7 +165,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "has cat"
       ) {
         userProfile.loveFactor += 20;
-        break;
       }
       if (
         userProfile.pets === "likes dogs" ||
@@ -185,7 +172,6 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "likes cats"
       ) {
         userProfile.loveFactor += 7;
-        break;
       }
       if (
         userProfile.pets === "dislikes dogs" ||
@@ -194,8 +180,10 @@ const checkPetCompatibility = (myProfile, userProfile) => {
         "dislikes dogs and likes cats"
       ) {
         userProfile.loveFactor -= 10;
-        break;
       }
+      break;
+    case "default":
+      break;
   }
 };
 

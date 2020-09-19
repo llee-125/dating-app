@@ -63,7 +63,7 @@ class Profile extends React.Component {
     }).then((response) => {
       if (!response.data) return;
       let obj = response.data;
-      obj.counter = 16;
+      obj.counter = 15;
       this.setState(obj);
     });
   }
@@ -330,7 +330,7 @@ class Profile extends React.Component {
     } else if (this.state.counter === 5) {
       let options = [
         [
-          "drinks",
+          "drugs",
           "How often do you do drugs?",
           ["often", "sometimes", "never"],
         ],
@@ -823,7 +823,7 @@ class Profile extends React.Component {
     }
     return (
       <div className="profile">
-        {this.state.counter === 16 ? (
+        {this.state.counter === 15 ? (
           <ProfileDashboard
             first_name={this.state.first_name}
             last_name={this.state.last_name}

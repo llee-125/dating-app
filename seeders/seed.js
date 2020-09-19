@@ -1,7 +1,7 @@
 let mongoose = require("mongoose");
 let db = require("../models/profileModel");
+require("dotenv").config();
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/profile";
-
 
 mongoose.connect(
   MONGODB_URI,

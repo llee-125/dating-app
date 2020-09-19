@@ -111,12 +111,12 @@ class ProfileDashboard extends React.Component {
             style={{ marginRight: "2px" }}
           />
           <span> year young &nbsp; </span>
-          <input
+          {/* <input
             name="orientation"
             onChange={this.handleChange}
             value={this.state.orientation}
             size="8"
-          />
+          /> */}
           <input
             name="gender"
             onChange={this.handleChange}
@@ -125,12 +125,12 @@ class ProfileDashboard extends React.Component {
           />
           <br />
           <p>Height</p>
-          <input
+          {/* <input
             name="height"
             onChange={this.handleChange}
             value={this.state.height}
             size="2"
-          />
+          /> */}
           <p>Number </p>
           <input
             name="phone"

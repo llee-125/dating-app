@@ -48,7 +48,7 @@ class ProfileDashboard extends React.Component {
   };
 
   saveProfile = () => {
-    // console.log(this.state);
+    // console.log(this.props);
     const profileRec = {
       first_name: this.props.first_name,
       last_name: this.props.last_name,
@@ -94,7 +94,7 @@ class ProfileDashboard extends React.Component {
           <img
             onChange={this.handleChange}
             src={this.props.profile_image}
-            alt=""
+            alt="profile-image"
           />
           <br />
           <span>Hi, I'm &nbsp;</span>
@@ -138,7 +138,7 @@ class ProfileDashboard extends React.Component {
             size="8"
           />
           <p>Height</p>
-          {/* <input
+          <input
             name="height"
             onChange={this.handleChange}
             value={this.props.height}

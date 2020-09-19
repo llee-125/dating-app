@@ -2,7 +2,6 @@ import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-// import AuthOptions from "./Components/auth/AuthOptions";
 import Login from "./Components/auth/Login.js";
 import Register from "./Components/auth/Register.js";
 import BottomNavigation from "./Components/BottomNavigation/BottomNavigation.js";
@@ -140,7 +139,7 @@ export default function App() {
       return profile;
     }
   });
-  const token = localStorage.getItem("auth-token");
+
   return (
     <>
       <BrowserRouter>
@@ -150,11 +149,12 @@ export default function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/profile" component={Profile} />
             <Route exact path="/profile/discover">
               <Search personSearch={personSearch} />
               {personList.map((profile, id) => (
                 <Discover key={id} updateLikes={updateLikesSet}>
-                  <Route exact path="/profile" component={Profile} />
+                  {profile}
                 </Discover>
               ))}
             </Route>

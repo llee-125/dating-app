@@ -113,12 +113,12 @@ export default function LabelBottomNavigation() {
         <StyledMenuItem component={Link} to="/profile/likes">
           <ListItemText label="YouLikes" value="Youlikes" primary="You Like" />
         </StyledMenuItem>
-        <StyledMenuItem component={Link} to="/profile/likes">
+        {/* <StyledMenuItem component={Link} to="/profile/likes">
           <ListItemText primary="Likes You" />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemText primary="Mutual Likes" />
-        </StyledMenuItem>
+        </StyledMenuItem> */}
       </StyledMenu>
 
       <BottomNavigationAction

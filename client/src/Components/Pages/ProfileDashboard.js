@@ -15,7 +15,7 @@ const style = {
 };
 
 class ProfileDashboard extends React.Component {
-  // state = {
+  // props = {
   //   first_name: this.props.first_name,
   //   last_name: this.props.last_name,
   //   mumble_email: this.props.mumble_email,

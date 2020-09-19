@@ -30,6 +30,9 @@ import React from "react";
 
 import avatar1 from "../BottomNavigation/mumble-logo.png";
 
+const style = {
+  color: "#ec646f",
+};
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -102,7 +105,7 @@ const Discover = (props) => {
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <LoyaltyIcon />
+              <h5 style={style}>Love Factor:&nbsp; </h5>
             </ListItemIcon>
             <ListItemText primary={props.children.loveFactor} />
           </ListItem>

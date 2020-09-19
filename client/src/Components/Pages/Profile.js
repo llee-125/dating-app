@@ -13,6 +13,16 @@ import ProfileDashboard from "./ProfileDashboard";
 
 import "./profile.css";
 
+const style = {
+  background: "linear-gradient(45deg, #ED6570 30%, #F0CA77 90%)",
+  borderRadius: 3,
+  border: 0,
+  color: "white",
+  height: 48,
+  padding: "0 30px",
+  boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+};
+
 class Profile extends React.Component {
   state = {
     first_name: "",
@@ -144,7 +154,8 @@ class Profile extends React.Component {
             <Button
               key={i}
               variant="contained"
-              color="primary"
+              // color="primary"
+              // style={style}
               value={el}
               onClick={(e) => this.handleChange(e)}
               name={options[0]}

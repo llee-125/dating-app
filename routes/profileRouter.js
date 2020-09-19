@@ -12,9 +12,22 @@ router.get("/all", (req, res) => {
   db.Profile.find().then((profiles) => res.send(profiles));
 });
 
-router.get("/find/:id", (req, res) => {
-  db.Profile.findById(req.params.id).then((profile) => res.send(profile));
+router.get("/find", auth, (req, res) => {
+  console.log(req.user);
+  db.Profile.findById(req.user)
+    .then((profile) => {
+      console.log(profile);
+      res.send(profile);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send("db err");
+    });
 });
+
+// router.get("/find/:id", (req, res) => {
+//   db.Profile.findById(req.params.id).then((profile) => res.send(profile));
+// });
 
 router.get("/discover", (req, res) => {
   db.Profile.find().then((profiles) => res.send(profiles));
@@ -31,8 +44,10 @@ router.delete("/remove/:id", (req, res) => {
   db.Profile.findByIdAndRemove(req.params.id).then(() => res.send("success"));
 });
 
-router.post("/new", (req, res) => {
+router.post("/new", auth, (req, res) => {
+  console.log(req.user);
   console.log(req.body);
+  req.body._id = req.user;
   db.Profile.create(req.body).then((profile) => res.send(profile));
 });
 

@@ -2,7 +2,8 @@ let mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const profileSchema = new Schema({
-  _id: { type: Number },
+  // _id: { type: Number },
+  _id: { type: mongoose.Types.ObjectId, ref: "user" },
   first_name: { type: String },
   last_name: { type: String },
   mumble_email: { type: String },

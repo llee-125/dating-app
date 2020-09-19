@@ -7,6 +7,7 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Axios from "axios";
 
 import ProfileDashboard from "./ProfileDashboard";
 
@@ -38,6 +39,21 @@ class Profile extends React.Component {
     profile_image: "",
     counter: 0,
   };
+
+  componentDidMount() {
+    const token = localStorage.getItem("auth-token");
+    Axios({
+      method: "GET",
+      url: "/profile/find",
+      headers: { "x-auth-token": token },
+    }).then((response) => {
+      if (!response.data) return;
+      let obj = response.data;
+      obj.counter = 16;
+      this.setState(obj);
+    });
+  }
+
   handleLeftCounter = () => {
     var counter = this.state.counter;
     if (counter >= 1) {

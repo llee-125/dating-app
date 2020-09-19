@@ -4,6 +4,16 @@ import React from "react";
 
 // import UserContext from "../../context/UserContext";
 
+const style = {
+  background: "linear-gradient(45deg, #ED6570 30%, #F0CA77 90%)",
+  borderRadius: 3,
+  border: 0,
+  color: "white",
+  height: 48,
+  padding: "0 30px",
+  // boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+};
+
 class ProfileDashboard extends React.Component {
   // state = {
   //   first_name: this.props.first_name,
@@ -237,10 +247,11 @@ class ProfileDashboard extends React.Component {
 
         <Button
           variant="contained"
-          color="primary"
+          // color="primary"
+
           disableElevation
           onClick={this.saveProfile}
-          style={{ textAlign: "center" }}
+          style={({ textAlign: "center" }, style)}
         >
           Save Profile
         </Button>

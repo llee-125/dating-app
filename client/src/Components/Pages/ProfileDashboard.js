@@ -15,7 +15,7 @@ const style = {
 };
 
 class ProfileDashboard extends React.Component {
-  // state = {
+  // props = {
   //   first_name: this.props.first_name,
   //   last_name: this.props.last_name,
   //   mumble_email: this.props.mumble_email,
@@ -93,7 +93,7 @@ class ProfileDashboard extends React.Component {
         <form className="centerForm">
           <img
             onChange={this.handleChange}
-            src={this.state.profile_image}
+            src={this.props.profile_image}
             alt=""
           />
           <br />
@@ -101,14 +101,14 @@ class ProfileDashboard extends React.Component {
           <input
             name="first_name"
             onChange={this.handleChange}
-            value={this.state.first_name}
+            value={this.props.first_name}
             size="8"
             style={{ fontSize: "24px", fontWeight: "bold" }}
           />
           <input
             name="last_name"
             onChange={this.handleChange}
-            value={this.state.last_name}
+            value={this.props.last_name}
             size="8"
             style={{ fontSize: "24px", fontWeight: "bold" }}
           />
@@ -128,34 +128,34 @@ class ProfileDashboard extends React.Component {
           {/* <input
             name="orientation"
             onChange={this.handleChange}
-            value={this.state.orientation}
+            value={this.props.orientation}
             size="8"
           /> */}
           <input
             name="sex"
             onChange={this.handleChange}
-            value={this.state.sex}
+            value={this.props.sex}
             size="8"
           />
           <p>Height</p>
           {/* <input
             name="height"
             onChange={this.handleChange}
-            value={this.state.height}
+            value={this.props.height}
             size="2"
           />
           <p>Body Type</p>
           <input
             name="body_type"
             onChange={this.handleChange}
-            value={this.state.body_type}
+            value={this.props.body_type}
             size="2"
           />
           <p>Mumble Email</p>
           <input
             name="mumble_email"
             onChange={this.handleChange}
-            value={this.state.mumble_email}
+            value={this.props.mumble_email}
             size="8"
           />
           {/* <p>Number </p>
@@ -203,19 +203,19 @@ class ProfileDashboard extends React.Component {
           <input
             name="wantOffspring"
             onChange={this.handleChange}
-            value={this.state.wantOffspring}
+            value={this.props.wantOffspring}
           /> */}
           <p>Have Pets</p>
           <input
             name="pets"
             onChange={this.handleChange}
-            value={this.state.pets}
+            value={this.props.pets}
           />
           {/* <p>Want Pets </p> */}
           {/* <input
             name="wantPets"
             onChange={this.handleChange}
-            value={this.state.wantPets}
+            value={this.props.wantPets}
           /> */}
           <p>Education </p>
           <input
@@ -263,7 +263,7 @@ class ProfileDashboard extends React.Component {
           <input
             name="status"
             onChange={this.handleChange}
-            value={this.state.status}
+            value={this.props.status}
           />
         </form>
 

@@ -15,14 +15,13 @@ import RecoAlgo from "./RecoAlgorithm/RecoAlgo.js";
 
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+let profileSet = [];
+let likesSet = [];
 export default function App() {
   const [userData, setUserData] = useState({
     token: "",
     user: "",
   });
-  let profileSet = [];
-  let likesSet = [];
 
   // useEffect(()=>{
   //     retrieveAllPersons();
@@ -50,13 +49,36 @@ export default function App() {
   }, []);
 
   const retrieveAllPersons = () => {
-    Axios.get("/profile/find/3000")
-      .then((res) => {
-        RecoAlgo(res).then((response) => {
-          profileSet = [];
-          profileSet = response.data;
-          setProfileArray([...profileSet]);
-        });
+    const token = localStorage.getItem("auth-token");
+    console.log(token);
+    Axios({
+      method: "GET",
+      url: "/profile/find",
+      headers: { "x-auth-token": token },
+    })
+      //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjU1YjdmYTIyOTYwMGMwYWVkYzZhZiIsImlhdCI6MTYwMDQ3ODA3OX0.kQ8MUrCyL_LpdXiPujUo8s8D8Lp3FlR9pbR0lQ-4vlU
+
+      // .get("/profile/find", token)
+      //.then(({ data }) => {
+      .then(({ data }) => {
+        console.log(data);
+        if (!data) {
+          console.log("this is no recommendation");
+          Axios.get("/profile/discover").then((response) => {
+            profileSet = [];
+            profileSet = response.data;
+            setProfileArray([...profileSet]);
+          });
+        } else {
+          RecoAlgo(data).then((response) => {
+            // console.log(response);
+            // profileSet = [];
+            // profileSet = response;
+            // console.log(profileSet[0].loveFactor);
+            setProfileArray(response);
+            // console.log(profileSet);
+          });
+        }
       })
       // Axios.get("/profile/discover")
       //   .then((response) => {

@@ -18,57 +18,63 @@ import checkJobCompatibility from "./checkJobCompatibility.js";
 //   axios.get("http://localhost:3000/users/user_data").then(({ data }) => data);
 // };
 
-// const myProfile = {
-//   _id: 2243,
-//   first_name: "Ella",
-//   last_name: "Manning",
-//   mumble_email: "ella.manning@mumble.com",
-//   age: 22,
-//   body_type: "thin",
-//   diet: "strictly kosher",
-//   drinks: "desperately",
-//   drugs: "often",
-//   education: "graduated from ph.d program",
-//   essay: "",
-//   ethnicity: "black",
-//   height: 75,
-//   income: -1,
-//   job: "military",
-//   location: "san francisco, california",
-//   offspring: "has kids",
-//   orientation: "bisexual",
-//   pets: "has dogs",
-//   religion: "catholicism but not too serious about it",
-//   sex: "women",
-//   sign: "cancer and it&rsquo;s fun to think about",
-//   smokes: "sometimes",
-//   speaks: "english (fluently), spanish (poorly)",
-//   status: "single",
-//   profile_image: "https://randomuser.me/api/portraits/women/60.jpg",
-// };
+const myProfile = {
+  _id: 2243,
+  first_name: "Ella",
+  last_name: "Manning",
+  mumble_email: "ella.manning@mumble.com",
+  age: 22,
+  body_type: "thin",
+  diet: "strictly kosher",
+  drinks: "desperately",
+  drugs: "often",
+  education: "graduated from ph.d program",
+  essay: "",
+  ethnicity: "black",
+  height: 75,
+  income: -1,
+  job: "military",
+  location: "san francisco, california",
+  offspring: "has kids",
+  orientation: "bisexual",
+  pets: "has dogs",
+  religion: "catholicism but not too serious about it",
+  sex: "women",
+  sign: "cancer and it&rsquo;s fun to think about",
+  smokes: "sometimes",
+  speaks: "english (fluently), spanish (poorly)",
+  status: "single",
+  profile_image: "https://randomuser.me/api/portraits/women/60.jpg",
+};
 
 const RecoAlgo = (myProfile) => {
   return new Promise((resolve, reject) => {
     axios
-      .get("profile/all")
+      .get("/profile/discover")
       .then(({ data }) => {
+        console.log("n data=", data.length);
+        console.log(data);
         let sexualPreference = checkSexualPreference(myProfile);
         return data.filter(
           (Data) =>
+            myProfile._id !== Data._id &&
             (sexualPreference[0] === Data.sex ||
               sexualPreference[1] === Data.sex) &&
             (sexualPreference[2] === Data.orientation ||
               sexualPreference[3] === Data.orientation) &&
-            Data.age > myProfile.age - 20 &&
-            Data.age < myProfile.age + 20
+            Data.age > myProfile.age - 100 &&
+            Data.age < myProfile.age + 100
         );
       })
       .then((rightData) => {
-        rightData.map((userProfile) => {
+        let array = rightData.map((userProfile) => {
           userProfile.loveFactor = 0;
           calculateLoveFactor(myProfile, userProfile);
+          return userProfile;
         });
-        return rightData;
+        // return rightData;
+        // console.log(array);
+        return array;
       })
       .then((recommendedProfiles) => {
         resolve(

@@ -20,9 +20,7 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     bottom: 0,
-    // position: "fixed !important",
-    zIndex: "9999",
-    // marginBottom: "15px",
+    position: "fixed",
   },
 });
 
@@ -30,9 +28,7 @@ const StyledMenu = withStyles({
   paper: {
     border: "1px solid #d3d4d5",
   },
-  
 })((props) => (
-  
   <Menu
     elevation={0}
     getContentAnchorEl={null}
@@ -89,7 +85,6 @@ export default function LabelBottomNavigation() {
       value={value}
       onChange={handleChange}
       className={classes.root}
-      style={{ position: "fixed" }}
     >
       <BottomNavigationAction
         label="Discover"

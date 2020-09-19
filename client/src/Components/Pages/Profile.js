@@ -213,7 +213,7 @@ class Profile extends React.Component {
             <Button
               key={i}
               variant="contained"
-              color="primary"
+              // color="primary"
               value={el}
               onClick={(e) => this.handleChange(e)}
               name={options[0]}
@@ -296,7 +296,7 @@ class Profile extends React.Component {
             <Button
               key={i}
               variant="contained"
-              color="primary"
+              // color="primary"
               value={el}
               onClick={(e) => this.handleChange(e)}
               name={options[0]}
@@ -348,7 +348,7 @@ class Profile extends React.Component {
               <Button
                 key={i}
                 variant="contained"
-                color="primary"
+                // color="primary"
                 value={el}
                 onClick={(e) => this.handleChange(e)}
                 name={options[j][0]}
@@ -408,7 +408,7 @@ class Profile extends React.Component {
             <Button
               key={i}
               variant="contained"
-              color="primary"
+              // color="primary"
               value={el}
               onClick={(e) => this.handleChange(e)}
               name={options[0]}
@@ -462,7 +462,7 @@ class Profile extends React.Component {
             <Button
               key={i}
               variant="contained"
-              color="primary"
+              // color="primary"
               value={el}
               onClick={(e) => this.handleChange(e)}
               name={options[0]}
@@ -518,7 +518,7 @@ class Profile extends React.Component {
             <Button
               key={i}
               variant="contained"
-              color="primary"
+              // color="primary"
               value={el}
               onClick={(e) => this.handleChange(e)}
               name={options[0]}
@@ -568,7 +568,7 @@ class Profile extends React.Component {
             <Button
               key={i}
               variant="contained"
-              color="primary"
+              // color="primary"
               value={el}
               onClick={(e) => this.handleChange(e)}
               name={options[0]}
@@ -620,7 +620,7 @@ class Profile extends React.Component {
             <Button
               key={i}
               variant="contained"
-              color="primary"
+              // color="primary"
               value={el}
               onClick={(e) => this.handleChange(e)}
               name={options[0]}
@@ -674,7 +674,7 @@ class Profile extends React.Component {
             <Button
               key={i}
               variant="contained"
-              color="primary"
+              // color="primary"
               value={el}
               onClick={(e) => this.handleChange(e)}
               name={options[0]}
@@ -723,7 +723,7 @@ class Profile extends React.Component {
               <Button
                 key={i}
                 variant="contained"
-                color="primary"
+                // color="primary"
                 value={el}
                 onClick={(e) => this.handleChange(e)}
                 name={options[j][0]}
@@ -775,7 +775,7 @@ class Profile extends React.Component {
             <Button
               key={i}
               variant="contained"
-              color="primary"
+              // color="primary"
               value={el}
               onClick={(e) => this.handleChange(e)}
               name={options[0]}

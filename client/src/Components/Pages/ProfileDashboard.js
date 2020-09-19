@@ -42,6 +42,7 @@ class ProfileDashboard extends React.Component {
   componentDidMount = () => {
     console.log(this.props);
   };
+
   handleChange = (event) => {
     event.preventDefault();
     this.setState({ [event.currentTarget.name]: event.currentTarget.value });
@@ -94,10 +95,11 @@ class ProfileDashboard extends React.Component {
           <img
             onChange={this.handleChange}
             src={this.props.profile_image}
-            alt="profile-image"
+            alt="profile"
+            style={{ marginBottom: "12px", borderRadius: "50px" }}
           />
           <br />
-          <span>Hi, I'm &nbsp;</span>
+          <p>Name</p>
           <input
             name="first_name"
             onChange={this.handleChange}
@@ -114,30 +116,23 @@ class ProfileDashboard extends React.Component {
           />
 
           {/* Age, Orientation, Gender */}
-          <br />
-          <span style={{ marginRight: "-5px" }}>I am a &nbsp;</span>
+          <p>Age</p>
           <input
             name="age"
             onChange={this.handleChange}
             value={this.props.age}
             size="2"
-            maxlength="2"
+            maxLength="2"
             style={{ marginRight: "2px" }}
           />
-          <span> year young &nbsp; </span>
-          {/* <input
-            name="orientation"
-            onChange={this.handleChange}
-            value={this.props.orientation}
-            size="8"
-          /> */}
+          <p> Gender </p>
           <input
             name="sex"
             onChange={this.handleChange}
             value={this.props.sex}
             size="8"
           />
-          <p>Height</p>
+          <p>Height (in) </p>
           <input
             name="height"
             onChange={this.handleChange}
@@ -149,14 +144,6 @@ class ProfileDashboard extends React.Component {
             name="body_type"
             onChange={this.handleChange}
             value={this.props.body_type}
-            size="2"
-          />
-          <p>Mumble Email</p>
-          <input
-            name="mumble_email"
-            onChange={this.handleChange}
-            value={this.props.mumble_email}
-            size="8"
           />
           {/* <p>Number </p>
           <input
@@ -171,29 +158,19 @@ class ProfileDashboard extends React.Component {
             onChange={this.handleChange}
             value={this.props.location}
           />
-          <br />
-          <span>Orientation </span>
+          <p>Orientation </p>
           <input
             name="orientation"
             onChange={this.handleChange}
             value={this.props.orientation}
           />
-          <br />
-          <span>Ethnicity </span>
+          <p>Ethnicity </p>
           <input
             name="ethnicity"
             onChange={this.handleChange}
             value={this.props.ethnicity}
           />
-          <br />
-          <span>Height </span>
-          <input
-            name="height"
-            onChange={this.handleChange}
-            value={this.props.height}
-            size="2"
-          />
-          <p>Offspring </p>
+          <p>Children </p>
           <input
             name="offspring"
             onChange={this.handleChange}
@@ -205,7 +182,7 @@ class ProfileDashboard extends React.Component {
             onChange={this.handleChange}
             value={this.props.wantOffspring}
           /> */}
-          <p>Have Pets</p>
+          <p>Pets</p>
           <input
             name="pets"
             onChange={this.handleChange}

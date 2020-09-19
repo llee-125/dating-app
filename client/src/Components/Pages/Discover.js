@@ -22,6 +22,7 @@ import LocalBarOutlinedIcon from "@material-ui/icons/LocalBarOutlined";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import SmokingRoomsOutlinedIcon from "@material-ui/icons/SmokingRoomsOutlined";
 import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import Box from "@material-ui/core/Box";
 import axios from "axios";
 import clsx from "clsx";
@@ -90,6 +91,7 @@ const Discover = (props) => {
             <IconButton
               aria-label="add to favorites"
               onClick={(e) => {
+                console.log("discover pros child _id", props.children._id);
                 props.updateLikes(props.children._id);
               }}
               text="likes"
@@ -100,7 +102,7 @@ const Discover = (props) => {
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <HeightOutlinedIcon />
+              <LoyaltyIcon/>
             </ListItemIcon>
             <ListItemText primary={props.children.loveFactor} />
           </ListItem>

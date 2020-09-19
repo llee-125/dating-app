@@ -21,6 +21,7 @@ import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import LocalBarOutlinedIcon from '@material-ui/icons/LocalBarOutlined';
 import SmokingRoomsOutlinedIcon from '@material-ui/icons/SmokingRoomsOutlined';
 import avatar1 from "../BottomNavigation/mumble-logo.png";
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,6 +84,12 @@ const Discover = (props) =>{
        <ListItem>
         <ListItemText />
       </ListItem>
+         <ListItem>
+            <ListItemIcon>
+              <LoyaltyIcon/>
+            </ListItemIcon>
+            <ListItemText primary={props.children.loveFactor} />
+          </ListItem>
       <ListItem>
         <ListItemIcon>
         <HeightOutlinedIcon/>

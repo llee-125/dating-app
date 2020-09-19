@@ -24,7 +24,7 @@ const style = {
 };
 
 const style1 = {
-  margin: "20px 0px 40px 0px",
+  margin: "10px 0px 40px 0px",
 };
 
 class Profile extends React.Component {
@@ -179,7 +179,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -234,7 +234,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -247,7 +247,7 @@ class Profile extends React.Component {
     } else if (this.state.counter === 3) {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>How tall are you? (inches)</h1>
             <TextField
               label="Height"
@@ -262,7 +262,7 @@ class Profile extends React.Component {
 
             <h1 style={style1}>What is your income in $</h1>
             <TextField
-              label="income"
+              label="Income"
               placeholder="1,000,000"
               name="income"
               value={this.state.income}
@@ -274,7 +274,7 @@ class Profile extends React.Component {
 
             <h1 style={style1}>Where do you live?</h1>
             <TextField
-              label="location"
+              label="Location"
               placeholder="San Francisco, CA"
               name="location"
               value={this.state.location}
@@ -317,7 +317,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -370,7 +370,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[0][1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -430,7 +430,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -483,7 +483,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -539,7 +539,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -589,7 +589,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -641,7 +641,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -695,7 +695,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -746,7 +746,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[0][1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -796,7 +796,7 @@ class Profile extends React.Component {
           m={1}
           p={1}
         >
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>{options[1]}</h1>
             <Container fluid="md" className="text-center">
               <Row>
@@ -809,7 +809,7 @@ class Profile extends React.Component {
     } else {
       result = (
         <Box display="flex" justifyContent="center" m={1} p={1}>
-          <Box>
+          <Box alignItems="center" justifyContent="center" m={3}>
             <h1 style={style1}>Enter an image URL for your profile picture</h1>
             <TextField
               label="URL"

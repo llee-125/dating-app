@@ -1,11 +1,21 @@
 let mongoose = require("mongoose");
 let db = require("../models/profileModel");
+require("dotenv").config();
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/profile";
 
-mongoose.connect("mongodb://localhost/profile", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
-});
+
+mongoose.connect(
+  MONGODB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  },
+  (err) => {
+    if (err) throw err;
+    console.log("MongoDB connection established.");
+  }
+);
 
 let profileSeed = [
   {

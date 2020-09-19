@@ -112,6 +112,13 @@ const Discover = (props) => {
 
           <ListItem>
             <ListItemIcon>
+              <LocationOnOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary={props.children.location} />
+          </ListItem>
+
+          <ListItem>
+            <ListItemIcon>
               <HeightOutlinedIcon />
             </ListItemIcon>
             <ListItemText primary={props.children.height + " inches"} />
@@ -122,13 +129,6 @@ const Discover = (props) => {
               <WorkOutlineOutlinedIcon />
             </ListItemIcon>
             <ListItemText primary={props.children.job} />
-          </ListItem>
-
-          <ListItem>
-            <ListItemIcon>
-              <LocationOnOutlinedIcon />
-            </ListItemIcon>
-            <ListItemText primary={props.children.location} />
           </ListItem>
 
           <ListItem>

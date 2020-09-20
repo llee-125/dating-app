@@ -1,18 +1,19 @@
 import axios from "axios";
+
+import checkBodyCompatibility from "./checkBodyCompatibility.js";
+import checkDietCompatibility from "./checkDietCompatibility.js";
 import checkDrinkCompatibility from "./checkDrinkCompatibility.js";
 import checkDrugCompatibility from "./checkDrugCompatibility.js";
-import checkBodyCompatibility from "./checkBodyCompatibility.js";
+import checkEduCompatibility from "./checkEduCompatibility.js";
+import checkEthnicityCompatibility from "./checkEthnicityCompatibility.js";
 import checkHeightCompatibility from "./checkHeightCompatibility.js";
+import checkJobCompatibility from "./checkJobCompatibility.js";
+import checkOffspringCompatibility from "./checkOffspringCompatibility.js";
+import checkPetCompatibility from "./checkPetCompatibility.js";
+import checkReligionCompatibility from "./checkReligionCompatibility.js";
 import checkSexualPreference from "./checkSexualPreference.js";
 import checkSmokesCompatibility from "./checkSmokesCompatibility.js";
 import checkStatusCompatibility from "./checkStatusCompatibility.js";
-import checkDietCompatibility from "./checkDietCompatibility.js";
-import checkEduCompatibility from "./checkEduCompatibility.js";
-import checkEthnicityCompatibility from "./checkEthnicityCompatibility.js";
-import checkPetCompatibility from "./checkPetCompatibility.js";
-import checkReligionCompatibility from "./checkReligionCompatibility.js";
-import checkOffspringCompatibility from "./checkOffspringCompatibility.js";
-import checkJobCompatibility from "./checkJobCompatibility.js";
 
 // const getUserProfile = () => {
 //   axios.get("http://localhost:3000/users/user_data").then(({ data }) => data);
@@ -50,11 +51,14 @@ import checkJobCompatibility from "./checkJobCompatibility.js";
 const RecoAlgo = (myProfile) => {
   return new Promise((resolve, reject) => {
     axios
-      .get("profile/all")
+      .get("/profile/discover")
       .then(({ data }) => {
+        console.log("n data=", data.length);
+        console.log(data);
         let sexualPreference = checkSexualPreference(myProfile);
         return data.filter(
           (Data) =>
+            myProfile._id !== Data._id &&
             (sexualPreference[0] === Data.sex ||
               sexualPreference[1] === Data.sex) &&
             (sexualPreference[2] === Data.orientation ||
@@ -64,11 +68,14 @@ const RecoAlgo = (myProfile) => {
         );
       })
       .then((rightData) => {
-        rightData.map((userProfile) => {
+        let array = rightData.map((userProfile) => {
           userProfile.loveFactor = 0;
           calculateLoveFactor(myProfile, userProfile);
+          return userProfile;
         });
-        return rightData;
+        // return rightData;
+        // console.log(array);
+        return array;
       })
       .then((recommendedProfiles) => {
         resolve(

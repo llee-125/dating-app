@@ -20,9 +20,7 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     bottom: 0,
-    // position: "fixed !important",
-    zIndex: "9999",
-    // marginBottom: "15px",
+    position: "fixed",
   },
 });
 
@@ -30,9 +28,7 @@ const StyledMenu = withStyles({
   paper: {
     border: "1px solid #d3d4d5",
   },
-  
 })((props) => (
-  
   <Menu
     elevation={0}
     getContentAnchorEl={null}
@@ -89,7 +85,6 @@ export default function LabelBottomNavigation() {
       value={value}
       onChange={handleChange}
       className={classes.root}
-      style={{ position: "fixed" }}
     >
       <BottomNavigationAction
         label="Discover"
@@ -102,13 +97,16 @@ export default function LabelBottomNavigation() {
       <BottomNavigationAction
         label="Likes"
         value="likes"
-        aria-controls="customized-menu"
-        aria-haspopup="true"
-        variant="contained"
+        // aria-controls="customized-menu"
+        // aria-haspopup="true"
+        // variant="contained"
         icon={<FavoriteIcon />}
-        onClick={handleClick}
+        component={Link}
+        to="/profile/likes"
+        // onClick={handleClick}
       />
-      <StyledMenu
+
+      {/* <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}
         keepMounted
@@ -118,13 +116,13 @@ export default function LabelBottomNavigation() {
         <StyledMenuItem component={Link} to="/profile/likes">
           <ListItemText label="YouLikes" value="Youlikes" primary="You Like" />
         </StyledMenuItem>
-        <StyledMenuItem component={Link} to="/profile/likes">
+        {/* <StyledMenuItem component={Link} to="/profile/likes">
           <ListItemText primary="Likes You" />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemText primary="Mutual Likes" />
-        </StyledMenuItem>
-      </StyledMenu>
+        </StyledMenuItem> 
+      </StyledMenu> */}
 
       <BottomNavigationAction
         label="Profile"
